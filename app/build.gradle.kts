@@ -77,7 +77,7 @@ dependencies {
     implementation("androidx.drawerlayout:drawerlayout:1.1.1")
     implementation("androidx.palette:palette-ktx:1.0.0")
     implementation("androidx.startup:startup-runtime:1.1.1")
-    implementation("androidx.viewbinding:viewbinding:8.7.3")
+    implementation("androidx.databinding:viewbinding:8.7.3")
 
     // Lifecycle
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.8.7")
