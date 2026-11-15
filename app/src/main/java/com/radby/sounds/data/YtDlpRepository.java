@@ -108,7 +108,7 @@ public final class YtDlpRepository {
             $this$invokeSuspend_u24lambda_u240.addOption("--dump-single-json");
             $this$invokeSuspend_u24lambda_u240.addOption("--flat-playlist");
             $this$invokeSuspend_u24lambda_u240.addOption("--no-warnings");
-            JSONObject json = new JSONObject(YtDlpRepository.INSTANCE.getYtdl().execute($this$invokeSuspend_u24lambda_u240, (String) null, (Function3<? super Float, ? super Long, ? super String, Unit>) null).getOut());
+            JSONObject json; try { json = new JSONObject(YtDlpRepository.INSTANCE.getYtdl().execute($this$invokeSuspend_u24lambda_u240, (String) null, (Function3<? super Float, ? super Long, ? super String, Unit>) null).getOut()); } catch (Throwable t) { return CollectionsKt.emptyList(); }
             JSONArray entries = json.optJSONArray("entries");
             if (entries == null) {
                 return CollectionsKt.listOfNotNull(YtDlpRepository.INSTANCE.parse(json));
@@ -189,12 +189,12 @@ public final class YtDlpRepository {
             request.addOption("--no-playlist");
             request.addOption("--no-warnings");
             Object obj = null;
-            Sequence $this$firstOrNull$iv = SequencesKt.map(StringsKt.lineSequence(YtDlpRepository.INSTANCE.getYtdl().execute(request, (String) null, (Function3<? super Float, ? super Long, ? super String, Unit>) null).getOut()), new Function1() { // from class: com.radby.sounds.data.YtDlpRepository$streamUrl$2$$ExternalSyntheticLambda0
+            Sequence $this$firstOrNull$iv; try { $this$firstOrNull$iv = SequencesKt.map(StringsKt.lineSequence(YtDlpRepository.INSTANCE.getYtdl().execute(request, (String) null, (Function3<? super Float, ? super Long, ? super String, Unit>) null).getOut()), new Function1() { // from class: com.radby.sounds.data.YtDlpRepository$streamUrl$2$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj2) {
                     return YtDlpRepository.C01132.invokeSuspend$lambda$1((String) obj2);
                 }
-            });
+            }); } catch (Throwable t) { return null; }
             java.util.Iterator iterator$iv = $this$firstOrNull$iv.iterator();
             while (iterator$iv.hasNext()) {
                 Object element$iv = iterator$iv.next();
@@ -205,7 +205,7 @@ public final class YtDlpRepository {
                 }
             }
             str = (String) obj;
-            if (str != null) {
+            if (str == null) {
                 throw new IllegalStateException("O yt-dlp não devolveu uma URL de áudio".toString());
             }
             return str;

@@ -108,7 +108,7 @@ public final /* data */ class LibraryUiState {
         this.tab = tab;
         this.openFolder = openFolder;
         this.openPlaylistId = openPlaylistId;
-        this.rows = rows;
+        this.rows = (List<LibraryRow>) (List<?>) rows;
         this.queue = queue;
         this.playlists = playlists;
         this.selected = selected;

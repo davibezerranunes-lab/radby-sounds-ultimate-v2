@@ -132,12 +132,10 @@ public final class LibraryViewModel extends AndroidViewModel {
                 try {
                     $result = com.radby.compat.Kt.box((List) $result);
                 } catch (Throwable th) {
-                    th = th;
-                    $result = $result;
                     $result = com.radby.compat.Kt.box(com.radby.compat.Kt.failure(th));
                 }
             } catch (Throwable th2) {
-                th = th2;
+                $result = com.radby.compat.Kt.box(com.radby.compat.Kt.failure(th2));
             }
             LibraryViewModel libraryViewModel2 = LibraryViewModel.this;
             if (com.radby.compat.Kt.isSuccess($result)) {

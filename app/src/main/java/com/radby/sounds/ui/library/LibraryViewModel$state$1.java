@@ -26,10 +26,11 @@ final class LibraryViewModel$state$1 extends SuspendLambda implements Function5<
     int label;
     final /* synthetic */ LibraryViewModel this$0;
 
+    private final LibraryViewModel this$0;
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     LibraryViewModel$state$1(LibraryViewModel libraryViewModel, Continuation<? super LibraryViewModel$state$1> continuation) {
         super(5, (Continuation<Object>) continuation);
-        LibraryViewModel$state$1.this = libraryViewModel;
+        this.this$0 = libraryViewModel;
     }
 
     @Override // kotlin.jvm.functions.Function5
@@ -39,7 +40,7 @@ final class LibraryViewModel$state$1 extends SuspendLambda implements Function5<
 
     /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
     public final Object invoke2(List<LocalTrack> list, List<Playlist> list2, Nav nav, Set<Long> set, Continuation<? super LibraryUiState> continuation) {
-        LibraryViewModel$state$1 libraryViewModel$state$1 = new LibraryViewModel$state$1(LibraryViewModel$state$1.this, continuation);
+        LibraryViewModel$state$1 libraryViewModel$state$1 = new LibraryViewModel$state$1(this.this$0, continuation);
         libraryViewModel$state$1.L$0 = list;
         libraryViewModel$state$1.L$1 = list2;
         libraryViewModel$state$1.L$2 = nav;
@@ -57,7 +58,7 @@ final class LibraryViewModel$state$1 extends SuspendLambda implements Function5<
                 List playlists = (List) this.L$1;
                 Nav n = (Nav) this.L$2;
                 Set sel = (Set) this.L$3;
-                return LibraryViewModel$state$1.this.build(all, playlists, n, sel);
+                return this.this$0.build(all, playlists, n, sel);
             default:
                 throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         }

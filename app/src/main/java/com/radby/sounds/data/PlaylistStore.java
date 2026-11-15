@@ -302,6 +302,7 @@ public final class PlaylistStore {
         } catch (Throwable th) {
             objM663constructorimpl = com.radby.compat.Kt.box(com.radby.compat.Kt.failure(th));
         }
+        return (List) objM663constructorimpl;
     }
 
     private final void write(List<Playlist> list) {
@@ -309,7 +310,7 @@ public final class PlaylistStore {
         List<Playlist> $this$forEach$iv = list;
         for (Object element$iv : $this$forEach$iv) {
             Playlist p = (Playlist) element$iv;
-            arr.put(new JSONObject().put("id", p.getId()).put("name", p.getName()).put("tracks", new JSONArray((Collection) p.getTrackIds())));
+            try { arr.put(new JSONObject().put("id", p.getId()).put("name", p.getName()).put("tracks", new JSONArray((Collection) p.getTrackIds()))); } catch (Exception ignored) { }
         }
         File file = this.file;
         String string = arr.toString();

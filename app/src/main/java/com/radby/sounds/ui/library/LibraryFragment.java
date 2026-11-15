@@ -183,7 +183,7 @@ public final class LibraryFragment extends Fragment {
                 }
             }
         };
-        this.backCallback = new OnBackPressedCallback() { // from class: com.radby.sounds.ui.library.OnBackPressedCallback
+        this.backCallback = new OnBackPressedCallback(false) { // from class: com.radby.sounds.ui.library.OnBackPressedCallback
 
             @Override // androidx.activity.OnBackPressedCallback
             public void handleOnBackPressed() {
@@ -533,7 +533,7 @@ public final class LibraryFragment extends Fragment {
                                     }
                                 }
                                 libraryAdapter.submitList(s.getRows());
-                                setEnabled(s.isInside() || s.isSelecting());
+                                libraryFragment.backCallback.setEnabled(s.isInside() || s.isSelecting());
                                 libraryFragment.renderEmpty(s);
                                 libraryFragment.renderFab(s);
                                 libraryFragment.renderSelection(s);
@@ -720,7 +720,7 @@ public final class LibraryFragment extends Fragment {
         this$0.askName(R.string.new_playlist, "", new Function1() { // from class: com.radby.sounds.ui.library.LibraryFragment$$ExternalSyntheticLambda8
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                return LibraryFragment.renderFab$lambda$22$lambda$21(LibraryFragment.this, (String) obj);
+                return LibraryFragment.renderFab$lambda$22$lambda$21(this$0, (String) obj);
             }
         });
     }
@@ -844,7 +844,7 @@ public final class LibraryFragment extends Fragment {
                 this$0.askName(R.string.rename, $row.getPlaylist().getName(), new Function1() { // from class: com.radby.sounds.ui.library.LibraryFragment$$ExternalSyntheticLambda10
                     @Override // kotlin.jvm.functions.Function1
                     public final Object invoke(Object obj) {
-                        return LibraryFragment.showPlaylistMenu$lambda$30$lambda$28(LibraryFragment.this, $row, (String) obj);
+                        return LibraryFragment.showPlaylistMenu$lambda$30$lambda$28(this$0, $row, (String) obj);
                     }
                 });
                 break;
@@ -852,7 +852,7 @@ public final class LibraryFragment extends Fragment {
                 new MaterialAlertDialogBuilder(this$0.requireContext()).setMessage((CharSequence) this$0.getString(R.string.delete_playlist_confirm, $row.getPlaylist().getName())).setNegativeButton(R.string.cancel, (DialogInterface.OnClickListener) null).setPositiveButton(R.string.delete, new DialogInterface.OnClickListener() { // from class: com.radby.sounds.ui.library.LibraryFragment$$ExternalSyntheticLambda12
                     @Override // android.content.DialogInterface.OnClickListener
                     public final void onClick(DialogInterface dialogInterface, int i) {
-                        LibraryFragment.showPlaylistMenu$lambda$30$lambda$29(LibraryFragment.this, $row, dialogInterface, i);
+                        LibraryFragment.showPlaylistMenu$lambda$30$lambda$29(this$0, $row, dialogInterface, i);
                     }
                 }).show();
                 break;
@@ -895,7 +895,7 @@ public final class LibraryFragment extends Fragment {
         new MaterialAlertDialogBuilder(requireContext()).setTitle(R.string.add_to_playlist).setItems((CharSequence[]) names, new DialogInterface.OnClickListener() { // from class: com.radby.sounds.ui.library.LibraryFragment$$ExternalSyntheticLambda16
             @Override // android.content.DialogInterface.OnClickListener
             public final void onClick(DialogInterface dialogInterface, int i) {
-                LibraryFragment.pickPlaylist$lambda$34(playlists, this, ids, dialogInterface, i);
+                LibraryFragment.pickPlaylist$lambda$34(playlists, LibraryFragment.this, ids, dialogInterface, i);
             }
         }).show();
     }
@@ -916,7 +916,7 @@ public final class LibraryFragment extends Fragment {
             this$0.askName(R.string.new_playlist, "", new Function1() { // from class: com.radby.sounds.ui.library.LibraryFragment$$ExternalSyntheticLambda9
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    return LibraryFragment.pickPlaylist$lambda$34$lambda$33(LibraryFragment.this, $ids, (String) obj);
+                    return LibraryFragment.pickPlaylist$lambda$34$lambda$33(this$0, $ids, (String) obj);
                 }
             });
         }

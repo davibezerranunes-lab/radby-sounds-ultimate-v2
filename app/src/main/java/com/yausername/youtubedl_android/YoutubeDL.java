@@ -395,7 +395,7 @@ public final class YoutubeDL {
         public static final class STABLE extends UpdateChannel {
             public static final STABLE INSTANCE = new STABLE();
 
-            private STABLE() { super("STABLE", 0); } 
+            private STABLE() { super("https://api.github.com/repos/yt-dlp/yt-dlp/releases/latest"); } 
         }
 
         public UpdateChannel(String apiUrl) {
@@ -412,7 +412,7 @@ public final class YoutubeDL {
         public static final class NIGHTLY extends UpdateChannel {
             public static final NIGHTLY INSTANCE = new NIGHTLY();
 
-            private NIGHTLY() { super("NIGHTLY", 1); } 
+            private NIGHTLY() { super("https://api.github.com/repos/yt-dlp/yt-dlp-nightly-builds/releases/latest"); } 
         }
 
         /* JADX INFO: compiled from: YoutubeDL.kt */
@@ -420,7 +420,7 @@ public final class YoutubeDL {
         public static final class MASTER extends UpdateChannel {
             public static final MASTER INSTANCE = new MASTER();
 
-            private MASTER() { super("MASTER", 2); } 
+            private MASTER() { super("https://api.github.com/repos/yt-dlp/yt-dlp-master-builds/releases/latest"); } 
         }
     }
 

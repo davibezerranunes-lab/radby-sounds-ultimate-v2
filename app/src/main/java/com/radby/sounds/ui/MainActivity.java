@@ -187,7 +187,7 @@ public final class MainActivity extends AppCompatActivity {
             getTheme().applyStyle(it, true);
         }
         NavController navController = null;
-        EdgeToEdge.enable$default(this, null, null, 3, null);
+        EdgeToEdge.enable(this, null, null);
         super.onCreate(savedInstanceState);
         this.binding = ActivityMainBinding.inflate(getLayoutInflater());
         ActivityMainBinding activityMainBinding = this.binding;
@@ -439,7 +439,7 @@ public final class MainActivity extends AppCompatActivity {
                             public final Object emit(PlayerUiState playerUiState, Continuation<? super Unit> continuation) {
                                 mainActivity.renderMiniPlayer(playerUiState);
                                 if (!Intrinsics.areEqual(playerUiState.getCover(), lastCover.element)) {
-                                    lastCover.element = (T) playerUiState.getCover();
+                                    lastCover.element = (Object) playerUiState.getCover();
                                     ShapeableImageView miniCover = viewMiniPlayerBinding.miniCover;
                                     Intrinsics.checkNotNullExpressionValue(miniCover, "miniCover");
                                     ShapeableImageView shapeableImageView = miniCover;
@@ -450,7 +450,7 @@ public final class MainActivity extends AppCompatActivity {
                                     builderTarget.placeholder(R.drawable.cover_placeholder);
                                     builderTarget.error(R.drawable.cover_placeholder);
                                     builderTarget.allowHardware(false);
-                                    builderTarget.listener(new ImageRequest.Listener(mainActivity2) { // from class: com.radby.sounds.ui.MainActivity$setupMiniPlayer$4$1$1$emit$lambda$2$$inlined$listener$default$1
+                                    builderTarget.listener(new ImageRequest.Listener() { // from class: com.radby.sounds.ui.MainActivity$setupMiniPlayer$4$1$1$emit$lambda$2$$inlined$listener$default$1
                                         @Override // coil.request.ImageRequest.Listener
                                         public void onStart(ImageRequest request) {
                                         }
@@ -846,7 +846,7 @@ public final class MainActivity extends AppCompatActivity {
         if (!Intrinsics.areEqual(intent.getAction(), "android.intent.action.SEND") || (text = intent.getStringExtra("android.intent.extra.TEXT")) == null) {
             return;
         }
-        MatchResult matchResultFind$default = Regex.find$default(new Regex("https?://\\S+"), text, 0, 2, null);
+        MatchResult matchResultFind$default = new Regex("https?://\\S+").find(text);
         if (matchResultFind$default == null || (url = matchResultFind$default.getValue()) == null) {
             url = text;
         }
