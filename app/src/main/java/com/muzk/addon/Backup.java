@@ -102,8 +102,7 @@ public final class Backup {
                                 fileOutputStream.close();
                                 throw th;
                             }
-                            zipInputStream.close();
-                            throw th;
+                        zipInputStream.close();
                         }
                         fileOutputStream.close();
                         i++;

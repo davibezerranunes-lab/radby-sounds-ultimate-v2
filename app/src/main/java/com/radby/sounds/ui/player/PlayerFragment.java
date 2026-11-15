@@ -29,7 +29,6 @@ import androidx.lifecycle.RepeatOnLifecycleKt;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelStore;
 import androidx.lifecycle.viewmodel.CreationExtras;
-import androidx.media3.extractor.text.ttml.TtmlNode;
 import androidx.navigation.fragment.FragmentKt;
 import coil.Coil;
 import coil.ImageLoader;
@@ -72,7 +71,7 @@ import kotlin.jvm.internal.Ref;
 import kotlin.jvm.internal.Reflection;
 import kotlin.ranges.RangesKt;
 import kotlin.text.StringsKt;
-import kotlinx.coroutines.BuildersKt__Builders_commonKt;
+import kotlinx.coroutines.BuildersKt;
 import kotlinx.coroutines.CoroutineScope;
 import kotlinx.coroutines.DebugKt;
 import kotlinx.coroutines.flow.FlowCollector;
@@ -80,7 +79,7 @@ import kotlinx.coroutines.flow.StateFlow;
 
 /* JADX INFO: compiled from: PlayerFragment.kt */
 /* JADX INFO: loaded from: classes3.dex */
-@Metadata(d1 = {"\u0000b\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0010\t\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0006\n\u0002\u0010\u000e\n\u0002\b\u0005\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J$\u0010\u0011\u001a\u00020\u00122\u0006\u0010\u0013\u001a\u00020\u00142\b\u0010\u0015\u001a\u0004\u0018\u00010\u00162\b\u0010\u0017\u001a\u0004\u0018\u00010\u0018H\u0016J\u001a\u0010\u0019\u001a\u00020\u001a2\u0006\u0010\u001b\u001a\u00020\u00122\b\u0010\u0017\u001a\u0004\u0018\u00010\u0018H\u0016J\u000f\u0010\u001c\u001a\u0004\u0018\u00010\u001dH\u0002¢\u0006\u0002\u0010\u001eJ\b\u0010\u001f\u001a\u00020\u001aH\u0002J\b\u0010 \u001a\u00020\u001aH\u0002J\u001a\u0010!\u001a\u00020\"2\u0006\u0010#\u001a\u00020\u00102\b\b\u0002\u0010$\u001a\u00020%H\u0002J\u0010\u0010&\u001a\u00020\u001a2\u0006\u0010'\u001a\u00020\u0012H\u0002J\u0010\u0010(\u001a\u00020\u001a2\u0006\u0010)\u001a\u00020\u001dH\u0002J\u0010\u0010*\u001a\u00020\u001a2\u0006\u0010+\u001a\u00020,H\u0002J\u0017\u0010-\u001a\u00020\u001a2\b\u0010.\u001a\u0004\u0018\u00010%H\u0002¢\u0006\u0002\u0010/J\b\u00100\u001a\u00020\u001aH\u0016R\u0010\u0010\u0004\u001a\u0004\u0018\u00010\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u0006\u001a\u00020\u00058BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b\u0007\u0010\bR\u001b\u0010\t\u001a\u00020\n8BX\u0082\u0084\u0002¢\u0006\f\n\u0004\b\r\u0010\u000e\u001a\u0004\b\u000b\u0010\fR\u000e\u0010\u000f\u001a\u00020\u0010X\u0082\u000e¢\u0006\u0002\n\u0000¨\u00061"}, d2 = {"Lcom/muzk/app/ui/player/PlayerFragment;", "Landroidx/fragment/app/Fragment;", "<init>", "()V", "_binding", "Lcom/muzk/app/databinding/FragmentPlayerBinding;", "binding", "getBinding", "()Lcom/muzk/app/databinding/FragmentPlayerBinding;", "player", "Lcom/muzk/app/playback/PlayerViewModel;", "getPlayer", "()Lcom/muzk/app/playback/PlayerViewModel;", "player$delegate", "Lkotlin/Lazy;", "dragging", "", "onCreateView", "Landroid/view/View;", "inflater", "Landroid/view/LayoutInflater;", TtmlNode.RUBY_CONTAINER, "Landroid/view/ViewGroup;", "savedInstanceState", "Landroid/os/Bundle;", "onViewCreated", "", "view", "currentTrackId", "", "()Ljava/lang/Long;", "renderLike", "toggleLike", "toggleTint", "Landroid/content/res/ColorStateList;", DebugKt.DEBUG_PROPERTY_VALUE_ON, "offAttr", "", "showMenu", "anchor", "pickPlaylist", "trackId", "toast", "text", "", "applyCoverColor", "color", "(Ljava/lang/Integer;)V", "onDestroyView", "app_debug"}, k = 1, mv = {2, 0, 0}, xi = ConstraintLayout.LayoutParams.Table.LAYOUT_CONSTRAINT_VERTICAL_CHAINSTYLE)
+@Metadata(d1 = {"\u0000b\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0010\t\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0006\n\u0002\u0010\u000e\n\u0002\b\u0005\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J$\u0010\u0011\u001a\u00020\u00122\u0006\u0010\u0013\u001a\u00020\u00142\b\u0010\u0015\u001a\u0004\u0018\u00010\u00162\b\u0010\u0017\u001a\u0004\u0018\u00010\u0018H\u0016J\u001a\u0010\u0019\u001a\u00020\u001a2\u0006\u0010\u001b\u001a\u00020\u00122\b\u0010\u0017\u001a\u0004\u0018\u00010\u0018H\u0016J\u000f\u0010\u001c\u001a\u0004\u0018\u00010\u001dH\u0002¢\u0006\u0002\u0010\u001eJ\b\u0010\u001f\u001a\u00020\u001aH\u0002J\b\u0010 \u001a\u00020\u001aH\u0002J\u001a\u0010!\u001a\u00020\"2\u0006\u0010#\u001a\u00020\u00102\b\b\u0002\u0010$\u001a\u00020%H\u0002J\u0010\u0010&\u001a\u00020\u001a2\u0006\u0010'\u001a\u00020\u0012H\u0002J\u0010\u0010(\u001a\u00020\u001a2\u0006\u0010)\u001a\u00020\u001dH\u0002J\u0010\u0010*\u001a\u00020\u001a2\u0006\u0010+\u001a\u00020,H\u0002J\u0017\u0010-\u001a\u00020\u001a2\b\u0010.\u001a\u0004\u0018\u00010%H\u0002¢\u0006\u0002\u0010/J\b\u00100\u001a\u00020\u001aH\u0016R\u0010\u0010\u0004\u001a\u0004\u0018\u00010\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u0006\u001a\u00020\u00058BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b\u0007\u0010\bR\u001b\u0010\t\u001a\u00020\n8BX\u0082\u0084\u0002¢\u0006\f\n\u0004\b\r\u0010\u000e\u001a\u0004\b\u000b\u0010\fR\u000e\u0010\u000f\u001a\u00020\u0010X\u0082\u000e¢\u0006\u0002\n\u0000¨\u00061"}, d2 = {"Lcom/muzk/app/ui/player/PlayerFragment;", "Landroidx/fragment/app/Fragment;", "<init>", "()V", "_binding", "Lcom/muzk/app/databinding/FragmentPlayerBinding;", "binding", "getBinding", "()Lcom/muzk/app/databinding/FragmentPlayerBinding;", "player", "Lcom/muzk/app/playback/PlayerViewModel;", "getPlayer", "()Lcom/muzk/app/playback/PlayerViewModel;", "player$delegate", "Lkotlin/Lazy;", "dragging", "", "onCreateView", "Landroid/view/View;", "inflater", "Landroid/view/LayoutInflater;", "container", "Landroid/view/ViewGroup;", "savedInstanceState", "Landroid/os/Bundle;", "onViewCreated", "", "view", "currentTrackId", "", "()Ljava/lang/Long;", "renderLike", "toggleLike", "toggleTint", "Landroid/content/res/ColorStateList;", DebugKt.DEBUG_PROPERTY_VALUE_ON, "offAttr", "", "showMenu", "anchor", "pickPlaylist", "trackId", "toast", "text", "", "applyCoverColor", "color", "(Ljava/lang/Integer;)V", "onDestroyView", "app_debug"}, k = 1, mv = {2, 0, 0})
 public final class PlayerFragment extends Fragment {
     private FragmentPlayerBinding _binding;
     private boolean dragging;
@@ -92,9 +91,6 @@ public final class PlayerFragment extends Fragment {
         final PlayerFragment $this$activityViewModels_u24default$iv = this;
         final Function0 extrasProducer$iv = null;
         this.player = FragmentViewModelLazyKt.createViewModelLazy($this$activityViewModels_u24default$iv, Reflection.getOrCreateKotlinClass(PlayerViewModel.class), new Function0<ViewModelStore>() { // from class: com.radby.sounds.ui.player.PlayerFragment$special$$inlined$activityViewModels$default$1
-            {
-                super(0);
-            }
 
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
@@ -103,9 +99,6 @@ public final class PlayerFragment extends Fragment {
             }
         }, new Function0<CreationExtras>() { // from class: com.radby.sounds.ui.player.PlayerFragment$special$$inlined$activityViewModels$default$2
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            {
-                super(0);
-            }
 
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
@@ -115,9 +108,6 @@ public final class PlayerFragment extends Fragment {
                 return (function0 == null || (creationExtras = (CreationExtras) function0.invoke()) == null) ? $this$activityViewModels_u24default$iv.requireActivity().getDefaultViewModelCreationExtras() : creationExtras;
             }
         }, new Function0<ViewModelProvider.Factory>() { // from class: com.radby.sounds.ui.player.PlayerFragment$special$$inlined$activityViewModels$default$3
-            {
-                super(0);
-            }
 
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
@@ -161,49 +151,49 @@ public final class PlayerFragment extends Fragment {
         $this$onViewCreated_u24lambda_u2410.btnCollapse.setOnClickListener(new View.OnClickListener() { // from class: com.radby.sounds.ui.player.PlayerFragment$$ExternalSyntheticLambda8
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
-                PlayerFragment.onViewCreated$lambda$10$lambda$1(this.f$0, view2);
+                PlayerFragment.onViewCreated$lambda$10$lambda$1(PlayerFragment.this, view2);
             }
         });
         $this$onViewCreated_u24lambda_u2410.btnPlay.setOnClickListener(new View.OnClickListener() { // from class: com.radby.sounds.ui.player.PlayerFragment$$ExternalSyntheticLambda9
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
-                PlayerFragment.onViewCreated$lambda$10$lambda$2(this.f$0, view2);
+                PlayerFragment.onViewCreated$lambda$10$lambda$2(PlayerFragment.this, view2);
             }
         });
         $this$onViewCreated_u24lambda_u2410.btnNext.setOnClickListener(new View.OnClickListener() { // from class: com.radby.sounds.ui.player.PlayerFragment$$ExternalSyntheticLambda10
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
-                PlayerFragment.onViewCreated$lambda$10$lambda$3(this.f$0, view2);
+                PlayerFragment.onViewCreated$lambda$10$lambda$3(PlayerFragment.this, view2);
             }
         });
         $this$onViewCreated_u24lambda_u2410.btnPrev.setOnClickListener(new View.OnClickListener() { // from class: com.radby.sounds.ui.player.PlayerFragment$$ExternalSyntheticLambda11
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
-                PlayerFragment.onViewCreated$lambda$10$lambda$4(this.f$0, view2);
+                PlayerFragment.onViewCreated$lambda$10$lambda$4(PlayerFragment.this, view2);
             }
         });
         $this$onViewCreated_u24lambda_u2410.btnShuffle.setOnClickListener(new View.OnClickListener() { // from class: com.radby.sounds.ui.player.PlayerFragment$$ExternalSyntheticLambda12
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
-                PlayerFragment.onViewCreated$lambda$10$lambda$5(this.f$0, view2);
+                PlayerFragment.onViewCreated$lambda$10$lambda$5(PlayerFragment.this, view2);
             }
         });
         $this$onViewCreated_u24lambda_u2410.btnRepeat.setOnClickListener(new View.OnClickListener() { // from class: com.radby.sounds.ui.player.PlayerFragment$$ExternalSyntheticLambda13
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
-                PlayerFragment.onViewCreated$lambda$10$lambda$6(this.f$0, view2);
+                PlayerFragment.onViewCreated$lambda$10$lambda$6(PlayerFragment.this, view2);
             }
         });
         $this$onViewCreated_u24lambda_u2410.btnMenu.setOnClickListener(new View.OnClickListener() { // from class: com.radby.sounds.ui.player.PlayerFragment$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
-                PlayerFragment.onViewCreated$lambda$10$lambda$7(this.f$0, view2);
+                PlayerFragment.onViewCreated$lambda$10$lambda$7(PlayerFragment.this, view2);
             }
         });
         $this$onViewCreated_u24lambda_u2410.btnLike.setOnClickListener(new View.OnClickListener() { // from class: com.radby.sounds.ui.player.PlayerFragment$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
-                this.f$0.toggleLike();
+                PlayerFragment.this.toggleLike();
             }
         });
         $this$onViewCreated_u24lambda_u2410.title.setSelected(true);
@@ -212,15 +202,15 @@ public final class PlayerFragment extends Fragment {
             @Override // com.google.android.material.slider.Slider.OnSliderTouchListener, com.google.android.material.slider.BaseOnSliderTouchListener
             public void onStartTrackingTouch(Slider slider) {
                 Intrinsics.checkNotNullParameter(slider, "slider");
-                this.this$0.dragging = true;
+                PlayerFragment.this.dragging = true;
             }
 
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // com.google.android.material.slider.Slider.OnSliderTouchListener, com.google.android.material.slider.BaseOnSliderTouchListener
             public void onStopTrackingTouch(Slider slider) {
                 Intrinsics.checkNotNullParameter(slider, "slider");
-                this.this$0.dragging = false;
-                this.this$0.getPlayer().seekTo((long) slider.getValue());
+                PlayerFragment.this.dragging = false;
+                PlayerFragment.this.getPlayer().seekTo((long) slider.getValue());
             }
         });
         $this$onViewCreated_u24lambda_u2410.seek.addOnChangeListener(new Slider.OnChangeListener() { // from class: com.radby.sounds.ui.player.PlayerFragment$$ExternalSyntheticLambda3
@@ -232,7 +222,7 @@ public final class PlayerFragment extends Fragment {
         });
         LifecycleOwner viewLifecycleOwner = getViewLifecycleOwner();
         Intrinsics.checkNotNullExpressionValue(viewLifecycleOwner, "getViewLifecycleOwner(...)");
-        BuildersKt__Builders_commonKt.launch$default(LifecycleOwnerKt.getLifecycleScope(viewLifecycleOwner), null, null, new AnonymousClass3(null), 3, null);
+        BuildersKt.launch(LifecycleOwnerKt.getLifecycleScope(viewLifecycleOwner), kotlin.coroutines.EmptyCoroutineContext.INSTANCE, kotlinx.coroutines.CoroutineStart.DEFAULT, (Function2) new AnonymousClass3(null));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -293,50 +283,48 @@ public final class PlayerFragment extends Fragment {
 
     /* JADX INFO: renamed from: com.radby.sounds.ui.player.PlayerFragment$onViewCreated$3, reason: invalid class name */
     /* JADX INFO: compiled from: PlayerFragment.kt */
-    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = ConstraintLayout.LayoutParams.Table.LAYOUT_CONSTRAINT_VERTICAL_CHAINSTYLE)
+    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0})
     @DebugMetadata(c = "com.radby.sounds.ui.player.PlayerFragment$onViewCreated$3", f = "PlayerFragment.kt", i = {}, l = {80}, m = "invokeSuspend", n = {}, s = {})
-    static final class AnonymousClass3 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
+    final class AnonymousClass3 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
         int label;
 
-        AnonymousClass3(Continuation<? super AnonymousClass3> continuation) {
-            super(2, continuation);
-        }
+        AnonymousClass3(Continuation<? super AnonymousClass3> continuation) { super(2, (Continuation<Object>) continuation); }
 
         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            return PlayerFragment.this.new AnonymousClass3(continuation);
+            return (Continuation<Unit>) (Object) new AnonymousClass3((Continuation<Object>) continuation);
         }
 
         @Override // kotlin.jvm.functions.Function2
         public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
-            return ((AnonymousClass3) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
+            return ((AnonymousClass3) (Object) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
         }
 
         /* JADX INFO: renamed from: com.radby.sounds.ui.player.PlayerFragment$onViewCreated$3$1, reason: invalid class name */
         /* JADX INFO: compiled from: PlayerFragment.kt */
-        @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = ConstraintLayout.LayoutParams.Table.LAYOUT_CONSTRAINT_VERTICAL_CHAINSTYLE)
+        @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0})
         @DebugMetadata(c = "com.radby.sounds.ui.player.PlayerFragment$onViewCreated$3$1", f = "PlayerFragment.kt", i = {}, l = {84}, m = "invokeSuspend", n = {}, s = {})
-        static final class AnonymousClass1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
+    final class AnonymousClass1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
             private /* synthetic */ Object L$0;
             int label;
             final /* synthetic */ PlayerFragment this$0;
 
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             AnonymousClass1(PlayerFragment playerFragment, Continuation<? super AnonymousClass1> continuation) {
-                super(2, continuation);
+                super(2, (Continuation<Object>) continuation);
                 this.this$0 = playerFragment;
             }
 
             @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
             public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-                AnonymousClass1 anonymousClass1 = new AnonymousClass1(this.this$0, continuation);
+                AnonymousClass1 anonymousClass1 = new AnonymousClass1(PlayerFragment.this, (Continuation<Object>) continuation);
                 anonymousClass1.L$0 = obj;
-                return anonymousClass1;
+                return (Continuation<Unit>) (Object) anonymousClass1;
             }
 
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
-                return ((AnonymousClass1) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
+                return ((AnonymousClass1) (Object) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
             }
 
             /* JADX WARN: Type inference failed for: r2v1, types: [T, kotlin.Unit] */
@@ -345,13 +333,13 @@ public final class PlayerFragment extends Fragment {
                 Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
                 switch (this.label) {
                     case 0:
-                        ResultKt.throwOnFailure($result);
+                        com.radby.compat.Kt.throwOnFailure($result);
                         CoroutineScope $this$repeatOnLifecycle = (CoroutineScope) this.L$0;
                         final Ref.ObjectRef lastCover = new Ref.ObjectRef();
                         lastCover.element = Unit.INSTANCE;
-                        BuildersKt__Builders_commonKt.launch$default($this$repeatOnLifecycle, null, null, new C00371(this.this$0, null), 3, null);
-                        StateFlow<PlayerUiState> state = this.this$0.getPlayer().getState();
-                        final PlayerFragment playerFragment = this.this$0;
+                        BuildersKt.launch($this$repeatOnLifecycle, kotlin.coroutines.EmptyCoroutineContext.INSTANCE, kotlinx.coroutines.CoroutineStart.DEFAULT, (Function2) new C00371(PlayerFragment.this, null));
+                        StateFlow<PlayerUiState> state = PlayerFragment.this.getPlayer().getState();
+                        final PlayerFragment playerFragment = PlayerFragment.this;
                         this.label = 1;
                         if (state.collect(new FlowCollector() { // from class: com.radby.sounds.ui.player.PlayerFragment.onViewCreated.3.1.2
                             @Override // kotlinx.coroutines.flow.FlowCollector
@@ -411,12 +399,12 @@ public final class PlayerFragment extends Fragment {
 
                                             @Override // coil.request.ImageRequest.Listener
                                             public void onError(ImageRequest request, ErrorResult result) {
-                                                this.this$0.applyCoverColor(null);
+                                                PlayerFragment.this.applyCoverColor(null);
                                             }
 
                                             @Override // coil.request.ImageRequest.Listener
                                             public void onSuccess(ImageRequest request, SuccessResult result) {
-                                                this.this$0.applyCoverColor(CoverColors.INSTANCE.extract(result.getDrawable()));
+                                                PlayerFragment.this.applyCoverColor(CoverColors.INSTANCE.extract(result.getDrawable()));
                                             }
                                         });
                                         imageLoader.enqueue(builderTarget.build());
@@ -445,7 +433,7 @@ public final class PlayerFragment extends Fragment {
                         }
                         break;
                     case 1:
-                        ResultKt.throwOnFailure($result);
+                        com.radby.compat.Kt.throwOnFailure($result);
                         break;
                     default:
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
@@ -455,26 +443,26 @@ public final class PlayerFragment extends Fragment {
 
             /* JADX INFO: renamed from: com.radby.sounds.ui.player.PlayerFragment$onViewCreated$3$1$1, reason: invalid class name and collision with other inner class name */
             /* JADX INFO: compiled from: PlayerFragment.kt */
-            @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = ConstraintLayout.LayoutParams.Table.LAYOUT_CONSTRAINT_VERTICAL_CHAINSTYLE)
+            @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0})
             @DebugMetadata(c = "com.radby.sounds.ui.player.PlayerFragment$onViewCreated$3$1$1", f = "PlayerFragment.kt", i = {}, l = {83}, m = "invokeSuspend", n = {}, s = {})
-            static final class C00371 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
+    final class C00371 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
                 int label;
                 final /* synthetic */ PlayerFragment this$0;
 
                 /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                 C00371(PlayerFragment playerFragment, Continuation<? super C00371> continuation) {
-                    super(2, continuation);
+                    super(2, (Continuation<Object>) continuation);
                     this.this$0 = playerFragment;
                 }
 
                 @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
                 public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-                    return new C00371(this.this$0, continuation);
+                    return (Continuation<Unit>) (Object) new C00371(PlayerFragment.this, (Continuation<Object>) continuation);
                 }
 
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
-                    return ((C00371) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
+                    return ((C00371) (Object) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
                 }
 
                 @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
@@ -482,12 +470,12 @@ public final class PlayerFragment extends Fragment {
                     Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
                     switch (this.label) {
                         case 0:
-                            ResultKt.throwOnFailure($result);
+                            com.radby.compat.Kt.throwOnFailure($result);
                             PlaylistStore.Companion companion = PlaylistStore.INSTANCE;
-                            Context contextRequireContext = this.this$0.requireContext();
+                            Context contextRequireContext = PlayerFragment.this.requireContext();
                             Intrinsics.checkNotNullExpressionValue(contextRequireContext, "requireContext(...)");
                             StateFlow<List<Playlist>> playlists = companion.get(contextRequireContext).getPlaylists();
-                            final PlayerFragment playerFragment = this.this$0;
+                            final PlayerFragment playerFragment = PlayerFragment.this;
                             this.label = 1;
                             if (playlists.collect(new FlowCollector() { // from class: com.radby.sounds.ui.player.PlayerFragment.onViewCreated.3.1.1.1
                                 @Override // kotlinx.coroutines.flow.FlowCollector
@@ -504,7 +492,7 @@ public final class PlayerFragment extends Fragment {
                             }
                             break;
                         case 1:
-                            ResultKt.throwOnFailure($result);
+                            com.radby.compat.Kt.throwOnFailure($result);
                             break;
                         default:
                             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
@@ -519,7 +507,7 @@ public final class PlayerFragment extends Fragment {
             Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
             switch (this.label) {
                 case 0:
-                    ResultKt.throwOnFailure($result);
+                    com.radby.compat.Kt.throwOnFailure($result);
                     LifecycleOwner viewLifecycleOwner = PlayerFragment.this.getViewLifecycleOwner();
                     Intrinsics.checkNotNullExpressionValue(viewLifecycleOwner, "getViewLifecycleOwner(...)");
                     this.label = 1;
@@ -528,7 +516,7 @@ public final class PlayerFragment extends Fragment {
                     }
                     break;
                 case 1:
-                    ResultKt.throwOnFailure($result);
+                    com.radby.compat.Kt.throwOnFailure($result);
                     break;
                 default:
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
@@ -543,10 +531,10 @@ public final class PlayerFragment extends Fragment {
         if (it == null) {
             return null;
         }
-        if (!StringsKt.startsWith$default(it, "content://", false, 2, (Object) null)) {
+        if (!StringsKt.startsWith(it, "content://", false)) {
             it = null;
         }
-        if (it == null || (strSubstringAfterLast$default = StringsKt.substringAfterLast$default(it, '/', (String) null, 2, (Object) null)) == null) {
+        if (it == null || (strSubstringAfterLast$default = StringsKt.substringAfterLast(it, '/', null)) == null) {
             return null;
         }
         return StringsKt.toLongOrNull(strSubstringAfterLast$default);
@@ -597,7 +585,7 @@ public final class PlayerFragment extends Fragment {
                 duration.withEndAction(new Runnable() { // from class: com.radby.sounds.ui.player.PlayerFragment$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        PlayerFragment.toggleLike$lambda$12(this.f$0);
+                        PlayerFragment.toggleLike$lambda$12(PlayerFragment.this);
                     }
                 });
             }
@@ -639,10 +627,10 @@ public final class PlayerFragment extends Fragment {
         String it = s.getMediaId();
         Long longOrNull = null;
         if (it != null) {
-            if (!StringsKt.startsWith$default(it, "content://", false, 2, (Object) null)) {
+            if (!StringsKt.startsWith(it, "content://", false)) {
                 it = null;
             }
-            if (it != null && (strSubstringAfterLast$default = StringsKt.substringAfterLast$default(it, '/', (String) null, 2, (Object) null)) != null) {
+            if (it != null && (strSubstringAfterLast$default = StringsKt.substringAfterLast(it, '/', null)) != null) {
                 longOrNull = StringsKt.toLongOrNull(strSubstringAfterLast$default);
             }
         }

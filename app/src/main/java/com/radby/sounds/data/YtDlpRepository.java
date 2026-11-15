@@ -1,8 +1,5 @@
 package com.radby.sounds.data;
-
-import androidx.constraintlayout.core.motion.utils.TypedValues;
 import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.media3.extractor.text.ttml.TtmlNode;
 import com.radby.sounds.MuzkApp;
 import com.radby.sounds.download.DownloadWorker;
 import com.yausername.youtubedl_android.YoutubeDL;
@@ -36,7 +33,7 @@ import org.json.JSONObject;
 
 /* JADX INFO: compiled from: YtDlpRepository.kt */
 /* JADX INFO: loaded from: classes6.dex */
-@Metadata(d1 = {"\u0000<\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0004\bÆ\u0002\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u000e\u0010\b\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\u000bJ&\u0010\f\u001a\b\u0012\u0004\u0012\u00020\u000e0\r2\u0006\u0010\u000f\u001a\u00020\u000b2\b\b\u0002\u0010\u0010\u001a\u00020\u0011H\u0086@¢\u0006\u0002\u0010\u0012J\u0016\u0010\u0013\u001a\u00020\u000b2\u0006\u0010\u0014\u001a\u00020\u000bH\u0086@¢\u0006\u0002\u0010\u0015J\u0014\u0010\u0016\u001a\u00020\u000b*\u00020\u00172\u0006\u0010\u0018\u001a\u00020\u000bH\u0002J\u0012\u0010\u0019\u001a\u0004\u0018\u00010\u000e2\u0006\u0010\u001a\u001a\u00020\u0017H\u0002R\u0014\u0010\u0004\u001a\u00020\u00058BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b\u0006\u0010\u0007¨\u0006\u001b"}, d2 = {"Lcom/muzk/app/data/YtDlpRepository;", "", "<init>", "()V", "ytdl", "Lcom/yausername/youtubedl_android/YoutubeDL;", "getYtdl", "()Lcom/yausername/youtubedl_android/YoutubeDL;", "isUrl", "", "text", "", "search", "", "Lcom/muzk/app/data/RemoteTrack;", "query", "limit", "", "(Ljava/lang/String;ILkotlin/coroutines/Continuation;)Ljava/lang/Object;", "streamUrl", "pageUrl", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "str", "Lorg/json/JSONObject;", "key", "parse", "o", "app_debug"}, k = 1, mv = {2, 0, 0}, xi = ConstraintLayout.LayoutParams.Table.LAYOUT_CONSTRAINT_VERTICAL_CHAINSTYLE)
+@Metadata(d1 = {"\u0000<\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0004\bÆ\u0002\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u000e\u0010\b\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\u000bJ&\u0010\f\u001a\b\u0012\u0004\u0012\u00020\u000e0\r2\u0006\u0010\u000f\u001a\u00020\u000b2\b\b\u0002\u0010\u0010\u001a\u00020\u0011H\u0086@¢\u0006\u0002\u0010\u0012J\u0016\u0010\u0013\u001a\u00020\u000b2\u0006\u0010\u0014\u001a\u00020\u000bH\u0086@¢\u0006\u0002\u0010\u0015J\u0014\u0010\u0016\u001a\u00020\u000b*\u00020\u00172\u0006\u0010\u0018\u001a\u00020\u000bH\u0002J\u0012\u0010\u0019\u001a\u0004\u0018\u00010\u000e2\u0006\u0010\u001a\u001a\u00020\u0017H\u0002R\u0014\u0010\u0004\u001a\u00020\u00058BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b\u0006\u0010\u0007¨\u0006\u001b"}, d2 = {"Lcom/muzk/app/data/YtDlpRepository;", "", "<init>", "()V", "ytdl", "Lcom/yausername/youtubedl_android/YoutubeDL;", "getYtdl", "()Lcom/yausername/youtubedl_android/YoutubeDL;", "isUrl", "", "text", "", "search", "", "Lcom/muzk/app/data/RemoteTrack;", "query", "limit", "", "(Ljava/lang/String;ILkotlin/coroutines/Continuation;)Ljava/lang/Object;", "streamUrl", "pageUrl", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "str", "Lorg/json/JSONObject;", "key", "parse", "o", "app_debug"}, k = 1, mv = {2, 0, 0})
 public final class YtDlpRepository {
     public static final YtDlpRepository INSTANCE = new YtDlpRepository();
 
@@ -50,12 +47,12 @@ public final class YtDlpRepository {
 
     public final boolean isUrl(String text) {
         Intrinsics.checkNotNullParameter(text, "text");
-        return StringsKt.startsWith$default(text, "http://", false, 2, (Object) null) || StringsKt.startsWith$default(text, "https://", false, 2, (Object) null);
+        return StringsKt.startsWith(text, "http://", false) || StringsKt.startsWith(text, "https://", false);
     }
 
     /* JADX INFO: renamed from: com.radby.sounds.data.YtDlpRepository$search$2, reason: invalid class name */
     /* JADX INFO: compiled from: YtDlpRepository.kt */
-    @Metadata(d1 = {"\u0000\u000e\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\b\u0012\u0004\u0012\u00020\u00020\u0001*\u00020\u0003H\n"}, d2 = {"<anonymous>", "", "Lcom/muzk/app/data/RemoteTrack;", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = ConstraintLayout.LayoutParams.Table.LAYOUT_CONSTRAINT_VERTICAL_CHAINSTYLE)
+    @Metadata(d1 = {"\u0000\u000e\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\b\u0012\u0004\u0012\u00020\u00020\u0001*\u00020\u0003H\n"}, d2 = {"<anonymous>", "", "Lcom/muzk/app/data/RemoteTrack;", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0})
     @DebugMetadata(c = "com.radby.sounds.data.YtDlpRepository$search$2", f = "YtDlpRepository.kt", i = {}, l = {19}, m = "invokeSuspend", n = {}, s = {})
     static final class AnonymousClass2 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super List<? extends RemoteTrack>>, Object> {
         final /* synthetic */ int $limit;
@@ -64,14 +61,14 @@ public final class YtDlpRepository {
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         AnonymousClass2(String str, int i, Continuation<? super AnonymousClass2> continuation) {
-            super(2, continuation);
+            super(2, (Continuation<Object>) continuation);
             this.$query = str;
             this.$limit = i;
         }
 
         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            return new AnonymousClass2(this.$query, this.$limit, continuation);
+            return (Continuation<Unit>) (Object) new AnonymousClass2(this.$query, this.$limit, (Continuation<Object>) continuation);
         }
 
         @Override // kotlin.jvm.functions.Function2
@@ -81,7 +78,7 @@ public final class YtDlpRepository {
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final Object invoke2(CoroutineScope coroutineScope, Continuation<? super List<RemoteTrack>> continuation) {
-            return ((AnonymousClass2) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
+            return ((AnonymousClass2) (Object) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
         }
 
         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
@@ -90,14 +87,14 @@ public final class YtDlpRepository {
             Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
             switch (this.label) {
                 case 0:
-                    ResultKt.throwOnFailure($result);
+                    com.radby.compat.Kt.throwOnFailure($result);
                     this.label = 1;
                     if (MuzkApp.INSTANCE.getYtdlReady().await(this) == coroutine_suspended) {
                         return coroutine_suspended;
                     }
                     break;
                 case 1:
-                    ResultKt.throwOnFailure($result);
+                    com.radby.compat.Kt.throwOnFailure($result);
                     break;
                 default:
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
@@ -139,12 +136,12 @@ public final class YtDlpRepository {
     }
 
     public final Object search(String query, int limit, Continuation<? super List<RemoteTrack>> continuation) {
-        return BuildersKt.withContext(Dispatchers.getIO(), new AnonymousClass2(query, limit, null), continuation);
+        return BuildersKt.withContext(Dispatchers.getIO(), (Function2) new AnonymousClass2(query, limit, null), (Continuation) continuation);
     }
 
     /* JADX INFO: renamed from: com.radby.sounds.data.YtDlpRepository$streamUrl$2, reason: invalid class name and case insensitive filesystem */
     /* JADX INFO: compiled from: YtDlpRepository.kt */
-    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u000e\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = ConstraintLayout.LayoutParams.Table.LAYOUT_CONSTRAINT_VERTICAL_CHAINSTYLE)
+    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u000e\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0})
     @DebugMetadata(c = "com.radby.sounds.data.YtDlpRepository$streamUrl$2", f = "YtDlpRepository.kt", i = {}, l = {37}, m = "invokeSuspend", n = {}, s = {})
     static final class C01132 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super String>, Object> {
         final /* synthetic */ String $pageUrl;
@@ -152,18 +149,18 @@ public final class YtDlpRepository {
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         C01132(String str, Continuation<? super C01132> continuation) {
-            super(2, continuation);
+            super(2, (Continuation<Object>) continuation);
             this.$pageUrl = str;
         }
 
         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            return new C01132(this.$pageUrl, continuation);
+            return (Continuation<Unit>) (Object) new C01132(this.$pageUrl, (Continuation<Object>) continuation);
         }
 
         @Override // kotlin.jvm.functions.Function2
         public final Object invoke(CoroutineScope coroutineScope, Continuation<? super String> continuation) {
-            return ((C01132) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
+            return ((C01132) (Object) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
         }
 
         /* JADX WARN: Code duplicated, block: B:19:0x008e A[RETURN] */
@@ -174,14 +171,14 @@ public final class YtDlpRepository {
             Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
             switch (this.label) {
                 case 0:
-                    ResultKt.throwOnFailure($result);
+                    com.radby.compat.Kt.throwOnFailure($result);
                     this.label = 1;
                     if (MuzkApp.INSTANCE.getYtdlReady().await(this) == coroutine_suspended) {
                         return coroutine_suspended;
                     }
                     break;
                 case 1:
-                    ResultKt.throwOnFailure($result);
+                    com.radby.compat.Kt.throwOnFailure($result);
                     break;
                 default:
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
@@ -198,15 +195,13 @@ public final class YtDlpRepository {
                     return YtDlpRepository.C01132.invokeSuspend$lambda$1((String) obj2);
                 }
             });
-            for (Object element$iv : $this$firstOrNull$iv) {
+            java.util.Iterator iterator$iv = $this$firstOrNull$iv.iterator();
+            while (iterator$iv.hasNext()) {
+                Object element$iv = iterator$iv.next();
                 String it = (String) element$iv;
-                if (StringsKt.startsWith$default(it, "http", false, 2, (Object) null)) {
+                if (StringsKt.startsWith(it, "http", false)) {
                     obj = element$iv;
-                    str = (String) obj;
-                    if (str != null) {
-                        throw new IllegalStateException("O yt-dlp não devolveu uma URL de áudio".toString());
-                    }
-                    return str;
+                    break;
                 }
             }
             str = (String) obj;
@@ -223,7 +218,7 @@ public final class YtDlpRepository {
     }
 
     public final Object streamUrl(String pageUrl, Continuation<? super String> continuation) {
-        return BuildersKt.withContext(Dispatchers.getIO(), new C01132(pageUrl, null), continuation);
+        return BuildersKt.withContext(Dispatchers.getIO(), (Function2) new C01132(pageUrl, null), (Continuation) continuation);
     }
 
     private final String str(JSONObject $this$str, String key) {
@@ -240,7 +235,7 @@ public final class YtDlpRepository {
         Object element$iv;
         String thumb;
         JSONObject jSONObjectOptJSONObject;
-        String str = str(o, TtmlNode.ATTR_ID);
+        String str = str(o, "id");
         if (StringsKt.isBlank(str)) {
             return null;
         }
@@ -254,7 +249,7 @@ public final class YtDlpRepository {
         String str3 = str(o, "webpage_url");
         if (StringsKt.isBlank(str3)) {
             String it = INSTANCE.str(o, DownloadWorker.KEY_URL);
-            if (!StringsKt.startsWith$default(it, "http", false, 2, (Object) null)) {
+            if (!StringsKt.startsWith(it, "http", false)) {
                 it = null;
             }
             if (it != null) {
@@ -300,7 +295,7 @@ public final class YtDlpRepository {
         } else {
             thumb = str(o, "thumbnail");
         }
-        double it3 = o.optDouble(TypedValues.TransitionType.S_DURATION, 0.0d);
+        double it3 = o.optDouble("duration", 0.0d);
         return new RemoteTrack(id, pageUrl, title, artist, thumb, Double.isNaN(it3) ? 0L : (long) it3);
     }
 }

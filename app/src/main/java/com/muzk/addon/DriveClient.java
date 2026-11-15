@@ -1,7 +1,6 @@
 package com.muzk.addon;
 
 import android.content.Context;
-import androidx.media3.extractor.text.ttml.TtmlNode;
 import com.google.common.net.HttpHeaders;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -21,7 +20,7 @@ public final class DriveClient {
         try {
             Http.Resp resp = get("https://www.googleapis.com/drive/v3/files?spaces=appDataFolder&fields=files(id,name,modifiedTime,size)&q=" + Pkce.url("name='" + str2 + "' and trashed=false"), str);
             if (resp.code == 200 && resp.body != null && (jSONArrayOptJSONArray = new JSONObject(resp.body).optJSONArray("files")) != null && jSONArrayOptJSONArray.length() > 0) {
-                return jSONArrayOptJSONArray.getJSONObject(0).optString(TtmlNode.ATTR_ID, null);
+                return jSONArrayOptJSONArray.getJSONObject(0).optString("id", null);
             }
         } catch (Exception unused) {
         }
@@ -48,7 +47,7 @@ public final class DriveClient {
             throw new Exception("upload http " + respRequest2.code + " " + respRequest2.body);
         }
         try {
-            return new JSONObject(respRequest2.body).optString(TtmlNode.ATTR_ID, null);
+            return new JSONObject(respRequest2.body).optString("id", null);
         } catch (Exception unused) {
             return null;
         }

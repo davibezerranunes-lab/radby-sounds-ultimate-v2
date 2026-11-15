@@ -27,7 +27,6 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelStore;
 import androidx.lifecycle.ViewModelStoreOwner;
 import androidx.lifecycle.viewmodel.CreationExtras;
-import androidx.media3.extractor.text.ttml.TtmlNode;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -59,21 +58,21 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Reflection;
-import kotlinx.coroutines.BuildersKt__Builders_commonKt;
+import kotlinx.coroutines.BuildersKt;
 import kotlinx.coroutines.CoroutineScope;
 import kotlinx.coroutines.flow.FlowCollector;
 import kotlinx.coroutines.flow.StateFlow;
 
 /* JADX INFO: compiled from: HomeFragment.kt */
 /* JADX INFO: loaded from: classes12.dex */
-@Metadata(d1 = {"\u0000{\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0005\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004*\u0001\u001f\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J$\u0010!\u001a\u00020\"2\u0006\u0010#\u001a\u00020$2\b\u0010%\u001a\u0004\u0018\u00010&2\b\u0010'\u001a\u0004\u0018\u00010(H\u0016J\u001a\u0010)\u001a\u00020*2\u0006\u0010+\u001a\u00020\"2\b\u0010'\u001a\u0004\u0018\u00010(H\u0016J\b\u0010,\u001a\u00020*H\u0016J\b\u0010-\u001a\u00020*H\u0016J&\u0010.\u001a\u00020*2\f\u0010/\u001a\b\u0012\u0004\u0012\u000201002\u0006\u00102\u001a\u0002032\u0006\u00104\u001a\u00020\u001aH\u0002J\u0010\u00105\u001a\u00020*2\u0006\u00106\u001a\u000207H\u0002J\u0010\u00108\u001a\u00020*2\u0006\u00109\u001a\u000203H\u0002J\b\u0010:\u001a\u00020*H\u0016R\u0010\u0010\u0004\u001a\u0004\u0018\u00010\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u0006\u001a\u00020\u00058BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b\u0007\u0010\bR\u001b\u0010\t\u001a\u00020\n8BX\u0082\u0084\u0002¢\u0006\f\n\u0004\b\r\u0010\u000e\u001a\u0004\b\u000b\u0010\fR\u001b\u0010\u000f\u001a\u00020\u00108BX\u0082\u0084\u0002¢\u0006\f\n\u0004\b\u0013\u0010\u000e\u001a\u0004\b\u0011\u0010\u0012R\u001b\u0010\u0014\u001a\u00020\u00158BX\u0082\u0084\u0002¢\u0006\f\n\u0004\b\u0018\u0010\u000e\u001a\u0004\b\u0016\u0010\u0017R\u000e\u0010\u0019\u001a\u00020\u001aX\u0082\u0004¢\u0006\u0002\n\u0000R\u001c\u0010\u001b\u001a\u0010\u0012\f\u0012\n \u001d*\u0004\u0018\u00010\u001a0\u001a0\u001cX\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u001e\u001a\u00020\u001fX\u0082\u0004¢\u0006\u0004\n\u0002\u0010 ¨\u0006;"}, d2 = {"Lcom/muzk/app/ui/home/HomeFragment;", "Landroidx/fragment/app/Fragment;", "<init>", "()V", "_binding", "Lcom/muzk/app/databinding/FragmentHomeBinding;", "binding", "getBinding", "()Lcom/muzk/app/databinding/FragmentHomeBinding;", "vm", "Lcom/muzk/app/ui/home/HomeViewModel;", "getVm", "()Lcom/muzk/app/ui/home/HomeViewModel;", "vm$delegate", "Lkotlin/Lazy;", "library", "Lcom/muzk/app/ui/library/LibraryViewModel;", "getLibrary", "()Lcom/muzk/app/ui/library/LibraryViewModel;", "library$delegate", "player", "Lcom/muzk/app/playback/PlayerViewModel;", "getPlayer", "()Lcom/muzk/app/playback/PlayerViewModel;", "player$delegate", "audioPermission", "", "permissionLauncher", "Landroidx/activity/result/ActivityResultLauncher;", "kotlin.jvm.PlatformType", "mediaObserver", "com/muzk/app/ui/home/HomeFragment$mediaObserver$1", "Lcom/muzk/app/ui/home/HomeFragment$mediaObserver$1;", "onCreateView", "Landroid/view/View;", "inflater", "Landroid/view/LayoutInflater;", TtmlNode.RUBY_CONTAINER, "Landroid/view/ViewGroup;", "savedInstanceState", "Landroid/os/Bundle;", "onViewCreated", "", "view", "onStart", "onStop", "playFrom", "items", "", "Lcom/muzk/app/ui/home/HomeTrack;", "index", "", "source", "openTile", "tile", "Lcom/muzk/app/ui/home/HomeTile;", "selectTab", TtmlNode.ATTR_ID, "onDestroyView", "app_debug"}, k = 1, mv = {2, 0, 0}, xi = ConstraintLayout.LayoutParams.Table.LAYOUT_CONSTRAINT_VERTICAL_CHAINSTYLE)
+@Metadata(d1 = {"\u0000{\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0005\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004*\u0001\u001f\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J$\u0010!\u001a\u00020\"2\u0006\u0010#\u001a\u00020$2\b\u0010%\u001a\u0004\u0018\u00010&2\b\u0010'\u001a\u0004\u0018\u00010(H\u0016J\u001a\u0010)\u001a\u00020*2\u0006\u0010+\u001a\u00020\"2\b\u0010'\u001a\u0004\u0018\u00010(H\u0016J\b\u0010,\u001a\u00020*H\u0016J\b\u0010-\u001a\u00020*H\u0016J&\u0010.\u001a\u00020*2\f\u0010/\u001a\b\u0012\u0004\u0012\u000201002\u0006\u00102\u001a\u0002032\u0006\u00104\u001a\u00020\u001aH\u0002J\u0010\u00105\u001a\u00020*2\u0006\u00106\u001a\u000207H\u0002J\u0010\u00108\u001a\u00020*2\u0006\u00109\u001a\u000203H\u0002J\b\u0010:\u001a\u00020*H\u0016R\u0010\u0010\u0004\u001a\u0004\u0018\u00010\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u0006\u001a\u00020\u00058BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b\u0007\u0010\bR\u001b\u0010\t\u001a\u00020\n8BX\u0082\u0084\u0002¢\u0006\f\n\u0004\b\r\u0010\u000e\u001a\u0004\b\u000b\u0010\fR\u001b\u0010\u000f\u001a\u00020\u00108BX\u0082\u0084\u0002¢\u0006\f\n\u0004\b\u0013\u0010\u000e\u001a\u0004\b\u0011\u0010\u0012R\u001b\u0010\u0014\u001a\u00020\u00158BX\u0082\u0084\u0002¢\u0006\f\n\u0004\b\u0018\u0010\u000e\u001a\u0004\b\u0016\u0010\u0017R\u000e\u0010\u0019\u001a\u00020\u001aX\u0082\u0004¢\u0006\u0002\n\u0000R\u001c\u0010\u001b\u001a\u0010\u0012\f\u0012\n \u001d*\u0004\u0018\u00010\u001a0\u001a0\u001cX\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u001e\u001a\u00020\u001fX\u0082\u0004¢\u0006\u0004\n\u0002\u0010 ¨\u0006;"}, d2 = {"Lcom/muzk/app/ui/home/HomeFragment;", "Landroidx/fragment/app/Fragment;", "<init>", "()V", "_binding", "Lcom/muzk/app/databinding/FragmentHomeBinding;", "binding", "getBinding", "()Lcom/muzk/app/databinding/FragmentHomeBinding;", "vm", "Lcom/muzk/app/ui/home/HomeViewModel;", "getVm", "()Lcom/muzk/app/ui/home/HomeViewModel;", "vm$delegate", "Lkotlin/Lazy;", "library", "Lcom/muzk/app/ui/library/LibraryViewModel;", "getLibrary", "()Lcom/muzk/app/ui/library/LibraryViewModel;", "library$delegate", "player", "Lcom/muzk/app/playback/PlayerViewModel;", "getPlayer", "()Lcom/muzk/app/playback/PlayerViewModel;", "player$delegate", "audioPermission", "", "permissionLauncher", "Landroidx/activity/result/ActivityResultLauncher;", "kotlin.jvm.PlatformType", "mediaObserver", "com/muzk/app/ui/home/ContentObserver", "Lcom/muzk/app/ui/home/ContentObserver;", "onCreateView", "Landroid/view/View;", "inflater", "Landroid/view/LayoutInflater;", "container", "Landroid/view/ViewGroup;", "savedInstanceState", "Landroid/os/Bundle;", "onViewCreated", "", "view", "onStart", "onStop", "playFrom", "items", "", "Lcom/muzk/app/ui/home/HomeTrack;", "index", "", "source", "openTile", "tile", "Lcom/muzk/app/ui/home/HomeTile;", "selectTab", "id", "onDestroyView", "app_debug"}, k = 1, mv = {2, 0, 0})
 public final class HomeFragment extends Fragment {
     private FragmentHomeBinding _binding;
     private final String audioPermission;
 
     /* JADX INFO: renamed from: library$delegate, reason: from kotlin metadata */
     private final Lazy library;
-    private final HomeFragment$mediaObserver$1 mediaObserver;
+    private final ContentObserver mediaObserver;
     private final ActivityResultLauncher<String> permissionLauncher;
 
     /* JADX INFO: renamed from: player$delegate, reason: from kotlin metadata */
@@ -83,7 +82,7 @@ public final class HomeFragment extends Fragment {
     private final Lazy vm;
 
     /* JADX INFO: compiled from: HomeFragment.kt */
-    @Metadata(k = 3, mv = {2, 0, 0}, xi = ConstraintLayout.LayoutParams.Table.LAYOUT_CONSTRAINT_VERTICAL_CHAINSTYLE)
+    @Metadata(k = 3, mv = {2, 0, 0})
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
 
@@ -105,13 +104,10 @@ public final class HomeFragment extends Fragment {
         }
     }
 
-    /* JADX WARN: Type inference failed for: r1v8, types: [com.radby.sounds.ui.home.HomeFragment$mediaObserver$1] */
+    /* JADX WARN: Type inference failed for: r1v8, types: [com.radby.sounds.ui.home.ContentObserver] */
     public HomeFragment() {
         final HomeFragment $this$viewModels_u24default$iv = this;
         final Function0<Fragment> function0 = new Function0<Fragment>() { // from class: com.radby.sounds.ui.home.HomeFragment$special$$inlined$viewModels$default$1
-            {
-                super(0);
-            }
 
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
@@ -121,9 +117,6 @@ public final class HomeFragment extends Fragment {
         };
         final Function0 extrasProducer$iv = null;
         final Lazy owner$delegate$iv = LazyKt.lazy(LazyThreadSafetyMode.NONE, (Function0) new Function0<ViewModelStoreOwner>() { // from class: com.radby.sounds.ui.home.HomeFragment$special$$inlined$viewModels$default$2
-            {
-                super(0);
-            }
 
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
@@ -132,20 +125,14 @@ public final class HomeFragment extends Fragment {
             }
         });
         this.vm = FragmentViewModelLazyKt.createViewModelLazy($this$viewModels_u24default$iv, Reflection.getOrCreateKotlinClass(HomeViewModel.class), new Function0<ViewModelStore>() { // from class: com.radby.sounds.ui.home.HomeFragment$special$$inlined$viewModels$default$3
-            {
-                super(0);
-            }
 
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                return FragmentViewModelLazyKt.m93viewModels$lambda1(owner$delegate$iv).getViewModelStore();
+                return ((ViewModelStoreOwner) owner$delegate$iv.getValue()).getViewModelStore();
             }
         }, new Function0<CreationExtras>() { // from class: com.radby.sounds.ui.home.HomeFragment$special$$inlined$viewModels$default$4
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            {
-                super(0);
-            }
 
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
@@ -153,7 +140,7 @@ public final class HomeFragment extends Fragment {
                 CreationExtras creationExtras;
                 Function0 function1 = extrasProducer$iv;
                 if (function1 == null || (creationExtras = (CreationExtras) function1.invoke()) == null) {
-                    ViewModelStoreOwner viewModelStoreOwnerM93viewModels$lambda1 = FragmentViewModelLazyKt.m93viewModels$lambda1(owner$delegate$iv);
+                    ViewModelStoreOwner viewModelStoreOwnerM93viewModels$lambda1 = (ViewModelStoreOwner) owner$delegate$iv.getValue();
                     HasDefaultViewModelProviderFactory hasDefaultViewModelProviderFactory = viewModelStoreOwnerM93viewModels$lambda1 instanceof HasDefaultViewModelProviderFactory ? (HasDefaultViewModelProviderFactory) viewModelStoreOwnerM93viewModels$lambda1 : null;
                     return hasDefaultViewModelProviderFactory != null ? hasDefaultViewModelProviderFactory.getDefaultViewModelCreationExtras() : CreationExtras.Empty.INSTANCE;
                 }
@@ -161,15 +148,12 @@ public final class HomeFragment extends Fragment {
             }
         }, new Function0<ViewModelProvider.Factory>() { // from class: com.radby.sounds.ui.home.HomeFragment$special$$inlined$viewModels$default$5
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            {
-                super(0);
-            }
 
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
                 ViewModelProvider.Factory defaultViewModelProviderFactory;
-                ViewModelStoreOwner viewModelStoreOwnerM93viewModels$lambda1 = FragmentViewModelLazyKt.m93viewModels$lambda1(owner$delegate$iv);
+                ViewModelStoreOwner viewModelStoreOwnerM93viewModels$lambda1 = (ViewModelStoreOwner) owner$delegate$iv.getValue();
                 HasDefaultViewModelProviderFactory hasDefaultViewModelProviderFactory = viewModelStoreOwnerM93viewModels$lambda1 instanceof HasDefaultViewModelProviderFactory ? (HasDefaultViewModelProviderFactory) viewModelStoreOwnerM93viewModels$lambda1 : null;
                 if (hasDefaultViewModelProviderFactory != null && (defaultViewModelProviderFactory = hasDefaultViewModelProviderFactory.getDefaultViewModelProviderFactory()) != null) {
                     return defaultViewModelProviderFactory;
@@ -180,9 +164,6 @@ public final class HomeFragment extends Fragment {
         final HomeFragment $this$activityViewModels_u24default$iv = this;
         final Function0 extrasProducer$iv2 = null;
         this.library = FragmentViewModelLazyKt.createViewModelLazy($this$activityViewModels_u24default$iv, Reflection.getOrCreateKotlinClass(LibraryViewModel.class), new Function0<ViewModelStore>() { // from class: com.radby.sounds.ui.home.HomeFragment$special$$inlined$activityViewModels$default$1
-            {
-                super(0);
-            }
 
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
@@ -191,9 +172,6 @@ public final class HomeFragment extends Fragment {
             }
         }, new Function0<CreationExtras>() { // from class: com.radby.sounds.ui.home.HomeFragment$special$$inlined$activityViewModels$default$2
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            {
-                super(0);
-            }
 
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
@@ -203,9 +181,6 @@ public final class HomeFragment extends Fragment {
                 return (function1 == null || (creationExtras = (CreationExtras) function1.invoke()) == null) ? $this$activityViewModels_u24default$iv.requireActivity().getDefaultViewModelCreationExtras() : creationExtras;
             }
         }, new Function0<ViewModelProvider.Factory>() { // from class: com.radby.sounds.ui.home.HomeFragment$special$$inlined$activityViewModels$default$3
-            {
-                super(0);
-            }
 
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
@@ -216,9 +191,6 @@ public final class HomeFragment extends Fragment {
         final HomeFragment $this$activityViewModels_u24default$iv2 = this;
         final Function0 extrasProducer$iv3 = null;
         this.player = FragmentViewModelLazyKt.createViewModelLazy($this$activityViewModels_u24default$iv2, Reflection.getOrCreateKotlinClass(PlayerViewModel.class), new Function0<ViewModelStore>() { // from class: com.radby.sounds.ui.home.HomeFragment$special$$inlined$activityViewModels$default$4
-            {
-                super(0);
-            }
 
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
@@ -227,9 +199,6 @@ public final class HomeFragment extends Fragment {
             }
         }, new Function0<CreationExtras>() { // from class: com.radby.sounds.ui.home.HomeFragment$special$$inlined$activityViewModels$default$5
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            {
-                super(0);
-            }
 
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
@@ -239,9 +208,6 @@ public final class HomeFragment extends Fragment {
                 return (function1 == null || (creationExtras = (CreationExtras) function1.invoke()) == null) ? $this$activityViewModels_u24default$iv2.requireActivity().getDefaultViewModelCreationExtras() : creationExtras;
             }
         }, new Function0<ViewModelProvider.Factory>() { // from class: com.radby.sounds.ui.home.HomeFragment$special$$inlined$activityViewModels$default$6
-            {
-                super(0);
-            }
 
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
@@ -253,17 +219,17 @@ public final class HomeFragment extends Fragment {
         ActivityResultLauncher<String> activityResultLauncherRegisterForActivityResult = registerForActivityResult(new ActivityResultContracts.RequestPermission(), new ActivityResultCallback() { // from class: com.radby.sounds.ui.home.HomeFragment$$ExternalSyntheticLambda0
             @Override // androidx.activity.result.ActivityResultCallback
             public final void onActivityResult(Object obj) {
-                HomeFragment.permissionLauncher$lambda$0(this.f$0, (Boolean) obj);
+                HomeFragment.permissionLauncher$lambda$0(HomeFragment.this, (Boolean) obj);
             }
         });
         Intrinsics.checkNotNullExpressionValue(activityResultLauncherRegisterForActivityResult, "registerForActivityResult(...)");
         this.permissionLauncher = activityResultLauncherRegisterForActivityResult;
         final Handler handler = new Handler(Looper.getMainLooper());
-        this.mediaObserver = new ContentObserver(handler) { // from class: com.radby.sounds.ui.home.HomeFragment$mediaObserver$1
+        this.mediaObserver = new ContentObserver(handler) { // from class: com.radby.sounds.ui.home.ContentObserver
             @Override // android.database.ContentObserver
             public void onChange(boolean selfChange) {
-                if (this.this$0.getVm().getState().getValue().getHasPermission()) {
-                    this.this$0.getVm().reload();
+                if (HomeFragment.this.getVm().getState().getValue().getHasPermission()) {
+                    HomeFragment.this.getVm().reload();
                 }
             }
         };
@@ -322,7 +288,7 @@ public final class HomeFragment extends Fragment {
         HomeTrackAdapter top = new HomeTrackAdapter(new Function1() { // from class: com.radby.sounds.ui.home.HomeFragment$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                return HomeFragment.onViewCreated$lambda$1(this.f$0, ((Integer) obj).intValue());
+                return HomeFragment.onViewCreated$lambda$1(HomeFragment.this, ((Integer) obj).intValue());
             }
         });
         getBinding().topList.setLayoutManager(new LinearLayoutManager(requireContext()));
@@ -330,18 +296,18 @@ public final class HomeFragment extends Fragment {
         getBinding().emptyAction.setOnClickListener(new View.OnClickListener() { // from class: com.radby.sounds.ui.home.HomeFragment$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
-                HomeFragment.onViewCreated$lambda$2(this.f$0, view2);
+                HomeFragment.onViewCreated$lambda$2(HomeFragment.this, view2);
             }
         });
         getBinding().goSearch.setOnClickListener(new View.OnClickListener() { // from class: com.radby.sounds.ui.home.HomeFragment$$ExternalSyntheticLambda3
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
-                HomeFragment.onViewCreated$lambda$3(this.f$0, view2);
+                HomeFragment.onViewCreated$lambda$3(HomeFragment.this, view2);
             }
         });
         LifecycleOwner viewLifecycleOwner = getViewLifecycleOwner();
         Intrinsics.checkNotNullExpressionValue(viewLifecycleOwner, "getViewLifecycleOwner(...)");
-        BuildersKt__Builders_commonKt.launch$default(LifecycleOwnerKt.getLifecycleScope(viewLifecycleOwner), null, null, new AnonymousClass3(tiles, top, null), 3, null);
+        BuildersKt.launch(LifecycleOwnerKt.getLifecycleScope(viewLifecycleOwner), kotlin.coroutines.EmptyCoroutineContext.INSTANCE, kotlinx.coroutines.CoroutineStart.DEFAULT, (Function2) new AnonymousClass3(tiles, top, null));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -365,35 +331,35 @@ public final class HomeFragment extends Fragment {
 
     /* JADX INFO: renamed from: com.radby.sounds.ui.home.HomeFragment$onViewCreated$3, reason: invalid class name */
     /* JADX INFO: compiled from: HomeFragment.kt */
-    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = ConstraintLayout.LayoutParams.Table.LAYOUT_CONSTRAINT_VERTICAL_CHAINSTYLE)
+    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0})
     @DebugMetadata(c = "com.radby.sounds.ui.home.HomeFragment$onViewCreated$3", f = "HomeFragment.kt", i = {}, l = {83}, m = "invokeSuspend", n = {}, s = {})
-    static final class AnonymousClass3 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
+    final class AnonymousClass3 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
         final /* synthetic */ HomeTileAdapter $tiles;
         final /* synthetic */ HomeTrackAdapter $top;
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         AnonymousClass3(HomeTileAdapter homeTileAdapter, HomeTrackAdapter homeTrackAdapter, Continuation<? super AnonymousClass3> continuation) {
-            super(2, continuation);
+            super(2, (Continuation<Object>) continuation);
             this.$tiles = homeTileAdapter;
             this.$top = homeTrackAdapter;
         }
 
         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            return HomeFragment.this.new AnonymousClass3(this.$tiles, this.$top, continuation);
+            return (Continuation<Unit>) (Object) new AnonymousClass3(this.$tiles, this.$top, (Continuation<Object>) continuation);
         }
 
         @Override // kotlin.jvm.functions.Function2
         public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
-            return ((AnonymousClass3) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
+            return ((AnonymousClass3) (Object) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
         }
 
         /* JADX INFO: renamed from: com.radby.sounds.ui.home.HomeFragment$onViewCreated$3$1, reason: invalid class name */
         /* JADX INFO: compiled from: HomeFragment.kt */
-        @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = ConstraintLayout.LayoutParams.Table.LAYOUT_CONSTRAINT_VERTICAL_CHAINSTYLE)
+        @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0})
         @DebugMetadata(c = "com.radby.sounds.ui.home.HomeFragment$onViewCreated$3$1", f = "HomeFragment.kt", i = {}, l = {84}, m = "invokeSuspend", n = {}, s = {})
-        static final class AnonymousClass1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
+    final class AnonymousClass1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
             final /* synthetic */ HomeTileAdapter $tiles;
             final /* synthetic */ HomeTrackAdapter $top;
             int label;
@@ -401,7 +367,7 @@ public final class HomeFragment extends Fragment {
 
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             AnonymousClass1(HomeFragment homeFragment, HomeTileAdapter homeTileAdapter, HomeTrackAdapter homeTrackAdapter, Continuation<? super AnonymousClass1> continuation) {
-                super(2, continuation);
+                super(2, (Continuation<Object>) continuation);
                 this.this$0 = homeFragment;
                 this.$tiles = homeTileAdapter;
                 this.$top = homeTrackAdapter;
@@ -409,12 +375,12 @@ public final class HomeFragment extends Fragment {
 
             @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
             public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-                return new AnonymousClass1(this.this$0, this.$tiles, this.$top, continuation);
+                return (Continuation<Unit>) (Object) new AnonymousClass1(HomeFragment.this, this.$tiles, this.$top, (Continuation<Object>) continuation);
             }
 
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
-                return ((AnonymousClass1) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
+                return ((AnonymousClass1) (Object) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
             }
 
             @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
@@ -422,11 +388,11 @@ public final class HomeFragment extends Fragment {
                 Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
                 switch (this.label) {
                     case 0:
-                        ResultKt.throwOnFailure($result);
-                        StateFlow<HomeUiState> state = this.this$0.getVm().getState();
+                        com.radby.compat.Kt.throwOnFailure($result);
+                        StateFlow<HomeUiState> state = HomeFragment.this.getVm().getState();
                         final HomeTileAdapter homeTileAdapter = this.$tiles;
                         final HomeTrackAdapter homeTrackAdapter = this.$top;
-                        final HomeFragment homeFragment = this.this$0;
+                        final HomeFragment homeFragment = HomeFragment.this;
                         this.label = 1;
                         if (state.collect(new FlowCollector() { // from class: com.radby.sounds.ui.home.HomeFragment.onViewCreated.3.1.1
                             @Override // kotlinx.coroutines.flow.FlowCollector
@@ -470,7 +436,7 @@ public final class HomeFragment extends Fragment {
                         }
                         break;
                     case 1:
-                        ResultKt.throwOnFailure($result);
+                        com.radby.compat.Kt.throwOnFailure($result);
                         break;
                     default:
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
@@ -484,7 +450,7 @@ public final class HomeFragment extends Fragment {
             Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
             switch (this.label) {
                 case 0:
-                    ResultKt.throwOnFailure($result);
+                    com.radby.compat.Kt.throwOnFailure($result);
                     LifecycleOwner viewLifecycleOwner = HomeFragment.this.getViewLifecycleOwner();
                     Intrinsics.checkNotNullExpressionValue(viewLifecycleOwner, "getViewLifecycleOwner(...)");
                     this.label = 1;
@@ -493,7 +459,7 @@ public final class HomeFragment extends Fragment {
                     }
                     break;
                 case 1:
-                    ResultKt.throwOnFailure($result);
+                    com.radby.compat.Kt.throwOnFailure($result);
                     break;
                 default:
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");

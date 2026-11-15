@@ -23,45 +23,38 @@ public final class MediaBridge {
         final Handler handler = new Handler(Looper.getMainLooper());
         try {
             final Object objInvoke = MediaController.Builder.class.getMethod("buildAsync", null).invoke(new MediaController.Builder(context, new SessionToken(context, new ComponentName(context.getPackageName(), context.getPackageName() + ".playback.PlaybackService"))), null);
-            new Thread(new Runnable() { // from class: com.muzk.addon.MediaBridge.1
-                @Override // java.lang.Runnable
+            new Thread(new Runnable() {
+                @Override
                 public void run() {
-                    final Object obj = null;
+                    Object obj = null;
+                    Throwable th = null;
                     try {
                         Future future = (Future) objInvoke;
-                        long jCurrentTimeMillis = System.currentTimeMillis() + 6000;
-                        while (true) {
-                            if (System.currentTimeMillis() < jCurrentTimeMillis) {
-                                if (future.isDone()) {
-                                    try {
-                                        Object obj2 = future.get(1L, TimeUnit.MILLISECONDS);
-                                        th = null;
-                                        obj = obj2;
-                                        break;
-                                    } catch (Throwable th) {
-                                        th = th;
-                                    }
-                                } else {
-                                    try {
-                                        Thread.sleep(100L);
-                                    } catch (InterruptedException unused) {
-                                    }
-                                }
+                        long deadline = System.currentTimeMillis() + 6000;
+                        while (System.currentTimeMillis() < deadline) {
+                            if (future.isDone()) {
+                                obj = future.get(1L, TimeUnit.MILLISECONDS);
+                                th = null;
+                                break;
                             }
-                            th = null;
-                            break;
+                            try {
+                                Thread.sleep(100L);
+                            } catch (InterruptedException unused) {
+                            }
                         }
                         if (obj == null && th == null) {
-                            th = new Exception("tempo esgotado ao abrir a sessão de mídia");
+                            th = new Exception("tempo esgotado ao abrir a sessao de midia");
                         }
                     } catch (Throwable th2) {
                         th = th2;
                     }
-                    handler.post(new Runnable() { // from class: com.muzk.addon.MediaBridge.1.1
-                        @Override // java.lang.Runnable
+                    final Object resultObj = obj;
+                    final Throwable resultTh = th;
+                    handler.post(new Runnable() {
+                        @Override
                         public void run() {
                             String str;
-                            Object obj3 = obj;
+                            Object obj3 = resultObj;
                             if (obj3 instanceof MediaController) {
                                 MediaController mediaController = (MediaController) obj3;
                                 try {
@@ -74,10 +67,10 @@ public final class MediaBridge {
                                 return;
                             }
                             Ready ready2 = ready;
-                            if (th != null) {
-                                str = th.getClass().getSimpleName() + ": " + th.getMessage();
+                            if (resultTh != null) {
+                                str = resultTh.getClass().getSimpleName() + ": " + resultTh.getMessage();
                             } else {
-                                str = "sessão indisponível";
+                                str = "sessao indisponivel";
                             }
                             ready2.onFailed(str);
                         }

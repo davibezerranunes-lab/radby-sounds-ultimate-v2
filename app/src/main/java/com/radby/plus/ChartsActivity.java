@@ -84,7 +84,8 @@ public class ChartsActivity extends Activity {
         LinearLayout linearLayout2 = new LinearLayout(this);
         linearLayout2.setOrientation(0);
         linearLayout2.setPadding(dp(12), 0, dp(12), 0);
-        for (final int i = 0; i < TABS.length; i++) {
+        for (int i = 0; i < TABS.length; i++) {
+            final int tabIndex = i;
             LinearLayout linearLayout3 = new LinearLayout(this);
             linearLayout3.setOrientation(1);
             linearLayout3.setGravity(17);
@@ -101,7 +102,7 @@ public class ChartsActivity extends Activity {
             linearLayout3.setOnClickListener(new View.OnClickListener() { // from class: com.radby.plus.ChartsActivity.1
                 @Override // android.view.View.OnClickListener
                 public void onClick(View view2) {
-                    ChartsActivity.this.select(i);
+                    ChartsActivity.this.select(tabIndex);
                 }
             });
             linearLayout2.addView(linearLayout3);
@@ -165,21 +166,21 @@ public class ChartsActivity extends Activity {
         this.io.submit(new Runnable() { // from class: com.radby.plus.ChartsActivity.3
             @Override // java.lang.Runnable
             public void run() {
-                final String simpleName;
-                List<ChartsData.Track> listCountry;
-                final List<ChartsData.Track> list = null;
+                String error;
+                List<ChartsData.Track> loaded;
                 try {
                     if (i == 0) {
-                        listCountry = ChartsData.region(ChartsActivity.this, ChartsActivity.this.cc);
+                        loaded = ChartsData.region(ChartsActivity.this, ChartsActivity.this.cc);
                     } else {
-                        listCountry = i == 1 ? ChartsData.country(ChartsActivity.this, ChartsActivity.this.cc) : ChartsData.world(ChartsActivity.this);
+                        loaded = i == 1 ? ChartsData.country(ChartsActivity.this, ChartsActivity.this.cc) : ChartsData.world(ChartsActivity.this);
                     }
-                    List<ChartsData.Track> list2 = listCountry;
-                    simpleName = null;
-                    list = list2;
+                    error = null;
                 } catch (Throwable th) {
-                    simpleName = th.getMessage() == null ? th.getClass().getSimpleName() : th.getMessage();
+                    loaded = null;
+                    error = th.getMessage() == null ? th.getClass().getSimpleName() : th.getMessage();
                 }
+                final List<ChartsData.Track> list = loaded;
+                final String simpleName = error;
                 ChartsActivity.this.ui.post(new Runnable() { // from class: com.radby.plus.ChartsActivity.3.1
                     @Override // java.lang.Runnable
                     public void run() {
@@ -216,13 +217,14 @@ public class ChartsActivity extends Activity {
         this.io.submit(new Runnable() { // from class: com.radby.plus.ChartsActivity.4
             @Override // java.lang.Runnable
             public void run() {
-                final String simpleName;
+                String err;
                 try {
                     PlayBridge.play(ChartsActivity.this, track);
-                    simpleName = null;
+                    err = null;
                 } catch (Throwable th) {
-                    simpleName = th.getMessage() == null ? th.getClass().getSimpleName() : th.getMessage();
+                    err = th.getMessage() == null ? th.getClass().getSimpleName() : th.getMessage();
                 }
+                final String simpleName = err;
                 ChartsActivity.this.ui.post(new Runnable() { // from class: com.radby.plus.ChartsActivity.4.1
                     @Override // java.lang.Runnable
                     public void run() {

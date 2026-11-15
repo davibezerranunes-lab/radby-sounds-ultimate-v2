@@ -9,7 +9,7 @@ import kotlin.jvm.internal.Intrinsics;
 
 /* JADX INFO: compiled from: AppBarConfiguration.kt */
 /* JADX INFO: loaded from: classes9.dex */
-@Metadata(k = 3, mv = {1, 8, 0}, xi = 176)
+@Metadata(k = 3, mv = {1, 8, 0})
 public final class MainActivity$inlined$sam$i$androidx_navigation_ui_AppBarConfiguration_OnNavigateUpListener$0 implements AppBarConfiguration.OnNavigateUpListener, FunctionAdapter {
     private final /* synthetic */ Function0 function;
 

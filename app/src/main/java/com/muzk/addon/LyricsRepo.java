@@ -116,6 +116,7 @@ public final class LyricsRepo {
             }
             return null;
         } catch (Exception unused) {
+            return null;
         }
     }
 

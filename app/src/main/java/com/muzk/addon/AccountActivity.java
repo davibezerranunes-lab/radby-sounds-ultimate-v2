@@ -77,10 +77,13 @@ public class AccountActivity extends Activity {
         this.logout = button4;
         button4.setOnClickListener(new View.OnClickListener() { // from class: com.muzk.addon.AccountActivity.4
             @Override // android.view.View.OnClickListener
-            public void onClick(View view) throws Throwable {
-                Cloud.logout(AccountActivity.this);
+            public void onClick(View view) {
+                try {
+                    Cloud.logout(AccountActivity.this);
+                } catch (Throwable unused) {
+                }
                 AccountActivity.this.refresh();
-                Ui.toast(AccountActivity.this, "Sessão encerrada.");
+                Ui.toast(AccountActivity.this, "Sessao encerrada.");
             }
         });
         linearLayoutColumn.addView(this.logout, wide());

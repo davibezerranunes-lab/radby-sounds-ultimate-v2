@@ -13,7 +13,7 @@ import kotlin.text.StringsKt;
 
 /* JADX INFO: compiled from: Models.kt */
 /* JADX INFO: loaded from: classes6.dex */
-@Metadata(d1 = {"\u0000.\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\t\n\u0000\u001a\n\u0010\u0000\u001a\u00020\u0001*\u00020\u0002\u001a\u0012\u0010\u0000\u001a\u00020\u0001*\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u0005\u001a\u001c\u0010\u0007\u001a\u0004\u0018\u00010\b2\b\u0010\t\u001a\u0004\u0018\u00010\u00052\b\u0010\n\u001a\u0004\u0018\u00010\u000b\u001a\u000e\u0010\f\u001a\u00020\u00052\u0006\u0010\r\u001a\u00020\u000e\"\u000e\u0010\u0006\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000¨\u0006\u000f"}, d2 = {"toMediaItem", "Landroidx/media3/common/MediaItem;", "Lcom/muzk/app/data/LocalTrack;", "Lcom/muzk/app/data/RemoteTrack;", "streamUrl", "", "EXTRA_REMOTE", "coverModel", "", "mediaId", "artworkUri", "Landroid/net/Uri;", "formatDuration", "ms", "", "app_debug"}, k = 2, mv = {2, 0, 0}, xi = ConstraintLayout.LayoutParams.Table.LAYOUT_CONSTRAINT_VERTICAL_CHAINSTYLE)
+@Metadata(d1 = {"\u0000.\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\t\n\u0000\u001a\n\u0010\u0000\u001a\u00020\u0001*\u00020\u0002\u001a\u0012\u0010\u0000\u001a\u00020\u0001*\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u0005\u001a\u001c\u0010\u0007\u001a\u0004\u0018\u00010\b2\b\u0010\t\u001a\u0004\u0018\u00010\u00052\b\u0010\n\u001a\u0004\u0018\u00010\u000b\u001a\u000e\u0010\f\u001a\u00020\u00052\u0006\u0010\r\u001a\u00020\u000e\"\u000e\u0010\u0006\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000¨\u0006\u000f"}, d2 = {"toMediaItem", "Landroidx/media3/common/MediaItem;", "Lcom/muzk/app/data/LocalTrack;", "Lcom/muzk/app/data/RemoteTrack;", "streamUrl", "", "EXTRA_REMOTE", "coverModel", "", "mediaId", "artworkUri", "Landroid/net/Uri;", "formatDuration", "ms", "", "app_debug"}, k = 2, mv = {2, 0, 0})
 public final class ModelsKt {
     public static final String EXTRA_REMOTE = "muzk.remote";
 
@@ -39,7 +39,7 @@ public final class ModelsKt {
         if (artworkUri != null) {
             return artworkUri;
         }
-        if (mediaId == null || !StringsKt.startsWith$default(mediaId, "content://", false, 2, (Object) null)) {
+        if (mediaId == null || !StringsKt.startsWith(mediaId, "content://", false)) {
             return null;
         }
         Uri uri = Uri.parse(mediaId);

@@ -33,9 +33,9 @@ import kotlin.jvm.internal.Intrinsics;
 
 /* JADX INFO: compiled from: LibraryAdapter.kt */
 /* JADX INFO: loaded from: classes4.dex */
-@Metadata(d1 = {"\u0000R\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\b\u0018\u0000 !2\u000e\u0012\u0004\u0012\u00020\u0002\u0012\u0004\u0012\u00020\u00030\u0001:\u0004\u001e\u001f !B\u0099\u0001\u0012\u0012\u0010\u0004\u001a\u000e\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u00070\u0005\u0012\u0018\u0010\b\u001a\u0014\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\n\u0012\u0004\u0012\u00020\u00070\t\u0012\u0012\u0010\u000b\u001a\u000e\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u00070\u0005\u0012\u0012\u0010\f\u001a\u000e\u0012\u0004\u0012\u00020\r\u0012\u0004\u0012\u00020\u00070\u0005\u0012\u0012\u0010\u000e\u001a\u000e\u0012\u0004\u0012\u00020\u000f\u0012\u0004\u0012\u00020\u00070\u0005\u0012\u0018\u0010\u0010\u001a\u0014\u0012\u0004\u0012\u00020\u000f\u0012\u0004\u0012\u00020\n\u0012\u0004\u0012\u00020\u00070\t\u0012\f\u0010\u0011\u001a\b\u0012\u0004\u0012\u00020\u00070\u0012¢\u0006\u0004\b\u0013\u0010\u0014J\u0010\u0010\u0015\u001a\u00020\u00162\u0006\u0010\u0017\u001a\u00020\u0016H\u0016J\u0018\u0010\u0018\u001a\u00020\u00032\u0006\u0010\u0019\u001a\u00020\u001a2\u0006\u0010\u001b\u001a\u00020\u0016H\u0016J\u0018\u0010\u001c\u001a\u00020\u00072\u0006\u0010\u001d\u001a\u00020\u00032\u0006\u0010\u0017\u001a\u00020\u0016H\u0016R\u001a\u0010\u0004\u001a\u000e\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u00070\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R \u0010\b\u001a\u0014\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\n\u0012\u0004\u0012\u00020\u00070\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\u000b\u001a\u000e\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u00070\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\f\u001a\u000e\u0012\u0004\u0012\u00020\r\u0012\u0004\u0012\u00020\u00070\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\u000e\u001a\u000e\u0012\u0004\u0012\u00020\u000f\u0012\u0004\u0012\u00020\u00070\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R \u0010\u0010\u001a\u0014\u0012\u0004\u0012\u00020\u000f\u0012\u0004\u0012\u00020\n\u0012\u0004\u0012\u00020\u00070\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0011\u001a\b\u0012\u0004\u0012\u00020\u00070\u0012X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\""}, d2 = {"Lcom/muzk/app/ui/library/LibraryAdapter;", "Landroidx/recyclerview/widget/ListAdapter;", "Lcom/muzk/app/ui/library/LibraryRow;", "Landroidx/recyclerview/widget/RecyclerView$ViewHolder;", "onTrackClick", "Lkotlin/Function1;", "Lcom/muzk/app/ui/library/LibraryRow$Track;", "", "onTrackMore", "Lkotlin/Function2;", "Landroid/view/View;", "onTrackLongClick", "onFolderClick", "Lcom/muzk/app/ui/library/LibraryRow$Folder;", "onPlaylistClick", "Lcom/muzk/app/ui/library/LibraryRow$PlaylistItem;", "onPlaylistMore", "onHeaderClick", "Lkotlin/Function0;", "<init>", "(Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function0;)V", "getItemViewType", "", "position", "onCreateViewHolder", "parent", "Landroid/view/ViewGroup;", "viewType", "onBindViewHolder", "holder", "HeaderVH", "TrackVH", "CollectionVH", "Companion", "app_debug"}, k = 1, mv = {2, 0, 0}, xi = ConstraintLayout.LayoutParams.Table.LAYOUT_CONSTRAINT_VERTICAL_CHAINSTYLE)
+@Metadata(d1 = {"\u0000R\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\b\u0018\u0000 !2\u000e\u0012\u0004\u0012\u00020\u0002\u0012\u0004\u0012\u00020\u00030\u0001:\u0004\u001e\u001f !B\u0099\u0001\u0012\u0012\u0010\u0004\u001a\u000e\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u00070\u0005\u0012\u0018\u0010\b\u001a\u0014\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\n\u0012\u0004\u0012\u00020\u00070\t\u0012\u0012\u0010\u000b\u001a\u000e\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u00070\u0005\u0012\u0012\u0010\f\u001a\u000e\u0012\u0004\u0012\u00020\r\u0012\u0004\u0012\u00020\u00070\u0005\u0012\u0012\u0010\u000e\u001a\u000e\u0012\u0004\u0012\u00020\u000f\u0012\u0004\u0012\u00020\u00070\u0005\u0012\u0018\u0010\u0010\u001a\u0014\u0012\u0004\u0012\u00020\u000f\u0012\u0004\u0012\u00020\n\u0012\u0004\u0012\u00020\u00070\t\u0012\f\u0010\u0011\u001a\b\u0012\u0004\u0012\u00020\u00070\u0012¢\u0006\u0004\b\u0013\u0010\u0014J\u0010\u0010\u0015\u001a\u00020\u00162\u0006\u0010\u0017\u001a\u00020\u0016H\u0016J\u0018\u0010\u0018\u001a\u00020\u00032\u0006\u0010\u0019\u001a\u00020\u001a2\u0006\u0010\u001b\u001a\u00020\u0016H\u0016J\u0018\u0010\u001c\u001a\u00020\u00072\u0006\u0010\u001d\u001a\u00020\u00032\u0006\u0010\u0017\u001a\u00020\u0016H\u0016R\u001a\u0010\u0004\u001a\u000e\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u00070\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R \u0010\b\u001a\u0014\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\n\u0012\u0004\u0012\u00020\u00070\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\u000b\u001a\u000e\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u00070\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\f\u001a\u000e\u0012\u0004\u0012\u00020\r\u0012\u0004\u0012\u00020\u00070\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\u000e\u001a\u000e\u0012\u0004\u0012\u00020\u000f\u0012\u0004\u0012\u00020\u00070\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R \u0010\u0010\u001a\u0014\u0012\u0004\u0012\u00020\u000f\u0012\u0004\u0012\u00020\n\u0012\u0004\u0012\u00020\u00070\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0011\u001a\b\u0012\u0004\u0012\u00020\u00070\u0012X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\""}, d2 = {"Lcom/muzk/app/ui/library/LibraryAdapter;", "Landroidx/recyclerview/widget/ListAdapter;", "Lcom/muzk/app/ui/library/LibraryRow;", "Landroidx/recyclerview/widget/RecyclerView$ViewHolder;", "onTrackClick", "Lkotlin/Function1;", "Lcom/muzk/app/ui/library/LibraryRow$Track;", "", "onTrackMore", "Lkotlin/Function2;", "Landroid/view/View;", "onTrackLongClick", "onFolderClick", "Lcom/muzk/app/ui/library/LibraryRow$Folder;", "onPlaylistClick", "Lcom/muzk/app/ui/library/LibraryRow$PlaylistItem;", "onPlaylistMore", "onHeaderClick", "Lkotlin/Function0;", "<init>", "(Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function0;)V", "getItemViewType", "", "position", "onCreateViewHolder", "parent", "Landroid/view/ViewGroup;", "viewType", "onBindViewHolder", "holder", "HeaderVH", "TrackVH", "CollectionVH", "Companion", "app_debug"}, k = 1, mv = {2, 0, 0})
 public final class LibraryAdapter extends ListAdapter<LibraryRow, RecyclerView.ViewHolder> {
-    private static final LibraryAdapter$Companion$DIFF$1 DIFF = new DiffUtil.ItemCallback<LibraryRow>() { // from class: com.radby.sounds.ui.library.LibraryAdapter$Companion$DIFF$1
+    private static final DiffUtil.ItemCallback<LibraryRow> DIFF = new DiffUtil.ItemCallback<LibraryRow>() { // from class: com.radby.sounds.ui.library.LibraryAdapter$Companion$DIFF$1
         @Override // androidx.recyclerview.widget.DiffUtil.ItemCallback
         public boolean areItemsTheSame(LibraryRow a, LibraryRow b) {
             Intrinsics.checkNotNullParameter(a, "a");
@@ -84,13 +84,13 @@ public final class LibraryAdapter extends ListAdapter<LibraryRow, RecyclerView.V
         Intrinsics.checkNotNullParameter(onPlaylistClick, "onPlaylistClick");
         Intrinsics.checkNotNullParameter(onPlaylistMore, "onPlaylistMore");
         Intrinsics.checkNotNullParameter(onHeaderClick, "onHeaderClick");
-        this.onTrackClick = onTrackClick;
-        this.onTrackMore = onTrackMore;
-        this.onTrackLongClick = onTrackLongClick;
-        this.onFolderClick = onFolderClick;
-        this.onPlaylistClick = onPlaylistClick;
-        this.onPlaylistMore = onPlaylistMore;
-        this.onHeaderClick = onHeaderClick;
+        this.onTrackClick = (Function1) onTrackClick;
+        this.onTrackMore = (Function2) onTrackMore;
+        this.onTrackLongClick = (Function1) onTrackLongClick;
+        this.onFolderClick = (Function1) onFolderClick;
+        this.onPlaylistClick = (Function1) onPlaylistClick;
+        this.onPlaylistMore = (Function2) onPlaylistMore;
+        this.onHeaderClick = (Function0) onHeaderClick;
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
@@ -138,7 +138,7 @@ public final class LibraryAdapter extends ListAdapter<LibraryRow, RecyclerView.V
             $this$onBindViewHolder_u24lambda_u241.getRoot().setOnClickListener(new View.OnClickListener() { // from class: com.radby.sounds.ui.library.LibraryAdapter$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    LibraryAdapter.onBindViewHolder$lambda$1$lambda$0(this.f$0, view);
+                    LibraryAdapter.onBindViewHolder$lambda$1$lambda$0(LibraryAdapter.this, view);
                 }
             });
             return;
@@ -174,19 +174,19 @@ public final class LibraryAdapter extends ListAdapter<LibraryRow, RecyclerView.V
             $this$onBindViewHolder_u24lambda_u246.getRoot().setOnClickListener(new View.OnClickListener() { // from class: com.radby.sounds.ui.library.LibraryAdapter$$ExternalSyntheticLambda1
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    LibraryAdapter.onBindViewHolder$lambda$6$lambda$3(this.f$0, row, view);
+                    LibraryAdapter.onBindViewHolder$lambda$6$lambda$3(LibraryAdapter.this, row, view);
                 }
             });
             $this$onBindViewHolder_u24lambda_u246.getRoot().setOnLongClickListener(new View.OnLongClickListener() { // from class: com.radby.sounds.ui.library.LibraryAdapter$$ExternalSyntheticLambda2
                 @Override // android.view.View.OnLongClickListener
                 public final boolean onLongClick(View view) {
-                    return LibraryAdapter.onBindViewHolder$lambda$6$lambda$4(this.f$0, row, view);
+                    return LibraryAdapter.onBindViewHolder$lambda$6$lambda$4(LibraryAdapter.this, row, view);
                 }
             });
             $this$onBindViewHolder_u24lambda_u246.btnMore.setOnClickListener(new View.OnClickListener() { // from class: com.radby.sounds.ui.library.LibraryAdapter$$ExternalSyntheticLambda3
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    LibraryAdapter.onBindViewHolder$lambda$6$lambda$5(this.f$0, row, view);
+                    LibraryAdapter.onBindViewHolder$lambda$6$lambda$5(LibraryAdapter.this, row, view);
                 }
             });
             return;
@@ -205,7 +205,7 @@ public final class LibraryAdapter extends ListAdapter<LibraryRow, RecyclerView.V
             $this$onBindViewHolder_u24lambda_u248.getRoot().setOnClickListener(new View.OnClickListener() { // from class: com.radby.sounds.ui.library.LibraryAdapter$$ExternalSyntheticLambda4
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    LibraryAdapter.onBindViewHolder$lambda$8$lambda$7(this.f$0, row, view);
+                    LibraryAdapter.onBindViewHolder$lambda$8$lambda$7(LibraryAdapter.this, row, view);
                 }
             });
             return;
@@ -228,13 +228,13 @@ public final class LibraryAdapter extends ListAdapter<LibraryRow, RecyclerView.V
         $this$onBindViewHolder_u24lambda_u2411.btnMore.setOnClickListener(new View.OnClickListener() { // from class: com.radby.sounds.ui.library.LibraryAdapter$$ExternalSyntheticLambda5
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                LibraryAdapter.onBindViewHolder$lambda$11$lambda$9(this.f$0, row, view);
+                LibraryAdapter.onBindViewHolder$lambda$11$lambda$9(LibraryAdapter.this, row, view);
             }
         });
         $this$onBindViewHolder_u24lambda_u2411.getRoot().setOnClickListener(new View.OnClickListener() { // from class: com.radby.sounds.ui.library.LibraryAdapter$$ExternalSyntheticLambda6
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                LibraryAdapter.onBindViewHolder$lambda$11$lambda$10(this.f$0, row, view);
+                LibraryAdapter.onBindViewHolder$lambda$11$lambda$10(LibraryAdapter.this, row, view);
             }
         });
     }
@@ -246,12 +246,12 @@ public final class LibraryAdapter extends ListAdapter<LibraryRow, RecyclerView.V
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void onBindViewHolder$lambda$6$lambda$3(LibraryAdapter this$0, LibraryRow $row, View it) {
-        this$0.onTrackClick.invoke($row);
+        this$0.onTrackClick.invoke((LibraryRow.Track) $row);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final boolean onBindViewHolder$lambda$6$lambda$4(LibraryAdapter this$0, LibraryRow $row, View it) {
-        this$0.onTrackLongClick.invoke($row);
+        this$0.onTrackLongClick.invoke((LibraryRow.Track) $row);
         return true;
     }
 
@@ -259,28 +259,28 @@ public final class LibraryAdapter extends ListAdapter<LibraryRow, RecyclerView.V
     public static final void onBindViewHolder$lambda$6$lambda$5(LibraryAdapter this$0, LibraryRow $row, View it) {
         Function2<LibraryRow.Track, View, Unit> function2 = this$0.onTrackMore;
         Intrinsics.checkNotNull(it);
-        function2.invoke($row, it);
+        function2.invoke((LibraryRow.PlaylistItem) $row, it);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void onBindViewHolder$lambda$8$lambda$7(LibraryAdapter this$0, LibraryRow $row, View it) {
-        this$0.onFolderClick.invoke($row);
+        this$0.onFolderClick.invoke((LibraryRow.Folder) $row);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void onBindViewHolder$lambda$11$lambda$9(LibraryAdapter this$0, LibraryRow $row, View it) {
         Function2<LibraryRow.PlaylistItem, View, Unit> function2 = this$0.onPlaylistMore;
         Intrinsics.checkNotNull(it);
-        function2.invoke($row, it);
+        function2.invoke((LibraryRow.PlaylistItem) $row, it);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void onBindViewHolder$lambda$11$lambda$10(LibraryAdapter this$0, LibraryRow $row, View it) {
-        this$0.onPlaylistClick.invoke($row);
+        this$0.onPlaylistClick.invoke((LibraryRow.PlaylistItem) $row);
     }
 
     /* JADX INFO: compiled from: LibraryAdapter.kt */
-    @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\u0018\u00002\u00020\u0001B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007¨\u0006\b"}, d2 = {"Lcom/muzk/app/ui/library/LibraryAdapter$HeaderVH;", "Landroidx/recyclerview/widget/RecyclerView$ViewHolder;", "b", "Lcom/muzk/app/databinding/ItemHeaderBinding;", "<init>", "(Lcom/muzk/app/databinding/ItemHeaderBinding;)V", "getB", "()Lcom/muzk/app/databinding/ItemHeaderBinding;", "app_debug"}, k = 1, mv = {2, 0, 0}, xi = ConstraintLayout.LayoutParams.Table.LAYOUT_CONSTRAINT_VERTICAL_CHAINSTYLE)
+    @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\u0018\u00002\u00020\u0001B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007¨\u0006\b"}, d2 = {"Lcom/muzk/app/ui/library/LibraryAdapter$HeaderVH;", "Landroidx/recyclerview/widget/RecyclerView$ViewHolder;", "b", "Lcom/muzk/app/databinding/ItemHeaderBinding;", "<init>", "(Lcom/muzk/app/databinding/ItemHeaderBinding;)V", "getB", "()Lcom/muzk/app/databinding/ItemHeaderBinding;", "app_debug"}, k = 1, mv = {2, 0, 0})
     public static final class HeaderVH extends RecyclerView.ViewHolder {
         private final ItemHeaderBinding b;
 
@@ -297,7 +297,7 @@ public final class LibraryAdapter extends ListAdapter<LibraryRow, RecyclerView.V
     }
 
     /* JADX INFO: compiled from: LibraryAdapter.kt */
-    @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\u0018\u00002\u00020\u0001B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007¨\u0006\b"}, d2 = {"Lcom/muzk/app/ui/library/LibraryAdapter$TrackVH;", "Landroidx/recyclerview/widget/RecyclerView$ViewHolder;", "b", "Lcom/muzk/app/databinding/ItemLocalTrackBinding;", "<init>", "(Lcom/muzk/app/databinding/ItemLocalTrackBinding;)V", "getB", "()Lcom/muzk/app/databinding/ItemLocalTrackBinding;", "app_debug"}, k = 1, mv = {2, 0, 0}, xi = ConstraintLayout.LayoutParams.Table.LAYOUT_CONSTRAINT_VERTICAL_CHAINSTYLE)
+    @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\u0018\u00002\u00020\u0001B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007¨\u0006\b"}, d2 = {"Lcom/muzk/app/ui/library/LibraryAdapter$TrackVH;", "Landroidx/recyclerview/widget/RecyclerView$ViewHolder;", "b", "Lcom/muzk/app/databinding/ItemLocalTrackBinding;", "<init>", "(Lcom/muzk/app/databinding/ItemLocalTrackBinding;)V", "getB", "()Lcom/muzk/app/databinding/ItemLocalTrackBinding;", "app_debug"}, k = 1, mv = {2, 0, 0})
     public static final class TrackVH extends RecyclerView.ViewHolder {
         private final ItemLocalTrackBinding b;
 
@@ -314,7 +314,7 @@ public final class LibraryAdapter extends ListAdapter<LibraryRow, RecyclerView.V
     }
 
     /* JADX INFO: compiled from: LibraryAdapter.kt */
-    @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\u0018\u00002\u00020\u0001B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007¨\u0006\b"}, d2 = {"Lcom/muzk/app/ui/library/LibraryAdapter$CollectionVH;", "Landroidx/recyclerview/widget/RecyclerView$ViewHolder;", "b", "Lcom/muzk/app/databinding/ItemCollectionBinding;", "<init>", "(Lcom/muzk/app/databinding/ItemCollectionBinding;)V", "getB", "()Lcom/muzk/app/databinding/ItemCollectionBinding;", "app_debug"}, k = 1, mv = {2, 0, 0}, xi = ConstraintLayout.LayoutParams.Table.LAYOUT_CONSTRAINT_VERTICAL_CHAINSTYLE)
+    @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\u0018\u00002\u00020\u0001B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007¨\u0006\b"}, d2 = {"Lcom/muzk/app/ui/library/LibraryAdapter$CollectionVH;", "Landroidx/recyclerview/widget/RecyclerView$ViewHolder;", "b", "Lcom/muzk/app/databinding/ItemCollectionBinding;", "<init>", "(Lcom/muzk/app/databinding/ItemCollectionBinding;)V", "getB", "()Lcom/muzk/app/databinding/ItemCollectionBinding;", "app_debug"}, k = 1, mv = {2, 0, 0})
     public static final class CollectionVH extends RecyclerView.ViewHolder {
         private final ItemCollectionBinding b;
 

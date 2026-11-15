@@ -10,7 +10,7 @@ import kotlin.jvm.internal.Intrinsics;
 
 /* JADX INFO: compiled from: MainActivity.kt */
 /* JADX INFO: loaded from: classes9.dex */
-@Metadata(k = 3, mv = {2, 0, 0}, xi = ConstraintLayout.LayoutParams.Table.LAYOUT_CONSTRAINT_VERTICAL_CHAINSTYLE)
+@Metadata(k = 3, mv = {2, 0, 0})
 final class MainActivity$sam$androidx_lifecycle_Observer$0 implements Observer, FunctionAdapter {
     private final /* synthetic */ Function1 function;
 

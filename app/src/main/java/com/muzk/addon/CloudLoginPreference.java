@@ -56,8 +56,11 @@ public class CloudLoginPreference extends Preference {
         if (new TokenStore(context).hasRefresh()) {
             new AlertDialog.Builder(context).setTitle("Conta Google").setMessage("Conectado como " + String.valueOf(new TokenStore(context).email())).setNegativeButton("Fechar", (DialogInterface.OnClickListener) null).setPositiveButton("Desconectar", new DialogInterface.OnClickListener() { // from class: com.muzk.addon.CloudLoginPreference.3
                 @Override // android.content.DialogInterface.OnClickListener
-                public void onClick(DialogInterface dialogInterface, int i) throws Throwable {
-                    Cloud.logout(context);
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    try {
+                        Cloud.logout(context);
+                    } catch (Throwable unused) {
+                    }
                     CloudLoginPreference.this.refreshSummary();
                     Ui.toast(context, "Conta desconectada.");
                 }

@@ -10,7 +10,6 @@ import androidx.media3.common.MediaItem;
 import androidx.media3.common.MediaMetadata;
 import androidx.media3.common.PlaybackException;
 import androidx.media3.common.Player;
-import androidx.media3.extractor.text.ttml.TtmlNode;
 import androidx.media3.session.MediaController;
 import androidx.media3.session.SessionToken;
 import com.google.common.util.concurrent.ListenableFuture;
@@ -31,7 +30,7 @@ import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.ranges.RangesKt;
 import kotlin.text.StringsKt;
-import kotlinx.coroutines.BuildersKt__Builders_commonKt;
+import kotlinx.coroutines.BuildersKt;
 import kotlinx.coroutines.CoroutineScope;
 import kotlinx.coroutines.CoroutineScopeKt;
 import kotlinx.coroutines.DelayKt;
@@ -43,18 +42,18 @@ import kotlinx.coroutines.flow.StateFlowKt;
 
 /* JADX INFO: compiled from: PlayerViewModel.kt */
 /* JADX INFO: loaded from: classes7.dex */
-@Metadata(d1 = {"\u0000w\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010!\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\b\u0006\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0007\n\u0002\u0010\t\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0003*\u0001\u0019\u0018\u00002\u00020\u0001B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u001c\u0010\u001b\u001a\u00020\u00122\u0012\u0010\u001c\u001a\u000e\u0012\u0004\u0012\u00020\u000e\u0012\u0004\u0012\u00020\u00120\u0011H\u0002J*\u0010\u001d\u001a\u00020\u00122\f\u0010\u001e\u001a\b\u0012\u0004\u0012\u00020 0\u001f2\b\b\u0002\u0010!\u001a\u00020\"2\n\b\u0002\u0010#\u001a\u0004\u0018\u00010$J\u000e\u0010%\u001a\u00020\u00122\u0006\u0010&\u001a\u00020 J\u0006\u0010'\u001a\u00020\u0012J\u0006\u0010(\u001a\u00020\u0012J\u0006\u0010)\u001a\u00020\u0012J\u000e\u0010*\u001a\u00020\u00122\u0006\u0010+\u001a\u00020,J\u0006\u0010-\u001a\u00020\u0012J\u0006\u0010.\u001a\u00020\u0012J\u0006\u0010/\u001a\u00020\u0012J\u0010\u00100\u001a\u00020\u00122\u0006\u00101\u001a\u000202H\u0002J\b\u00103\u001a\u00020\u0012H\u0002J\b\u00104\u001a\u00020\u0012H\u0014R\u0014\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\b0\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u0017\u0010\t\u001a\b\u0012\u0004\u0012\u00020\b0\n¢\u0006\b\n\u0000\u001a\u0004\b\u000b\u0010\fR\u0010\u0010\r\u001a\u0004\u0018\u00010\u000eX\u0082\u000e¢\u0006\u0002\n\u0000R \u0010\u000f\u001a\u0014\u0012\u0010\u0012\u000e\u0012\u0004\u0012\u00020\u000e\u0012\u0004\u0012\u00020\u00120\u00110\u0010X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u0013\u001a\u0004\u0018\u00010\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R\u0019\u0010\u0015\u001a\r\u0012\t\u0012\u00070\u000e¢\u0006\u0002\b\u00170\u0016X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u0018\u001a\u00020\u0019X\u0082\u0004¢\u0006\u0004\n\u0002\u0010\u001a¨\u00065"}, d2 = {"Lcom/muzk/app/playback/PlayerViewModel;", "Landroidx/lifecycle/AndroidViewModel;", "app", "Landroid/app/Application;", "<init>", "(Landroid/app/Application;)V", "_state", "Lkotlinx/coroutines/flow/MutableStateFlow;", "Lcom/muzk/app/playback/PlayerUiState;", "state", "Lkotlinx/coroutines/flow/StateFlow;", "getState", "()Lkotlinx/coroutines/flow/StateFlow;", "controller", "Landroidx/media3/session/MediaController;", "pending", "", "Lkotlin/Function1;", "", "ticker", "Lkotlinx/coroutines/Job;", "controllerFuture", "Lcom/google/common/util/concurrent/ListenableFuture;", "Lkotlin/jvm/internal/EnhancedNullability;", "listener", "com/muzk/app/playback/PlayerViewModel$listener$1", "Lcom/muzk/app/playback/PlayerViewModel$listener$1;", "withController", "block", "playQueue", "items", "", "Landroidx/media3/common/MediaItem;", "startIndex", "", "source", "", "playNext", "item", "togglePlay", "next", "previous", "seekTo", "ms", "", "toggleShuffle", "cycleRepeat", "clearError", "sync", TtmlNode.TAG_P, "Landroidx/media3/common/Player;", "startTicker", "onCleared", "app_debug"}, k = 1, mv = {2, 0, 0}, xi = ConstraintLayout.LayoutParams.Table.LAYOUT_CONSTRAINT_VERTICAL_CHAINSTYLE)
+@Metadata(d1 = {"\u0000w\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010!\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\b\u0006\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0007\n\u0002\u0010\t\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0003*\u0001\u0019\u0018\u00002\u00020\u0001B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u001c\u0010\u001b\u001a\u00020\u00122\u0012\u0010\u001c\u001a\u000e\u0012\u0004\u0012\u00020\u000e\u0012\u0004\u0012\u00020\u00120\u0011H\u0002J*\u0010\u001d\u001a\u00020\u00122\f\u0010\u001e\u001a\b\u0012\u0004\u0012\u00020 0\u001f2\b\b\u0002\u0010!\u001a\u00020\"2\n\b\u0002\u0010#\u001a\u0004\u0018\u00010$J\u000e\u0010%\u001a\u00020\u00122\u0006\u0010&\u001a\u00020 J\u0006\u0010'\u001a\u00020\u0012J\u0006\u0010(\u001a\u00020\u0012J\u0006\u0010)\u001a\u00020\u0012J\u000e\u0010*\u001a\u00020\u00122\u0006\u0010+\u001a\u00020,J\u0006\u0010-\u001a\u00020\u0012J\u0006\u0010.\u001a\u00020\u0012J\u0006\u0010/\u001a\u00020\u0012J\u0010\u00100\u001a\u00020\u00122\u0006\u00101\u001a\u000202H\u0002J\b\u00103\u001a\u00020\u0012H\u0002J\b\u00104\u001a\u00020\u0012H\u0014R\u0014\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\b0\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u0017\u0010\t\u001a\b\u0012\u0004\u0012\u00020\b0\n¢\u0006\b\n\u0000\u001a\u0004\b\u000b\u0010\fR\u0010\u0010\r\u001a\u0004\u0018\u00010\u000eX\u0082\u000e¢\u0006\u0002\n\u0000R \u0010\u000f\u001a\u0014\u0012\u0010\u0012\u000e\u0012\u0004\u0012\u00020\u000e\u0012\u0004\u0012\u00020\u00120\u00110\u0010X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u0013\u001a\u0004\u0018\u00010\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R\u0019\u0010\u0015\u001a\r\u0012\t\u0012\u00070\u000e¢\u0006\u0002\b\u00170\u0016X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u0018\u001a\u00020\u0019X\u0082\u0004¢\u0006\u0004\n\u0002\u0010\u001a¨\u00065"}, d2 = {"Lcom/muzk/app/playback/PlayerViewModel;", "Landroidx/lifecycle/AndroidViewModel;", "app", "Landroid/app/Application;", "<init>", "(Landroid/app/Application;)V", "_state", "Lkotlinx/coroutines/flow/MutableStateFlow;", "Lcom/muzk/app/playback/PlayerUiState;", "state", "Lkotlinx/coroutines/flow/StateFlow;", "getState", "()Lkotlinx/coroutines/flow/StateFlow;", "controller", "Landroidx/media3/session/MediaController;", "pending", "", "Lkotlin/Function1;", "", "ticker", "Lkotlinx/coroutines/Job;", "controllerFuture", "Lcom/google/common/util/concurrent/ListenableFuture;", "Lkotlin/jvm/internal/EnhancedNullability;", "listener", "com/muzk/app/playback/Player.Listener", "Lcom/muzk/app/playback/Player.Listener;", "withController", "block", "playQueue", "items", "", "Landroidx/media3/common/MediaItem;", "startIndex", "", "source", "", "playNext", "item", "togglePlay", "next", "previous", "seekTo", "ms", "", "toggleShuffle", "cycleRepeat", "clearError", "sync", "p", "Landroidx/media3/common/Player;", "startTicker", "onCleared", "app_debug"}, k = 1, mv = {2, 0, 0})
 public final class PlayerViewModel extends AndroidViewModel {
     private final MutableStateFlow<PlayerUiState> _state;
     private MediaController controller;
     private final ListenableFuture<MediaController> controllerFuture;
-    private final PlayerViewModel$listener$1 listener;
+    private final Player.Listener listener;
     private final List<Function1<MediaController, Unit>> pending;
     private final StateFlow<PlayerUiState> state;
     private Job ticker;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    /* JADX WARN: Type inference failed for: r2v9, types: [com.radby.sounds.playback.PlayerViewModel$listener$1] */
+    /* JADX WARN: Type inference failed for: r2v9, types: [com.radby.sounds.playback.Player.Listener] */
     public PlayerViewModel(Application app) {
         super(app);
         Intrinsics.checkNotNullParameter(app, "app");
@@ -64,18 +63,18 @@ public final class PlayerViewModel extends AndroidViewModel {
         ListenableFuture<MediaController> listenableFutureBuildAsync = new MediaController.Builder(app, new SessionToken(app, new ComponentName(app, (Class<?>) PlaybackService.class))).buildAsync();
         Intrinsics.checkNotNullExpressionValue(listenableFutureBuildAsync, "buildAsync(...)");
         this.controllerFuture = listenableFutureBuildAsync;
-        this.listener = new Player.Listener() { // from class: com.radby.sounds.playback.PlayerViewModel$listener$1
+        this.listener = new Player.Listener() { // from class: com.radby.sounds.playback.Player.Listener
             @Override // androidx.media3.common.Player.Listener
             public void onEvents(Player player, Player.Events events) {
                 Intrinsics.checkNotNullParameter(player, "player");
                 Intrinsics.checkNotNullParameter(events, "events");
-                this.this$0.sync(player);
+                PlayerViewModel.this.sync(player);
             }
         };
         this.controllerFuture.addListener(new Runnable() { // from class: com.radby.sounds.playback.PlayerViewModel$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
             public final void run() {
-                PlayerViewModel._init_$lambda$2(this.f$0);
+                PlayerViewModel._init_$lambda$2(PlayerViewModel.this);
             }
         }, ContextCompat.getMainExecutor(app));
     }
@@ -88,13 +87,11 @@ public final class PlayerViewModel extends AndroidViewModel {
     public static final void _init_$lambda$2(PlayerViewModel this$0) {
         Object objM663constructorimpl;
         try {
-            Result.Companion companion = Result.INSTANCE;
-            objM663constructorimpl = Result.m663constructorimpl(this$0.controllerFuture.get());
+            objM663constructorimpl = com.radby.compat.Kt.box(this$0.controllerFuture.get());
         } catch (Throwable th) {
-            Result.Companion companion2 = Result.INSTANCE;
-            objM663constructorimpl = Result.m663constructorimpl(ResultKt.createFailure(th));
+            objM663constructorimpl = com.radby.compat.Kt.box(com.radby.compat.Kt.failure(th));
         }
-        if (Result.m669isFailureimpl(objM663constructorimpl)) {
+        if (com.radby.compat.Kt.isFailure(objM663constructorimpl)) {
             objM663constructorimpl = null;
         }
         MediaController c = (MediaController) objM663constructorimpl;
@@ -117,7 +114,7 @@ public final class PlayerViewModel extends AndroidViewModel {
         if (mediaController != null) {
             block.invoke(mediaController);
         } else {
-            this.pending.add(block);
+            this.pending.add((Function1) block);
         }
     }
 
@@ -136,7 +133,7 @@ public final class PlayerViewModel extends AndroidViewModel {
         withController(new Function1() { // from class: com.radby.sounds.playback.PlayerViewModel$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                return PlayerViewModel.playQueue$lambda$4(this.f$0, items, startIndex, source, (MediaController) obj);
+                return PlayerViewModel.playQueue$lambda$4(PlayerViewModel.this, items, startIndex, source, (MediaController) obj);
             }
         });
     }
@@ -150,7 +147,7 @@ public final class PlayerViewModel extends AndroidViewModel {
         do {
             value = mutableStateFlow.getValue();
             s = value;
-        } while (!mutableStateFlow.compareAndSet(value, s.copy((32575 & 1) != 0 ? s.hasMedia : false, (32575 & 2) != 0 ? s.title : null, (32575 & 4) != 0 ? s.artist : null, (32575 & 8) != 0 ? s.cover : null, (32575 & 16) != 0 ? s.isPlaying : false, (32575 & 32) != 0 ? s.isBuffering : false, (32575 & 64) != 0 ? s.positionMs : 0L, (32575 & 128) != 0 ? s.durationMs : 0L, (32575 & 256) != 0 ? s.shuffle : false, (32575 & 512) != 0 ? s.repeatMode : 0, (32575 & 1024) != 0 ? s.mediaId : null, (32575 & 2048) != 0 ? s.isRemote : false, (32575 & 4096) != 0 ? s.source : $source, (32575 & 8192) != 0 ? s.album : null, (32575 & 16384) != 0 ? s.error : null)));
+        } while (!mutableStateFlow.compareAndSet(value, s.copy((32575 & 1) != 0 ? s.getHasMedia() : false, (32575 & 2) != 0 ? s.getTitle() : null, (32575 & 4) != 0 ? s.getArtist() : null, (32575 & 8) != 0 ? s.getCover() : null, (32575 & 16) != 0 ? s.getIsPlaying() : false, (32575 & 32) != 0 ? s.getIsBuffering() : false, (32575 & 64) != 0 ? s.getPositionMs() : 0L, (32575 & 128) != 0 ? s.getDurationMs() : 0L, (32575 & 256) != 0 ? s.getShuffle() : false, (32575 & 512) != 0 ? s.getRepeatMode() : 0, (32575 & 1024) != 0 ? s.getMediaId() : null, (32575 & 2048) != 0 ? s.getIsRemote() : false, (32575 & 4096) != 0 ? s.getSource() : $source, (32575 & 8192) != 0 ? s.getAlbum() : null, (32575 & 16384) != 0 ? s.getError() : null)));
         it.setMediaItems($items, $startIndex, 0L);
         it.prepare();
         it.play();
@@ -303,7 +300,7 @@ public final class PlayerViewModel extends AndroidViewModel {
         do {
             value = mutableStateFlow.getValue();
             it = value;
-        } while (!mutableStateFlow.compareAndSet(value, it.copy((32575 & 1) != 0 ? it.hasMedia : false, (32575 & 2) != 0 ? it.title : null, (32575 & 4) != 0 ? it.artist : null, (32575 & 8) != 0 ? it.cover : null, (32575 & 16) != 0 ? it.isPlaying : false, (32575 & 32) != 0 ? it.isBuffering : false, (32575 & 64) != 0 ? it.positionMs : 0L, (32575 & 128) != 0 ? it.durationMs : 0L, (32575 & 256) != 0 ? it.shuffle : false, (32575 & 512) != 0 ? it.repeatMode : 0, (32575 & 1024) != 0 ? it.mediaId : null, (32575 & 2048) != 0 ? it.isRemote : false, (32575 & 4096) != 0 ? it.source : null, (32575 & 8192) != 0 ? it.album : null, (32575 & 16384) != 0 ? it.error : null)));
+        } while (!mutableStateFlow.compareAndSet(value, it.copy((32575 & 1) != 0 ? it.getHasMedia() : false, (32575 & 2) != 0 ? it.getTitle() : null, (32575 & 4) != 0 ? it.getArtist() : null, (32575 & 8) != 0 ? it.getCover() : null, (32575 & 16) != 0 ? it.getIsPlaying() : false, (32575 & 32) != 0 ? it.getIsBuffering() : false, (32575 & 64) != 0 ? it.getPositionMs() : 0L, (32575 & 128) != 0 ? it.getDurationMs() : 0L, (32575 & 256) != 0 ? it.getShuffle() : false, (32575 & 512) != 0 ? it.getRepeatMode() : 0, (32575 & 1024) != 0 ? it.getMediaId() : null, (32575 & 2048) != 0 ? it.getIsRemote() : false, (32575 & 4096) != 0 ? it.getSource() : null, (32575 & 8192) != 0 ? it.getAlbum() : null, (32575 & 16384) != 0 ? it.getError() : null)));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -365,7 +362,7 @@ public final class PlayerViewModel extends AndroidViewModel {
                 z = false;
                 str = null;
                 i = 1;
-                if (StringsKt.startsWith$default(str3, "http", false, 2, (Object) null)) {
+                if (StringsKt.startsWith(str3, "http", false)) {
                     z2 = true;
                 }
                 charSequence = meta2.albumTitle;
@@ -391,7 +388,7 @@ public final class PlayerViewModel extends AndroidViewModel {
                 item = item2;
                 meta = meta2;
                 i2 = i;
-                if (mutableStateFlow.compareAndSet(value, it.copy((32575 & 1) != 0 ? it.hasMedia : z5, (32575 & 2) != 0 ? it.title : string2, (32575 & 4) != 0 ? it.artist : string3, (32575 & 8) != 0 ? it.cover : objCoverModel, (32575 & 16) != 0 ? it.isPlaying : zIsPlaying, (32575 & 32) != 0 ? it.isBuffering : z6, (32575 & 64) != 0 ? it.positionMs : currentPosition, (32575 & 128) != 0 ? it.durationMs : jCoerceAtLeast, (32575 & 256) != 0 ? it.shuffle : shuffleModeEnabled, (32575 & 512) != 0 ? it.repeatMode : repeatMode, (32575 & 1024) != 0 ? it.mediaId : str4, (32575 & 2048) != 0 ? it.isRemote : z2, (32575 & 4096) != 0 ? it.source : null, (32575 & 8192) != 0 ? it.album : str2, (32575 & 16384) != 0 ? it.error : error))) {
+                if (mutableStateFlow.compareAndSet(value, it.copy((32575 & 1) != 0 ? it.getHasMedia() : z5, (32575 & 2) != 0 ? it.getTitle() : string2, (32575 & 4) != 0 ? it.getArtist() : string3, (32575 & 8) != 0 ? it.getCover() : objCoverModel, (32575 & 16) != 0 ? it.getIsPlaying() : zIsPlaying, (32575 & 32) != 0 ? it.getIsBuffering() : z6, (32575 & 64) != 0 ? it.getPositionMs() : currentPosition, (32575 & 128) != 0 ? it.getDurationMs() : jCoerceAtLeast, (32575 & 256) != 0 ? it.getShuffle() : shuffleModeEnabled, (32575 & 512) != 0 ? it.getRepeatMode() : repeatMode, (32575 & 1024) != 0 ? it.getMediaId() : str4, (32575 & 2048) != 0 ? it.getIsRemote() : z2, (32575 & 4096) != 0 ? it.getSource() : null, (32575 & 8192) != 0 ? it.getAlbum() : str2, (32575 & 16384) != 0 ? it.getError() : error))) {
                     break;
                 }
                 item2 = item;
@@ -421,7 +418,7 @@ public final class PlayerViewModel extends AndroidViewModel {
             item = item2;
             meta = meta2;
             i2 = i;
-            if (mutableStateFlow.compareAndSet(value, it.copy((32575 & 1) != 0 ? it.hasMedia : z5, (32575 & 2) != 0 ? it.title : string2, (32575 & 4) != 0 ? it.artist : string3, (32575 & 8) != 0 ? it.cover : objCoverModel, (32575 & 16) != 0 ? it.isPlaying : zIsPlaying, (32575 & 32) != 0 ? it.isBuffering : z6, (32575 & 64) != 0 ? it.positionMs : currentPosition, (32575 & 128) != 0 ? it.durationMs : jCoerceAtLeast, (32575 & 256) != 0 ? it.shuffle : shuffleModeEnabled, (32575 & 512) != 0 ? it.repeatMode : repeatMode, (32575 & 1024) != 0 ? it.mediaId : str4, (32575 & 2048) != 0 ? it.isRemote : z2, (32575 & 4096) != 0 ? it.source : null, (32575 & 8192) != 0 ? it.album : str2, (32575 & 16384) != 0 ? it.error : error))) {
+            if (mutableStateFlow.compareAndSet(value, it.copy((32575 & 1) != 0 ? it.getHasMedia() : z5, (32575 & 2) != 0 ? it.getTitle() : string2, (32575 & 4) != 0 ? it.getArtist() : string3, (32575 & 8) != 0 ? it.getCover() : objCoverModel, (32575 & 16) != 0 ? it.getIsPlaying() : zIsPlaying, (32575 & 32) != 0 ? it.getIsBuffering() : z6, (32575 & 64) != 0 ? it.getPositionMs() : currentPosition, (32575 & 128) != 0 ? it.getDurationMs() : jCoerceAtLeast, (32575 & 256) != 0 ? it.getShuffle() : shuffleModeEnabled, (32575 & 512) != 0 ? it.getRepeatMode() : repeatMode, (32575 & 1024) != 0 ? it.getMediaId() : str4, (32575 & 2048) != 0 ? it.getIsRemote() : z2, (32575 & 4096) != 0 ? it.getSource() : null, (32575 & 8192) != 0 ? it.getAlbum() : str2, (32575 & 16384) != 0 ? it.getError() : error))) {
                 break;
                 break;
             } else {
@@ -432,7 +429,7 @@ public final class PlayerViewModel extends AndroidViewModel {
         if (!p.isPlaying()) {
             Job job = this.ticker;
             if (job != null) {
-                Job.DefaultImpls.cancel$default(job, (CancellationException) null, i2, (Object) null);
+                job.cancel((CancellationException) null);
                 return;
             }
             return;
@@ -442,26 +439,24 @@ public final class PlayerViewModel extends AndroidViewModel {
 
     /* JADX INFO: renamed from: com.radby.sounds.playback.PlayerViewModel$startTicker$1, reason: invalid class name */
     /* JADX INFO: compiled from: PlayerViewModel.kt */
-    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = ConstraintLayout.LayoutParams.Table.LAYOUT_CONSTRAINT_VERTICAL_CHAINSTYLE)
+    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0})
     @DebugMetadata(c = "com.radby.sounds.playback.PlayerViewModel$startTicker$1", f = "PlayerViewModel.kt", i = {0}, l = {142}, m = "invokeSuspend", n = {"$this$launch"}, s = {"L$0"})
-    static final class AnonymousClass1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
+    final class AnonymousClass1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
         private /* synthetic */ Object L$0;
         int label;
 
-        AnonymousClass1(Continuation<? super AnonymousClass1> continuation) {
-            super(2, continuation);
-        }
+        AnonymousClass1(Continuation<? super AnonymousClass1> continuation) { super(2, (Continuation<Object>) continuation); }
 
         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            AnonymousClass1 anonymousClass1 = PlayerViewModel.this.new AnonymousClass1(continuation);
+            AnonymousClass1 anonymousClass1 = new AnonymousClass1((Continuation<Object>) continuation);
             anonymousClass1.L$0 = obj;
-            return anonymousClass1;
+            return (Continuation<Unit>) (Object) anonymousClass1;
         }
 
         @Override // kotlin.jvm.functions.Function2
         public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
-            return ((AnonymousClass1) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
+            return ((AnonymousClass1) (Object) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
         }
 
         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
@@ -472,12 +467,12 @@ public final class PlayerViewModel extends AndroidViewModel {
             Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
             switch (this.label) {
                 case 0:
-                    ResultKt.throwOnFailure($result);
+                    com.radby.compat.Kt.throwOnFailure($result);
                     $this$launch = (CoroutineScope) this.L$0;
                     break;
                 case 1:
                     $this$launch = (CoroutineScope) this.L$0;
-                    ResultKt.throwOnFailure($result);
+                    com.radby.compat.Kt.throwOnFailure($result);
                     break;
                 default:
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
@@ -489,7 +484,7 @@ public final class PlayerViewModel extends AndroidViewModel {
                     do {
                         prevValue$iv = $this$update$iv.getValue();
                         it = (PlayerUiState) prevValue$iv;
-                    } while (!$this$update$iv.compareAndSet(prevValue$iv, it.copy((32575 & 1) != 0 ? it.hasMedia : false, (32575 & 2) != 0 ? it.title : null, (32575 & 4) != 0 ? it.artist : null, (32575 & 8) != 0 ? it.cover : null, (32575 & 16) != 0 ? it.isPlaying : false, (32575 & 32) != 0 ? it.isBuffering : false, (32575 & 64) != 0 ? it.positionMs : c.getCurrentPosition(), (32575 & 128) != 0 ? it.durationMs : RangesKt.coerceAtLeast(c.getDuration(), 0L), (32575 & 256) != 0 ? it.shuffle : false, (32575 & 512) != 0 ? it.repeatMode : 0, (32575 & 1024) != 0 ? it.mediaId : null, (32575 & 2048) != 0 ? it.isRemote : false, (32575 & 4096) != 0 ? it.source : null, (32575 & 8192) != 0 ? it.album : null, (32575 & 16384) != 0 ? it.error : null)));
+                    } while (!$this$update$iv.compareAndSet(prevValue$iv, it.copy((32575 & 1) != 0 ? it.getHasMedia() : false, (32575 & 2) != 0 ? it.getTitle() : null, (32575 & 4) != 0 ? it.getArtist() : null, (32575 & 8) != 0 ? it.getCover() : null, (32575 & 16) != 0 ? it.getIsPlaying() : false, (32575 & 32) != 0 ? it.getIsBuffering() : false, (32575 & 64) != 0 ? it.getPositionMs() : c.getCurrentPosition(), (32575 & 128) != 0 ? it.getDurationMs() : RangesKt.coerceAtLeast(c.getDuration(), 0L), (32575 & 256) != 0 ? it.getShuffle() : false, (32575 & 512) != 0 ? it.getRepeatMode() : 0, (32575 & 1024) != 0 ? it.getMediaId() : null, (32575 & 2048) != 0 ? it.getIsRemote() : false, (32575 & 4096) != 0 ? it.getSource() : null, (32575 & 8192) != 0 ? it.getAlbum() : null, (32575 & 16384) != 0 ? it.getError() : null)));
                 }
                 this.L$0 = $this$launch;
                 this.label = 1;
@@ -510,7 +505,7 @@ public final class PlayerViewModel extends AndroidViewModel {
         if (z) {
             return;
         }
-        this.ticker = BuildersKt__Builders_commonKt.launch$default(ViewModelKt.getViewModelScope(this), null, null, new AnonymousClass1(null), 3, null);
+        this.ticker = BuildersKt.launch(ViewModelKt.getViewModelScope(this), kotlin.coroutines.EmptyCoroutineContext.INSTANCE, kotlinx.coroutines.CoroutineStart.DEFAULT, (Function2) new AnonymousClass1(null));
     }
 
     @Override // androidx.lifecycle.ViewModel

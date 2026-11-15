@@ -55,12 +55,8 @@ public final class PlayBridge {
             }
             return null;
         } catch (InvocationTargetException e) {
-            Throwable cause = e.getCause();
-            InvocationTargetException cause2 = e;
-            if (cause != null) {
-                cause2 = e.getCause();
-            }
-            throw new IllegalStateException("yt-dlp falhou: " + cause2.getMessage());
+            Throwable cause = e.getCause() != null ? e.getCause() : e;
+            throw new IllegalStateException("yt-dlp falhou: " + cause.getMessage());
         }
     }
 
@@ -99,12 +95,8 @@ public final class PlayBridge {
             }
             return controller;
         } catch (InvocationTargetException e) {
-            Throwable cause = e.getCause();
-            InvocationTargetException cause2 = e;
-            if (cause != null) {
-                cause2 = e.getCause();
-            }
-            throw new IllegalStateException("servico de audio indisponivel: " + cause2.getMessage());
+            Throwable cause = e.getCause() != null ? e.getCause() : e;
+            throw new IllegalStateException("servico de audio indisponivel: " + cause.getMessage());
         }
     }
 }

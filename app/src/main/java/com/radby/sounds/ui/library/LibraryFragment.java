@@ -38,7 +38,6 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelStore;
 import androidx.lifecycle.viewmodel.CreationExtras;
 import androidx.media3.exoplayer.upstream.CmcdData;
-import androidx.media3.extractor.text.ttml.TtmlNode;
 import androidx.media3.extractor.ts.TsExtractor;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import com.google.android.material.chip.ChipGroup;
@@ -76,7 +75,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Reflection;
 import kotlin.ranges.RangesKt;
 import kotlin.text.StringsKt;
-import kotlinx.coroutines.BuildersKt__Builders_commonKt;
+import kotlinx.coroutines.BuildersKt;
 import kotlinx.coroutines.CoroutineScope;
 import kotlinx.coroutines.flow.FlowCollector;
 import kotlinx.coroutines.flow.StateFlow;
@@ -84,13 +83,13 @@ import org.apache.commons.compress.archivers.tar.TarConstants;
 
 /* JADX INFO: compiled from: LibraryFragment.kt */
 /* JADX INFO: loaded from: classes4.dex */
-@Metadata(d1 = {"\u0000\u009a\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\b\u0003\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010 \n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0007*\u0002\u001e!\u0018\u0000 L2\u00020\u0001:\u0001LB\u0007¢\u0006\u0004\b\u0002\u0010\u0003J$\u0010#\u001a\u00020$2\u0006\u0010%\u001a\u00020&2\b\u0010'\u001a\u0004\u0018\u00010(2\b\u0010)\u001a\u0004\u0018\u00010*H\u0016J\u001a\u0010+\u001a\u00020,2\u0006\u0010-\u001a\u00020$2\b\u0010)\u001a\u0004\u0018\u00010*H\u0016J\b\u0010.\u001a\u00020,H\u0016J\b\u0010/\u001a\u00020,H\u0016J\u0010\u00100\u001a\u00020,2\u0006\u00101\u001a\u000202H\u0002J\u0010\u00103\u001a\u00020,2\u0006\u00101\u001a\u000202H\u0002J\u0010\u00104\u001a\u00020,2\u0006\u00101\u001a\u000202H\u0002J\u0010\u00105\u001a\u00020,2\u0006\u00106\u001a\u000207H\u0002J\u0010\u00108\u001a\u00020\u00152\u0006\u00101\u001a\u000202H\u0002J\u0018\u00109\u001a\u00020,2\u0006\u0010:\u001a\u00020;2\u0006\u0010<\u001a\u00020$H\u0002J\u0018\u0010=\u001a\u00020,2\u0006\u0010:\u001a\u00020>2\u0006\u0010<\u001a\u00020$H\u0002J\u0016\u0010?\u001a\u00020,2\f\u0010@\u001a\b\u0012\u0004\u0012\u0002070AH\u0002J,\u0010B\u001a\u00020,2\u0006\u0010C\u001a\u00020\u001a2\u0006\u0010D\u001a\u00020\u00152\u0012\u0010E\u001a\u000e\u0012\u0004\u0012\u00020\u0015\u0012\u0004\u0012\u00020,0FH\u0002J\u0016\u0010G\u001a\u00020,2\f\u0010@\u001a\b\u0012\u0004\u0012\u0002070AH\u0002J\u0016\u0010H\u001a\u00020,2\f\u0010@\u001a\b\u0012\u0004\u0012\u0002070AH\u0002J\u0010\u0010I\u001a\u00020,2\u0006\u0010J\u001a\u00020\u0015H\u0002J\b\u0010K\u001a\u00020,H\u0016R\u0010\u0010\u0004\u001a\u0004\u0018\u00010\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u0006\u001a\u00020\u00058BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b\u0007\u0010\bR\u001b\u0010\t\u001a\u00020\n8BX\u0082\u0084\u0002¢\u0006\f\n\u0004\b\r\u0010\u000e\u001a\u0004\b\u000b\u0010\fR\u001b\u0010\u000f\u001a\u00020\u00108BX\u0082\u0084\u0002¢\u0006\f\n\u0004\b\u0013\u0010\u000e\u001a\u0004\b\u0011\u0010\u0012R\u000e\u0010\u0014\u001a\u00020\u0015X\u0082\u0004¢\u0006\u0002\n\u0000R\u001c\u0010\u0016\u001a\u0010\u0012\f\u0012\n \u0018*\u0004\u0018\u00010\u00150\u00150\u0017X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0019\u001a\u00020\u001aX\u0082\u000e¢\u0006\u0002\n\u0000R\u001c\u0010\u001b\u001a\u0010\u0012\f\u0012\n \u0018*\u0004\u0018\u00010\u001c0\u001c0\u0017X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u001d\u001a\u00020\u001eX\u0082\u0004¢\u0006\u0004\n\u0002\u0010\u001fR\u0010\u0010 \u001a\u00020!X\u0082\u0004¢\u0006\u0004\n\u0002\u0010\"¨\u0006M"}, d2 = {"Lcom/muzk/app/ui/library/LibraryFragment;", "Landroidx/fragment/app/Fragment;", "<init>", "()V", "_binding", "Lcom/muzk/app/databinding/FragmentLibraryBinding;", "binding", "getBinding", "()Lcom/muzk/app/databinding/FragmentLibraryBinding;", "vm", "Lcom/muzk/app/ui/library/LibraryViewModel;", "getVm", "()Lcom/muzk/app/ui/library/LibraryViewModel;", "vm$delegate", "Lkotlin/Lazy;", "player", "Lcom/muzk/app/playback/PlayerViewModel;", "getPlayer", "()Lcom/muzk/app/playback/PlayerViewModel;", "player$delegate", "audioPermission", "", "permissionLauncher", "Landroidx/activity/result/ActivityResultLauncher;", "kotlin.jvm.PlatformType", "pendingDeleteCount", "", "deleteLauncher", "Landroidx/activity/result/IntentSenderRequest;", "mediaObserver", "com/muzk/app/ui/library/LibraryFragment$mediaObserver$1", "Lcom/muzk/app/ui/library/LibraryFragment$mediaObserver$1;", "backCallback", "com/muzk/app/ui/library/LibraryFragment$backCallback$1", "Lcom/muzk/app/ui/library/LibraryFragment$backCallback$1;", "onCreateView", "Landroid/view/View;", "inflater", "Landroid/view/LayoutInflater;", TtmlNode.RUBY_CONTAINER, "Landroid/view/ViewGroup;", "savedInstanceState", "Landroid/os/Bundle;", "onViewCreated", "", "view", "onStart", "onStop", "renderEmpty", CmcdData.Factory.STREAMING_FORMAT_SS, "Lcom/muzk/app/ui/library/LibraryUiState;", "renderSelection", "renderFab", "playFrom", "track", "Lcom/muzk/app/data/LocalTrack;", "sourceName", "showTrackMenu", "row", "Lcom/muzk/app/ui/library/LibraryRow$Track;", "anchor", "showPlaylistMenu", "Lcom/muzk/app/ui/library/LibraryRow$PlaylistItem;", "pickPlaylist", "tracks", "", "askName", "titleRes", "initial", "onOk", "Lkotlin/Function1;", "confirmDelete", "deleteFiles", "snack", "text", "onDestroyView", "Companion", "app_debug"}, k = 1, mv = {2, 0, 0}, xi = ConstraintLayout.LayoutParams.Table.LAYOUT_CONSTRAINT_VERTICAL_CHAINSTYLE)
+@Metadata(d1 = {"\u0000\u009a\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\b\u0003\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010 \n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0007*\u0002\u001e!\u0018\u0000 L2\u00020\u0001:\u0001LB\u0007¢\u0006\u0004\b\u0002\u0010\u0003J$\u0010#\u001a\u00020$2\u0006\u0010%\u001a\u00020&2\b\u0010'\u001a\u0004\u0018\u00010(2\b\u0010)\u001a\u0004\u0018\u00010*H\u0016J\u001a\u0010+\u001a\u00020,2\u0006\u0010-\u001a\u00020$2\b\u0010)\u001a\u0004\u0018\u00010*H\u0016J\b\u0010.\u001a\u00020,H\u0016J\b\u0010/\u001a\u00020,H\u0016J\u0010\u00100\u001a\u00020,2\u0006\u00101\u001a\u000202H\u0002J\u0010\u00103\u001a\u00020,2\u0006\u00101\u001a\u000202H\u0002J\u0010\u00104\u001a\u00020,2\u0006\u00101\u001a\u000202H\u0002J\u0010\u00105\u001a\u00020,2\u0006\u00106\u001a\u000207H\u0002J\u0010\u00108\u001a\u00020\u00152\u0006\u00101\u001a\u000202H\u0002J\u0018\u00109\u001a\u00020,2\u0006\u0010:\u001a\u00020;2\u0006\u0010<\u001a\u00020$H\u0002J\u0018\u0010=\u001a\u00020,2\u0006\u0010:\u001a\u00020>2\u0006\u0010<\u001a\u00020$H\u0002J\u0016\u0010?\u001a\u00020,2\f\u0010@\u001a\b\u0012\u0004\u0012\u0002070AH\u0002J,\u0010B\u001a\u00020,2\u0006\u0010C\u001a\u00020\u001a2\u0006\u0010D\u001a\u00020\u00152\u0012\u0010E\u001a\u000e\u0012\u0004\u0012\u00020\u0015\u0012\u0004\u0012\u00020,0FH\u0002J\u0016\u0010G\u001a\u00020,2\f\u0010@\u001a\b\u0012\u0004\u0012\u0002070AH\u0002J\u0016\u0010H\u001a\u00020,2\f\u0010@\u001a\b\u0012\u0004\u0012\u0002070AH\u0002J\u0010\u0010I\u001a\u00020,2\u0006\u0010J\u001a\u00020\u0015H\u0002J\b\u0010K\u001a\u00020,H\u0016R\u0010\u0010\u0004\u001a\u0004\u0018\u00010\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u0006\u001a\u00020\u00058BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b\u0007\u0010\bR\u001b\u0010\t\u001a\u00020\n8BX\u0082\u0084\u0002¢\u0006\f\n\u0004\b\r\u0010\u000e\u001a\u0004\b\u000b\u0010\fR\u001b\u0010\u000f\u001a\u00020\u00108BX\u0082\u0084\u0002¢\u0006\f\n\u0004\b\u0013\u0010\u000e\u001a\u0004\b\u0011\u0010\u0012R\u000e\u0010\u0014\u001a\u00020\u0015X\u0082\u0004¢\u0006\u0002\n\u0000R\u001c\u0010\u0016\u001a\u0010\u0012\f\u0012\n \u0018*\u0004\u0018\u00010\u00150\u00150\u0017X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0019\u001a\u00020\u001aX\u0082\u000e¢\u0006\u0002\n\u0000R\u001c\u0010\u001b\u001a\u0010\u0012\f\u0012\n \u0018*\u0004\u0018\u00010\u001c0\u001c0\u0017X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u001d\u001a\u00020\u001eX\u0082\u0004¢\u0006\u0004\n\u0002\u0010\u001fR\u0010\u0010 \u001a\u00020!X\u0082\u0004¢\u0006\u0004\n\u0002\u0010\"¨\u0006M"}, d2 = {"Lcom/muzk/app/ui/library/LibraryFragment;", "Landroidx/fragment/app/Fragment;", "<init>", "()V", "_binding", "Lcom/muzk/app/databinding/FragmentLibraryBinding;", "binding", "getBinding", "()Lcom/muzk/app/databinding/FragmentLibraryBinding;", "vm", "Lcom/muzk/app/ui/library/LibraryViewModel;", "getVm", "()Lcom/muzk/app/ui/library/LibraryViewModel;", "vm$delegate", "Lkotlin/Lazy;", "player", "Lcom/muzk/app/playback/PlayerViewModel;", "getPlayer", "()Lcom/muzk/app/playback/PlayerViewModel;", "player$delegate", "audioPermission", "", "permissionLauncher", "Landroidx/activity/result/ActivityResultLauncher;", "kotlin.jvm.PlatformType", "pendingDeleteCount", "", "deleteLauncher", "Landroidx/activity/result/IntentSenderRequest;", "mediaObserver", "com/muzk/app/ui/library/ContentObserver", "Lcom/muzk/app/ui/library/ContentObserver;", "backCallback", "com/muzk/app/ui/library/OnBackPressedCallback", "Lcom/muzk/app/ui/library/OnBackPressedCallback;", "onCreateView", "Landroid/view/View;", "inflater", "Landroid/view/LayoutInflater;", "container", "Landroid/view/ViewGroup;", "savedInstanceState", "Landroid/os/Bundle;", "onViewCreated", "", "view", "onStart", "onStop", "renderEmpty", "", "Lcom/muzk/app/ui/library/LibraryUiState;", "renderSelection", "renderFab", "playFrom", "track", "Lcom/muzk/app/data/LocalTrack;", "sourceName", "showTrackMenu", "row", "Lcom/muzk/app/ui/library/LibraryRow$Track;", "anchor", "showPlaylistMenu", "Lcom/muzk/app/ui/library/LibraryRow$PlaylistItem;", "pickPlaylist", "tracks", "", "askName", "titleRes", "initial", "onOk", "Lkotlin/Function1;", "confirmDelete", "deleteFiles", "snack", "text", "onDestroyView", "Companion", "app_debug"}, k = 1, mv = {2, 0, 0})
 public final class LibraryFragment extends Fragment {
     private FragmentLibraryBinding _binding;
     private final String audioPermission;
-    private final LibraryFragment$backCallback$1 backCallback;
+    private final OnBackPressedCallback backCallback;
     private final ActivityResultLauncher<IntentSenderRequest> deleteLauncher;
-    private final LibraryFragment$mediaObserver$1 mediaObserver;
+    private final ContentObserver mediaObserver;
     private int pendingDeleteCount;
     private final ActivityResultLauncher<String> permissionLauncher;
 
@@ -101,15 +100,12 @@ public final class LibraryFragment extends Fragment {
     private final Lazy vm;
     private static final Map<LibraryTab, Integer> CHIPS = MapsKt.mapOf(TuplesKt.to(LibraryTab.PLAYLISTS, Integer.valueOf(R.id.chip_playlists)), TuplesKt.to(LibraryTab.TRACKS, Integer.valueOf(R.id.chip_tracks)), TuplesKt.to(LibraryTab.FOLDERS, Integer.valueOf(R.id.chip_folders)));
 
-    /* JADX WARN: Type inference failed for: r0v14, types: [com.radby.sounds.ui.library.LibraryFragment$backCallback$1] */
-    /* JADX WARN: Type inference failed for: r1v6, types: [com.radby.sounds.ui.library.LibraryFragment$mediaObserver$1] */
+    /* JADX WARN: Type inference failed for: r0v14, types: [com.radby.sounds.ui.library.OnBackPressedCallback] */
+    /* JADX WARN: Type inference failed for: r1v6, types: [com.radby.sounds.ui.library.ContentObserver] */
     public LibraryFragment() {
         final LibraryFragment $this$activityViewModels_u24default$iv = this;
         final Function0 extrasProducer$iv = null;
         this.vm = FragmentViewModelLazyKt.createViewModelLazy($this$activityViewModels_u24default$iv, Reflection.getOrCreateKotlinClass(LibraryViewModel.class), new Function0<ViewModelStore>() { // from class: com.radby.sounds.ui.library.LibraryFragment$special$$inlined$activityViewModels$default$1
-            {
-                super(0);
-            }
 
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
@@ -118,9 +114,6 @@ public final class LibraryFragment extends Fragment {
             }
         }, new Function0<CreationExtras>() { // from class: com.radby.sounds.ui.library.LibraryFragment$special$$inlined$activityViewModels$default$2
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            {
-                super(0);
-            }
 
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
@@ -130,9 +123,6 @@ public final class LibraryFragment extends Fragment {
                 return (function0 == null || (creationExtras = (CreationExtras) function0.invoke()) == null) ? $this$activityViewModels_u24default$iv.requireActivity().getDefaultViewModelCreationExtras() : creationExtras;
             }
         }, new Function0<ViewModelProvider.Factory>() { // from class: com.radby.sounds.ui.library.LibraryFragment$special$$inlined$activityViewModels$default$3
-            {
-                super(0);
-            }
 
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
@@ -143,9 +133,6 @@ public final class LibraryFragment extends Fragment {
         final LibraryFragment $this$activityViewModels_u24default$iv2 = this;
         final Function0 extrasProducer$iv2 = null;
         this.player = FragmentViewModelLazyKt.createViewModelLazy($this$activityViewModels_u24default$iv2, Reflection.getOrCreateKotlinClass(PlayerViewModel.class), new Function0<ViewModelStore>() { // from class: com.radby.sounds.ui.library.LibraryFragment$special$$inlined$activityViewModels$default$4
-            {
-                super(0);
-            }
 
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
@@ -154,9 +141,6 @@ public final class LibraryFragment extends Fragment {
             }
         }, new Function0<CreationExtras>() { // from class: com.radby.sounds.ui.library.LibraryFragment$special$$inlined$activityViewModels$default$5
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            {
-                super(0);
-            }
 
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
@@ -166,9 +150,6 @@ public final class LibraryFragment extends Fragment {
                 return (function0 == null || (creationExtras = (CreationExtras) function0.invoke()) == null) ? $this$activityViewModels_u24default$iv2.requireActivity().getDefaultViewModelCreationExtras() : creationExtras;
             }
         }, new Function0<ViewModelProvider.Factory>() { // from class: com.radby.sounds.ui.library.LibraryFragment$special$$inlined$activityViewModels$default$6
-            {
-                super(0);
-            }
 
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
@@ -180,7 +161,7 @@ public final class LibraryFragment extends Fragment {
         ActivityResultLauncher<String> activityResultLauncherRegisterForActivityResult = registerForActivityResult(new ActivityResultContracts.RequestPermission(), new ActivityResultCallback() { // from class: com.radby.sounds.ui.library.LibraryFragment$$ExternalSyntheticLambda13
             @Override // androidx.activity.result.ActivityResultCallback
             public final void onActivityResult(Object obj) {
-                LibraryFragment.permissionLauncher$lambda$0(this.f$0, (Boolean) obj);
+                LibraryFragment.permissionLauncher$lambda$0(LibraryFragment.this, (Boolean) obj);
             }
         });
         Intrinsics.checkNotNullExpressionValue(activityResultLauncherRegisterForActivityResult, "registerForActivityResult(...)");
@@ -188,28 +169,25 @@ public final class LibraryFragment extends Fragment {
         ActivityResultLauncher<IntentSenderRequest> activityResultLauncherRegisterForActivityResult2 = registerForActivityResult(new ActivityResultContracts.StartIntentSenderForResult(), new ActivityResultCallback() { // from class: com.radby.sounds.ui.library.LibraryFragment$$ExternalSyntheticLambda14
             @Override // androidx.activity.result.ActivityResultCallback
             public final void onActivityResult(Object obj) {
-                LibraryFragment.deleteLauncher$lambda$1(this.f$0, (ActivityResult) obj);
+                LibraryFragment.deleteLauncher$lambda$1(LibraryFragment.this, (ActivityResult) obj);
             }
         });
         Intrinsics.checkNotNullExpressionValue(activityResultLauncherRegisterForActivityResult2, "registerForActivityResult(...)");
         this.deleteLauncher = activityResultLauncherRegisterForActivityResult2;
         final Handler handler = new Handler(Looper.getMainLooper());
-        this.mediaObserver = new ContentObserver(handler) { // from class: com.radby.sounds.ui.library.LibraryFragment$mediaObserver$1
+        this.mediaObserver = new ContentObserver(handler) { // from class: com.radby.sounds.ui.library.ContentObserver
             @Override // android.database.ContentObserver
             public void onChange(boolean selfChange) {
-                if (this.this$0.getVm().getState().getValue().getHasPermission()) {
-                    this.this$0.getVm().reload();
+                if (LibraryFragment.this.getVm().getState().getValue().getHasPermission()) {
+                    LibraryFragment.this.getVm().reload();
                 }
             }
         };
-        this.backCallback = new OnBackPressedCallback() { // from class: com.radby.sounds.ui.library.LibraryFragment$backCallback$1
-            {
-                super(false);
-            }
+        this.backCallback = new OnBackPressedCallback() { // from class: com.radby.sounds.ui.library.OnBackPressedCallback
 
             @Override // androidx.activity.OnBackPressedCallback
             public void handleOnBackPressed() {
-                this.this$0.getVm().back();
+                LibraryFragment.this.getVm().back();
             }
         };
     }
@@ -269,37 +247,37 @@ public final class LibraryFragment extends Fragment {
         LibraryAdapter adapter = new LibraryAdapter(new Function1() { // from class: com.radby.sounds.ui.library.LibraryFragment$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                return LibraryFragment.onViewCreated$lambda$2(this.f$0, (LibraryRow.Track) obj);
+                return LibraryFragment.onViewCreated$lambda$2(LibraryFragment.this, (LibraryRow.Track) obj);
             }
         }, new Function2() { // from class: com.radby.sounds.ui.library.LibraryFragment$$ExternalSyntheticLambda18
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj, Object obj2) {
-                return LibraryFragment.onViewCreated$lambda$3(this.f$0, (LibraryRow.Track) obj, (View) obj2);
+                return LibraryFragment.onViewCreated$lambda$3(LibraryFragment.this, (LibraryRow.Track) obj, (View) obj2);
             }
         }, new Function1() { // from class: com.radby.sounds.ui.library.LibraryFragment$$ExternalSyntheticLambda19
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                return LibraryFragment.onViewCreated$lambda$4(this.f$0, (LibraryRow.Track) obj);
+                return LibraryFragment.onViewCreated$lambda$4(LibraryFragment.this, (LibraryRow.Track) obj);
             }
         }, new Function1() { // from class: com.radby.sounds.ui.library.LibraryFragment$$ExternalSyntheticLambda20
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                return LibraryFragment.onViewCreated$lambda$5(this.f$0, (LibraryRow.Folder) obj);
+                return LibraryFragment.onViewCreated$lambda$5(LibraryFragment.this, (LibraryRow.Folder) obj);
             }
         }, new Function1() { // from class: com.radby.sounds.ui.library.LibraryFragment$$ExternalSyntheticLambda21
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                return LibraryFragment.onViewCreated$lambda$6(this.f$0, (LibraryRow.PlaylistItem) obj);
+                return LibraryFragment.onViewCreated$lambda$6(LibraryFragment.this, (LibraryRow.PlaylistItem) obj);
             }
         }, new Function2() { // from class: com.radby.sounds.ui.library.LibraryFragment$$ExternalSyntheticLambda22
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj, Object obj2) {
-                return LibraryFragment.onViewCreated$lambda$7(this.f$0, (LibraryRow.PlaylistItem) obj, (View) obj2);
+                return LibraryFragment.onViewCreated$lambda$7(LibraryFragment.this, (LibraryRow.PlaylistItem) obj, (View) obj2);
             }
         }, new Function0() { // from class: com.radby.sounds.ui.library.LibraryFragment$$ExternalSyntheticLambda23
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                return LibraryFragment.onViewCreated$lambda$8(this.f$0);
+                return LibraryFragment.onViewCreated$lambda$8(LibraryFragment.this);
             }
         });
         getBinding().list.setLayoutManager(new LinearLayoutManager(requireContext()));
@@ -307,7 +285,7 @@ public final class LibraryFragment extends Fragment {
         getBinding().chips.setOnCheckedStateChangeListener(new ChipGroup.OnCheckedStateChangeListener() { // from class: com.radby.sounds.ui.library.LibraryFragment$$ExternalSyntheticLambda24
             @Override // com.google.android.material.chip.ChipGroup.OnCheckedStateChangeListener
             public final void onCheckedChanged(ChipGroup chipGroup, List list) {
-                LibraryFragment.onViewCreated$lambda$12(this.f$0, chipGroup, list);
+                LibraryFragment.onViewCreated$lambda$12(LibraryFragment.this, chipGroup, list);
             }
         });
         for (Map.Entry<LibraryTab, Integer> entry : CHIPS.entrySet()) {
@@ -316,7 +294,7 @@ public final class LibraryFragment extends Fragment {
             getBinding().getRoot().findViewById(id).setOnClickListener(new View.OnClickListener() { // from class: com.radby.sounds.ui.library.LibraryFragment$$ExternalSyntheticLambda1
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view2) {
-                    LibraryFragment.onViewCreated$lambda$14$lambda$13(this.f$0, tab, view2);
+                    LibraryFragment.onViewCreated$lambda$14$lambda$13(LibraryFragment.this, tab, view2);
                 }
             });
         }
@@ -324,24 +302,24 @@ public final class LibraryFragment extends Fragment {
         getBinding().selectionBar.setNavigationOnClickListener(new View.OnClickListener() { // from class: com.radby.sounds.ui.library.LibraryFragment$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
-                LibraryFragment.onViewCreated$lambda$15(this.f$0, view2);
+                LibraryFragment.onViewCreated$lambda$15(LibraryFragment.this, view2);
             }
         });
         getBinding().selectionBar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() { // from class: com.radby.sounds.ui.library.LibraryFragment$$ExternalSyntheticLambda11
             @Override // androidx.appcompat.widget.Toolbar.OnMenuItemClickListener
             public final boolean onMenuItemClick(MenuItem menuItem) {
-                return LibraryFragment.onViewCreated$lambda$18(this.f$0, menuItem);
+                return LibraryFragment.onViewCreated$lambda$18(LibraryFragment.this, menuItem);
             }
         });
         getBinding().emptyAction.setOnClickListener(new View.OnClickListener() { // from class: com.radby.sounds.ui.library.LibraryFragment$$ExternalSyntheticLambda17
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
-                LibraryFragment.onViewCreated$lambda$19(this.f$0, view2);
+                LibraryFragment.onViewCreated$lambda$19(LibraryFragment.this, view2);
             }
         });
         LifecycleOwner viewLifecycleOwner2 = getViewLifecycleOwner();
         Intrinsics.checkNotNullExpressionValue(viewLifecycleOwner2, "getViewLifecycleOwner(...)");
-        BuildersKt__Builders_commonKt.launch$default(LifecycleOwnerKt.getLifecycleScope(viewLifecycleOwner2), null, null, new AnonymousClass6(adapter, null), 3, null);
+        BuildersKt.launch(LifecycleOwnerKt.getLifecycleScope(viewLifecycleOwner2), kotlin.coroutines.EmptyCoroutineContext.INSTANCE, kotlinx.coroutines.CoroutineStart.DEFAULT, (Function2) new AnonymousClass6(adapter, null));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -481,52 +459,52 @@ public final class LibraryFragment extends Fragment {
 
     /* JADX INFO: renamed from: com.radby.sounds.ui.library.LibraryFragment$onViewCreated$6, reason: invalid class name */
     /* JADX INFO: compiled from: LibraryFragment.kt */
-    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = ConstraintLayout.LayoutParams.Table.LAYOUT_CONSTRAINT_VERTICAL_CHAINSTYLE)
+    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0})
     @DebugMetadata(c = "com.radby.sounds.ui.library.LibraryFragment$onViewCreated$6", f = "LibraryFragment.kt", i = {}, l = {TsExtractor.TS_STREAM_TYPE_HDMV_DTS}, m = "invokeSuspend", n = {}, s = {})
-    static final class AnonymousClass6 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
+    final class AnonymousClass6 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
         final /* synthetic */ LibraryAdapter $adapter;
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         AnonymousClass6(LibraryAdapter libraryAdapter, Continuation<? super AnonymousClass6> continuation) {
-            super(2, continuation);
+            super(2, (Continuation<Object>) continuation);
             this.$adapter = libraryAdapter;
         }
 
         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            return LibraryFragment.this.new AnonymousClass6(this.$adapter, continuation);
+            return (Continuation<Unit>) (Object) new AnonymousClass6(this.$adapter, (Continuation<Object>) continuation);
         }
 
         @Override // kotlin.jvm.functions.Function2
         public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
-            return ((AnonymousClass6) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
+            return ((AnonymousClass6) (Object) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
         }
 
         /* JADX INFO: renamed from: com.radby.sounds.ui.library.LibraryFragment$onViewCreated$6$1, reason: invalid class name */
         /* JADX INFO: compiled from: LibraryFragment.kt */
-        @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = ConstraintLayout.LayoutParams.Table.LAYOUT_CONSTRAINT_VERTICAL_CHAINSTYLE)
+        @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0})
         @DebugMetadata(c = "com.radby.sounds.ui.library.LibraryFragment$onViewCreated$6$1", f = "LibraryFragment.kt", i = {}, l = {TarConstants.PREFIXLEN_XSTAR}, m = "invokeSuspend", n = {}, s = {})
-        static final class AnonymousClass1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
+    final class AnonymousClass1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
             final /* synthetic */ LibraryAdapter $adapter;
             int label;
             final /* synthetic */ LibraryFragment this$0;
 
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             AnonymousClass1(LibraryFragment libraryFragment, LibraryAdapter libraryAdapter, Continuation<? super AnonymousClass1> continuation) {
-                super(2, continuation);
+                super(2, (Continuation<Object>) continuation);
                 this.this$0 = libraryFragment;
                 this.$adapter = libraryAdapter;
             }
 
             @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
             public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-                return new AnonymousClass1(this.this$0, this.$adapter, continuation);
+                return (Continuation<Unit>) (Object) new AnonymousClass1(LibraryFragment.this, this.$adapter, (Continuation<Object>) continuation);
             }
 
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
-                return ((AnonymousClass1) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
+                return ((AnonymousClass1) (Object) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
             }
 
             @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
@@ -534,10 +512,10 @@ public final class LibraryFragment extends Fragment {
                 Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
                 switch (this.label) {
                     case 0:
-                        ResultKt.throwOnFailure($result);
-                        StateFlow<LibraryUiState> state = this.this$0.getVm().getState();
+                        com.radby.compat.Kt.throwOnFailure($result);
+                        StateFlow<LibraryUiState> state = LibraryFragment.this.getVm().getState();
                         final LibraryAdapter libraryAdapter = this.$adapter;
-                        final LibraryFragment libraryFragment = this.this$0;
+                        final LibraryFragment libraryFragment = LibraryFragment.this;
                         this.label = 1;
                         if (state.collect(new FlowCollector() { // from class: com.radby.sounds.ui.library.LibraryFragment.onViewCreated.6.1.1
                             @Override // kotlinx.coroutines.flow.FlowCollector
@@ -566,7 +544,7 @@ public final class LibraryFragment extends Fragment {
                         }
                         break;
                     case 1:
-                        ResultKt.throwOnFailure($result);
+                        com.radby.compat.Kt.throwOnFailure($result);
                         break;
                     default:
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
@@ -580,7 +558,7 @@ public final class LibraryFragment extends Fragment {
             Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
             switch (this.label) {
                 case 0:
-                    ResultKt.throwOnFailure($result);
+                    com.radby.compat.Kt.throwOnFailure($result);
                     LifecycleOwner viewLifecycleOwner = LibraryFragment.this.getViewLifecycleOwner();
                     Intrinsics.checkNotNullExpressionValue(viewLifecycleOwner, "getViewLifecycleOwner(...)");
                     this.label = 1;
@@ -589,7 +567,7 @@ public final class LibraryFragment extends Fragment {
                     }
                     break;
                 case 1:
-                    ResultKt.throwOnFailure($result);
+                    com.radby.compat.Kt.throwOnFailure($result);
                     break;
                 default:
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
@@ -716,7 +694,7 @@ public final class LibraryFragment extends Fragment {
             fab.setOnClickListener(new View.OnClickListener() { // from class: com.radby.sounds.ui.library.LibraryFragment$$ExternalSyntheticLambda4
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    LibraryFragment.renderFab$lambda$22(this.f$0, view);
+                    LibraryFragment.renderFab$lambda$22(LibraryFragment.this, view);
                 }
             });
             fab.show();
@@ -728,7 +706,7 @@ public final class LibraryFragment extends Fragment {
             fab.setOnClickListener(new View.OnClickListener() { // from class: com.radby.sounds.ui.library.LibraryFragment$$ExternalSyntheticLambda5
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    LibraryFragment.renderFab$lambda$24(this.f$0, s, view);
+                    LibraryFragment.renderFab$lambda$24(LibraryFragment.this, s, view);
                 }
             });
             fab.show();
@@ -742,7 +720,7 @@ public final class LibraryFragment extends Fragment {
         this$0.askName(R.string.new_playlist, "", new Function1() { // from class: com.radby.sounds.ui.library.LibraryFragment$$ExternalSyntheticLambda8
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                return LibraryFragment.renderFab$lambda$22$lambda$21(this.f$0, (String) obj);
+                return LibraryFragment.renderFab$lambda$22$lambda$21(LibraryFragment.this, (String) obj);
             }
         });
     }
@@ -818,7 +796,7 @@ public final class LibraryFragment extends Fragment {
         popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() { // from class: com.radby.sounds.ui.library.LibraryFragment$$ExternalSyntheticLambda7
             @Override // android.widget.PopupMenu.OnMenuItemClickListener
             public final boolean onMenuItemClick(MenuItem menuItem) {
-                return LibraryFragment.showTrackMenu$lambda$27(this.f$0, row, menuItem);
+                return LibraryFragment.showTrackMenu$lambda$27(LibraryFragment.this, row, menuItem);
             }
         });
         popup.show();
@@ -853,7 +831,7 @@ public final class LibraryFragment extends Fragment {
         popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() { // from class: com.radby.sounds.ui.library.LibraryFragment$$ExternalSyntheticLambda3
             @Override // android.widget.PopupMenu.OnMenuItemClickListener
             public final boolean onMenuItemClick(MenuItem menuItem) {
-                return LibraryFragment.showPlaylistMenu$lambda$30(this.f$0, row, menuItem);
+                return LibraryFragment.showPlaylistMenu$lambda$30(LibraryFragment.this, row, menuItem);
             }
         });
         popup.show();
@@ -866,7 +844,7 @@ public final class LibraryFragment extends Fragment {
                 this$0.askName(R.string.rename, $row.getPlaylist().getName(), new Function1() { // from class: com.radby.sounds.ui.library.LibraryFragment$$ExternalSyntheticLambda10
                     @Override // kotlin.jvm.functions.Function1
                     public final Object invoke(Object obj) {
-                        return LibraryFragment.showPlaylistMenu$lambda$30$lambda$28(this.f$0, $row, (String) obj);
+                        return LibraryFragment.showPlaylistMenu$lambda$30$lambda$28(LibraryFragment.this, $row, (String) obj);
                     }
                 });
                 break;
@@ -874,7 +852,7 @@ public final class LibraryFragment extends Fragment {
                 new MaterialAlertDialogBuilder(this$0.requireContext()).setMessage((CharSequence) this$0.getString(R.string.delete_playlist_confirm, $row.getPlaylist().getName())).setNegativeButton(R.string.cancel, (DialogInterface.OnClickListener) null).setPositiveButton(R.string.delete, new DialogInterface.OnClickListener() { // from class: com.radby.sounds.ui.library.LibraryFragment$$ExternalSyntheticLambda12
                     @Override // android.content.DialogInterface.OnClickListener
                     public final void onClick(DialogInterface dialogInterface, int i) {
-                        LibraryFragment.showPlaylistMenu$lambda$30$lambda$29(this.f$0, $row, dialogInterface, i);
+                        LibraryFragment.showPlaylistMenu$lambda$30$lambda$29(LibraryFragment.this, $row, dialogInterface, i);
                     }
                 }).show();
                 break;
@@ -938,7 +916,7 @@ public final class LibraryFragment extends Fragment {
             this$0.askName(R.string.new_playlist, "", new Function1() { // from class: com.radby.sounds.ui.library.LibraryFragment$$ExternalSyntheticLambda9
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    return LibraryFragment.pickPlaylist$lambda$34$lambda$33(this.f$0, $ids, (String) obj);
+                    return LibraryFragment.pickPlaylist$lambda$34$lambda$33(LibraryFragment.this, $ids, (String) obj);
                 }
             });
         }
@@ -986,7 +964,7 @@ public final class LibraryFragment extends Fragment {
         new MaterialAlertDialogBuilder(requireContext()).setMessage((CharSequence) message).setNegativeButton(R.string.cancel, (DialogInterface.OnClickListener) null).setPositiveButton(R.string.delete, new DialogInterface.OnClickListener() { // from class: com.radby.sounds.ui.library.LibraryFragment$$ExternalSyntheticLambda15
             @Override // android.content.DialogInterface.OnClickListener
             public final void onClick(DialogInterface dialogInterface, int i) {
-                this.f$0.deleteFiles(tracks);
+                LibraryFragment.this.deleteFiles(tracks);
             }
         }).show();
     }

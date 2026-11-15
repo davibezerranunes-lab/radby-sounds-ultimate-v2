@@ -4,7 +4,6 @@ import android.app.Application;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.ViewModelKt;
-import androidx.media3.extractor.text.ttml.TtmlNode;
 import com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder;
 import com.radby.sounds.data.LocalMusicRepository;
 import com.radby.sounds.data.LocalTrack;
@@ -35,7 +34,7 @@ import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.ranges.RangesKt;
 import kotlin.text.StringsKt;
-import kotlinx.coroutines.BuildersKt__Builders_commonKt;
+import kotlinx.coroutines.BuildersKt;
 import kotlinx.coroutines.CoroutineScope;
 import kotlinx.coroutines.Job;
 import kotlinx.coroutines.flow.FlowKt;
@@ -46,7 +45,7 @@ import kotlinx.coroutines.flow.StateFlowKt;
 
 /* JADX INFO: compiled from: LibraryViewModel.kt */
 /* JADX INFO: loaded from: classes4.dex */
-@Metadata(d1 = {"\u0000n\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\"\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\u0019\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u00002\u00020\u0001B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u000e\u0010\u0016\u001a\u00020\u00172\u0006\u0010\u0018\u001a\u00020\u0019J\u0006\u0010\u001a\u001a\u00020\u001bJ\u000e\u0010\u001c\u001a\u00020\u00172\u0006\u0010\u001d\u001a\u00020\u001eJ\u000e\u0010\u001f\u001a\u00020\u00172\u0006\u0010 \u001a\u00020!J\u000e\u0010\"\u001a\u00020\u00172\u0006\u0010#\u001a\u00020!J\u000e\u0010$\u001a\u00020\u00172\u0006\u0010%\u001a\u00020\u0010J\u0006\u0010&\u001a\u00020\u0017J\u0006\u0010'\u001a\u00020\u0017J\u0006\u0010(\u001a\u00020\u0019J\u000e\u0010.\u001a\u00020!2\u0006\u0010/\u001a\u00020!J\u0016\u00100\u001a\u00020\u00172\u0006\u0010#\u001a\u00020!2\u0006\u0010/\u001a\u00020!J\u000e\u00101\u001a\u00020\u00172\u0006\u0010#\u001a\u00020!J\u0016\u00102\u001a\u00020\u00172\u0006\u00103\u001a\u00020!2\u0006\u0010%\u001a\u00020\u0010J\u0016\u00104\u001a\u00020\u00172\u0006\u00103\u001a\u00020!2\u0006\u0010%\u001a\u00020\u0010J\u001c\u00105\u001a\u00020\u00172\u0006\u00103\u001a\u00020!2\f\u00106\u001a\b\u0012\u0004\u0012\u00020\u00100\nJ\u001c\u00107\u001a\u00020\u00172\u0006\u00103\u001a\u00020!2\f\u00106\u001a\b\u0012\u0004\u0012\u00020\u00100\nJ:\u00108\u001a\u00020\u00132\f\u00109\u001a\b\u0012\u0004\u0012\u00020\u000b0\n2\f\u0010:\u001a\b\u0012\u0004\u0012\u00020;0\n2\u0006\u0010<\u001a\u00020\r2\f\u0010=\u001a\b\u0012\u0004\u0012\u00020\u00100\u000fH\u0002R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\b\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u000b0\n0\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\f\u001a\b\u0012\u0004\u0012\u00020\r0\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\u000e\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00100\u000f0\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u0017\u0010\u0011\u001a\b\u0012\u0004\u0012\u00020\u00130\u0012¢\u0006\b\n\u0000\u001a\u0004\b\u0014\u0010\u0015R\u001a\u0010)\u001a\u00020\u0019X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b*\u0010+\"\u0004\b,\u0010-¨\u0006>"}, d2 = {"Lcom/muzk/app/ui/library/LibraryViewModel;", "Landroidx/lifecycle/AndroidViewModel;", "app", "Landroid/app/Application;", "<init>", "(Landroid/app/Application;)V", "store", "Lcom/muzk/app/data/PlaylistStore;", "tracks", "Lkotlinx/coroutines/flow/MutableStateFlow;", "", "Lcom/muzk/app/data/LocalTrack;", "nav", "Lcom/muzk/app/ui/library/Nav;", "selection", "", "", "state", "Lkotlinx/coroutines/flow/StateFlow;", "Lcom/muzk/app/ui/library/LibraryUiState;", "getState", "()Lkotlinx/coroutines/flow/StateFlow;", "setPermission", "", "granted", "", "reload", "Lkotlinx/coroutines/Job;", "selectTab", "tab", "Lcom/muzk/app/ui/library/LibraryTab;", "openFolder", "path", "", "openPlaylist", TtmlNode.ATTR_ID, "toggleSelection", "trackId", "clearSelection", "selectAll", "back", "askedPermission", "getAskedPermission", "()Z", "setAskedPermission", "(Z)V", "createPlaylist", "name", "renamePlaylist", "deletePlaylist", "addToPlaylist", "playlistId", "removeFromPlaylist", "addAllToPlaylist", "trackIds", "removeAllFromPlaylist", JsonPOJOBuilder.DEFAULT_BUILD_METHOD, TtmlNode.COMBINE_ALL, "playlists", "Lcom/muzk/app/data/Playlist;", "n", "sel", "app_debug"}, k = 1, mv = {2, 0, 0}, xi = ConstraintLayout.LayoutParams.Table.LAYOUT_CONSTRAINT_VERTICAL_CHAINSTYLE)
+@Metadata(d1 = {"\u0000n\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\"\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\u0019\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u00002\u00020\u0001B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u000e\u0010\u0016\u001a\u00020\u00172\u0006\u0010\u0018\u001a\u00020\u0019J\u0006\u0010\u001a\u001a\u00020\u001bJ\u000e\u0010\u001c\u001a\u00020\u00172\u0006\u0010\u001d\u001a\u00020\u001eJ\u000e\u0010\u001f\u001a\u00020\u00172\u0006\u0010 \u001a\u00020!J\u000e\u0010\"\u001a\u00020\u00172\u0006\u0010#\u001a\u00020!J\u000e\u0010$\u001a\u00020\u00172\u0006\u0010%\u001a\u00020\u0010J\u0006\u0010&\u001a\u00020\u0017J\u0006\u0010'\u001a\u00020\u0017J\u0006\u0010(\u001a\u00020\u0019J\u000e\u0010.\u001a\u00020!2\u0006\u0010/\u001a\u00020!J\u0016\u00100\u001a\u00020\u00172\u0006\u0010#\u001a\u00020!2\u0006\u0010/\u001a\u00020!J\u000e\u00101\u001a\u00020\u00172\u0006\u0010#\u001a\u00020!J\u0016\u00102\u001a\u00020\u00172\u0006\u00103\u001a\u00020!2\u0006\u0010%\u001a\u00020\u0010J\u0016\u00104\u001a\u00020\u00172\u0006\u00103\u001a\u00020!2\u0006\u0010%\u001a\u00020\u0010J\u001c\u00105\u001a\u00020\u00172\u0006\u00103\u001a\u00020!2\f\u00106\u001a\b\u0012\u0004\u0012\u00020\u00100\nJ\u001c\u00107\u001a\u00020\u00172\u0006\u00103\u001a\u00020!2\f\u00106\u001a\b\u0012\u0004\u0012\u00020\u00100\nJ:\u00108\u001a\u00020\u00132\f\u00109\u001a\b\u0012\u0004\u0012\u00020\u000b0\n2\f\u0010:\u001a\b\u0012\u0004\u0012\u00020;0\n2\u0006\u0010<\u001a\u00020\r2\f\u0010=\u001a\b\u0012\u0004\u0012\u00020\u00100\u000fH\u0002R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\b\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u000b0\n0\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\f\u001a\b\u0012\u0004\u0012\u00020\r0\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\u000e\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00100\u000f0\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u0017\u0010\u0011\u001a\b\u0012\u0004\u0012\u00020\u00130\u0012¢\u0006\b\n\u0000\u001a\u0004\b\u0014\u0010\u0015R\u001a\u0010)\u001a\u00020\u0019X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b*\u0010+\"\u0004\b,\u0010-¨\u0006>"}, d2 = {"Lcom/muzk/app/ui/library/LibraryViewModel;", "Landroidx/lifecycle/AndroidViewModel;", "app", "Landroid/app/Application;", "<init>", "(Landroid/app/Application;)V", "store", "Lcom/muzk/app/data/PlaylistStore;", "tracks", "Lkotlinx/coroutines/flow/MutableStateFlow;", "", "Lcom/muzk/app/data/LocalTrack;", "nav", "Lcom/muzk/app/ui/library/Nav;", "selection", "", "", "state", "Lkotlinx/coroutines/flow/StateFlow;", "Lcom/muzk/app/ui/library/LibraryUiState;", "getState", "()Lkotlinx/coroutines/flow/StateFlow;", "setPermission", "", "granted", "", "reload", "Lkotlinx/coroutines/Job;", "selectTab", "tab", "Lcom/muzk/app/ui/library/LibraryTab;", "openFolder", "path", "", "openPlaylist", "id", "toggleSelection", "trackId", "clearSelection", "selectAll", "back", "askedPermission", "getAskedPermission", "()Z", "setAskedPermission", "(Z)V", "createPlaylist", "name", "renamePlaylist", "deletePlaylist", "addToPlaylist", "playlistId", "removeFromPlaylist", "addAllToPlaylist", "trackIds", "removeAllFromPlaylist", JsonPOJOBuilder.DEFAULT_BUILD_METHOD, "all", "playlists", "Lcom/muzk/app/data/Playlist;", "n", "sel", "app_debug"}, k = 1, mv = {2, 0, 0})
 public final class LibraryViewModel extends AndroidViewModel {
     private boolean askedPermission;
     private final MutableStateFlow<Nav> nav;
@@ -63,7 +62,7 @@ public final class LibraryViewModel extends AndroidViewModel {
         this.tracks = StateFlowKt.MutableStateFlow(CollectionsKt.emptyList());
         this.nav = StateFlowKt.MutableStateFlow(new Nav(false, false, null, null, null, 31, null));
         this.selection = StateFlowKt.MutableStateFlow(SetsKt.emptySet());
-        this.state = FlowKt.stateIn(FlowKt.combine(this.tracks, this.store.getPlaylists(), this.nav, this.selection, new LibraryViewModel$state$1(this, null)), ViewModelKt.getViewModelScope(this), SharingStarted.Companion.WhileSubscribed$default(SharingStarted.INSTANCE, 5000L, 0L, 2, null), new LibraryUiState(false, false, null, null, null, null, null, null, null, 511, null));
+        this.state = FlowKt.stateIn(FlowKt.combine(this.tracks, this.store.getPlaylists(), this.nav, this.selection, new LibraryViewModel$state$1(this, null)), ViewModelKt.getViewModelScope(this), SharingStarted.Companion.WhileSubscribed(5000L, 0L), new LibraryUiState(false, false, null, null, null, null, null, null, null, 511, null));
     }
 
     public final StateFlow<LibraryUiState> getState() {
@@ -85,26 +84,24 @@ public final class LibraryViewModel extends AndroidViewModel {
 
     /* JADX INFO: renamed from: com.radby.sounds.ui.library.LibraryViewModel$reload$1, reason: invalid class name */
     /* JADX INFO: compiled from: LibraryViewModel.kt */
-    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = ConstraintLayout.LayoutParams.Table.LAYOUT_CONSTRAINT_VERTICAL_CHAINSTYLE)
+    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0})
     @DebugMetadata(c = "com.radby.sounds.ui.library.LibraryViewModel$reload$1", f = "LibraryViewModel.kt", i = {}, l = {74}, m = "invokeSuspend", n = {}, s = {})
-    static final class AnonymousClass1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
+    final class AnonymousClass1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
         private /* synthetic */ Object L$0;
         int label;
 
-        AnonymousClass1(Continuation<? super AnonymousClass1> continuation) {
-            super(2, continuation);
-        }
+        AnonymousClass1(Continuation<? super AnonymousClass1> continuation) { super(2, (Continuation<Object>) continuation); }
 
         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            AnonymousClass1 anonymousClass1 = LibraryViewModel.this.new AnonymousClass1(continuation);
+            AnonymousClass1 anonymousClass1 = new AnonymousClass1((Continuation<Object>) continuation);
             anonymousClass1.L$0 = obj;
-            return anonymousClass1;
+            return (Continuation<Unit>) (Object) anonymousClass1;
         }
 
         @Override // kotlin.jvm.functions.Function2
         public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
-            return ((AnonymousClass1) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
+            return ((AnonymousClass1) (Object) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
         }
 
         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
@@ -115,9 +112,8 @@ public final class LibraryViewModel extends AndroidViewModel {
             try {
                 switch (this.label) {
                     case 0:
-                        ResultKt.throwOnFailure($result);
+                        com.radby.compat.Kt.throwOnFailure($result);
                         LibraryViewModel libraryViewModel = LibraryViewModel.this;
-                        Result.Companion companion = Result.INSTANCE;
                         LocalMusicRepository localMusicRepository = LocalMusicRepository.INSTANCE;
                         Application application = libraryViewModel.getApplication();
                         this.label = 1;
@@ -128,24 +124,23 @@ public final class LibraryViewModel extends AndroidViewModel {
                         $result = objLoadTracks;
                         break;
                     case 1:
-                        ResultKt.throwOnFailure($result);
+                        com.radby.compat.Kt.throwOnFailure($result);
                         break;
                     default:
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 }
                 try {
-                    $result = Result.m663constructorimpl((List) $result);
+                    $result = com.radby.compat.Kt.box((List) $result);
                 } catch (Throwable th) {
                     th = th;
                     $result = $result;
-                    Result.Companion companion2 = Result.INSTANCE;
-                    $result = Result.m663constructorimpl(ResultKt.createFailure(th));
+                    $result = com.radby.compat.Kt.box(com.radby.compat.Kt.failure(th));
                 }
             } catch (Throwable th2) {
                 th = th2;
             }
             LibraryViewModel libraryViewModel2 = LibraryViewModel.this;
-            if (Result.m670isSuccessimpl($result)) {
+            if (com.radby.compat.Kt.isSuccess($result)) {
                 List it2 = (List) $result;
                 libraryViewModel2.tracks.setValue(it2);
             }
@@ -159,7 +154,7 @@ public final class LibraryViewModel extends AndroidViewModel {
     }
 
     public final Job reload() {
-        return BuildersKt__Builders_commonKt.launch$default(ViewModelKt.getViewModelScope(this), null, null, new AnonymousClass1(null), 3, null);
+        return BuildersKt.launch(ViewModelKt.getViewModelScope(this), kotlin.coroutines.EmptyCoroutineContext.INSTANCE, kotlinx.coroutines.CoroutineStart.DEFAULT, (Function2) new AnonymousClass1(null));
     }
 
     public final void selectTab(LibraryTab tab) {
@@ -376,7 +371,7 @@ public final class LibraryViewModel extends AndroidViewModel {
                 Boolean.valueOf(rows.addAll(CollectionsKt.sortedWith($this$sortedBy$iv, new Comparator() { // from class: com.radby.sounds.ui.library.LibraryViewModel$build$$inlined$sortedBy$1
                     /* JADX WARN: Multi-variable type inference failed */
                     @Override // java.util.Comparator
-                    public final int compare(T t, T t2) {
+                    public final int compare(Object t, Object t2) {
                         LibraryRow.Folder it6 = (LibraryRow.Folder) t;
                         String lowerCase = it6.getName().toLowerCase(Locale.ROOT);
                         Intrinsics.checkNotNullExpressionValue(lowerCase, "toLowerCase(...)");

@@ -43,12 +43,8 @@ public final class YtVideo {
                 result.error = strLastLine;
             }
         } catch (InvocationTargetException e) {
-            Throwable cause = e.getCause();
-            InvocationTargetException cause2 = e;
-            if (cause != null) {
-                cause2 = e.getCause();
-            }
-            result.error = cause2.getClass().getSimpleName() + ": " + cause2.getMessage();
+            Throwable cause = e.getCause() != null ? e.getCause() : e;
+            result.error = cause.getClass().getSimpleName() + ": " + cause.getMessage();
         } catch (Throwable th) {
             result.error = th.getClass().getSimpleName() + ": " + th.getMessage();
         }

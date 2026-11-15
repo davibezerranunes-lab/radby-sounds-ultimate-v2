@@ -30,13 +30,13 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Intrinsics;
 import kotlinx.coroutines.BuildersKt;
-import kotlinx.coroutines.BuildersKt__Builders_commonKt;
+import kotlinx.coroutines.BuildersKt;
 import kotlinx.coroutines.CoroutineScope;
 import kotlinx.coroutines.Dispatchers;
 
 /* JADX INFO: compiled from: SettingsFragment.kt */
 /* JADX INFO: loaded from: classes8.dex */
-@Metadata(d1 = {"\u0000@\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0004\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u001a\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\b\u0010\b\u001a\u0004\u0018\u00010\tH\u0016J\u001c\u0010\n\u001a\u00020\u00052\b\u0010\b\u001a\u0004\u0018\u00010\t2\b\u0010\u000b\u001a\u0004\u0018\u00010\fH\u0016J\b\u0010\r\u001a\u00020\u0005H\u0002J\b\u0010\u000e\u001a\u00020\u0005H\u0002J\u0012\u0010\u000f\u001a\u00020\u00052\b\u0010\u0010\u001a\u0004\u0018\u00010\u0011H\u0002J\u0010\u0010\u0012\u001a\u00020\u00052\u0006\u0010\u0010\u001a\u00020\u0011H\u0002J+\u0010\u0013\u001a\u00020\u00052\u001c\u0010\u0014\u001a\u0018\b\u0001\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00050\u0016\u0012\u0006\u0012\u0004\u0018\u00010\u00170\u0015H\u0002¢\u0006\u0002\u0010\u0018J\u0010\u0010\u0019\u001a\u00020\u00052\u0006\u0010\u001a\u001a\u00020\fH\u0002¨\u0006\u001b"}, d2 = {"Lcom/muzk/app/ui/settings/SettingsFragment;", "Landroidx/preference/PreferenceFragmentCompat;", "<init>", "()V", "onViewCreated", "", "view", "Landroid/view/View;", "savedInstanceState", "Landroid/os/Bundle;", "onCreatePreferences", "rootKey", "", "openSystemEqualizer", "openAppEqualizer", "refreshYtDlpVersion", "pref", "Landroidx/preference/Preference;", "updateYtDlp", "launchUi", "block", "Lkotlin/Function1;", "Lkotlin/coroutines/Continuation;", "", "(Lkotlin/jvm/functions/Function1;)V", "toast", "text", "app_debug"}, k = 1, mv = {2, 0, 0}, xi = ConstraintLayout.LayoutParams.Table.LAYOUT_CONSTRAINT_VERTICAL_CHAINSTYLE)
+@Metadata(d1 = {"\u0000@\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0004\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u001a\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\b\u0010\b\u001a\u0004\u0018\u00010\tH\u0016J\u001c\u0010\n\u001a\u00020\u00052\b\u0010\b\u001a\u0004\u0018\u00010\t2\b\u0010\u000b\u001a\u0004\u0018\u00010\fH\u0016J\b\u0010\r\u001a\u00020\u0005H\u0002J\b\u0010\u000e\u001a\u00020\u0005H\u0002J\u0012\u0010\u000f\u001a\u00020\u00052\b\u0010\u0010\u001a\u0004\u0018\u00010\u0011H\u0002J\u0010\u0010\u0012\u001a\u00020\u00052\u0006\u0010\u0010\u001a\u00020\u0011H\u0002J+\u0010\u0013\u001a\u00020\u00052\u001c\u0010\u0014\u001a\u0018\b\u0001\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00050\u0016\u0012\u0006\u0012\u0004\u0018\u00010\u00170\u0015H\u0002¢\u0006\u0002\u0010\u0018J\u0010\u0010\u0019\u001a\u00020\u00052\u0006\u0010\u001a\u001a\u00020\fH\u0002¨\u0006\u001b"}, d2 = {"Lcom/muzk/app/ui/settings/SettingsFragment;", "Landroidx/preference/PreferenceFragmentCompat;", "<init>", "()V", "onViewCreated", "", "view", "Landroid/view/View;", "savedInstanceState", "Landroid/os/Bundle;", "onCreatePreferences", "rootKey", "", "openSystemEqualizer", "openAppEqualizer", "refreshYtDlpVersion", "pref", "Landroidx/preference/Preference;", "updateYtDlp", "launchUi", "block", "Lkotlin/Function1;", "Lkotlin/coroutines/Continuation;", "", "(Lkotlin/jvm/functions/Function1;)V", "toast", "text", "app_debug"}, k = 1, mv = {2, 0, 0})
 public final class SettingsFragment extends PreferenceFragmentCompat {
     @Override // androidx.preference.PreferenceFragmentCompat, androidx.fragment.app.Fragment
     public void onViewCreated(View view, Bundle savedInstanceState) {
@@ -57,7 +57,7 @@ public final class SettingsFragment extends PreferenceFragmentCompat {
             preferenceFindPreference2.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() { // from class: com.radby.sounds.ui.settings.SettingsFragment$$ExternalSyntheticLambda1
                 @Override // androidx.preference.Preference.OnPreferenceChangeListener
                 public final boolean onPreferenceChange(Preference preference, Object obj) {
-                    return SettingsFragment.onCreatePreferences$lambda$1(this.f$0, preference, obj);
+                    return SettingsFragment.onCreatePreferences$lambda$1(SettingsFragment.this, preference, obj);
                 }
             });
         }
@@ -66,7 +66,7 @@ public final class SettingsFragment extends PreferenceFragmentCompat {
             preferenceFindPreference3.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() { // from class: com.radby.sounds.ui.settings.SettingsFragment$$ExternalSyntheticLambda2
                 @Override // androidx.preference.Preference.OnPreferenceClickListener
                 public final boolean onPreferenceClick(Preference preference) {
-                    return SettingsFragment.onCreatePreferences$lambda$2(this.f$0, preference);
+                    return SettingsFragment.onCreatePreferences$lambda$2(SettingsFragment.this, preference);
                 }
             });
         }
@@ -75,7 +75,7 @@ public final class SettingsFragment extends PreferenceFragmentCompat {
             preferenceFindPreference4.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() { // from class: com.radby.sounds.ui.settings.SettingsFragment$$ExternalSyntheticLambda3
                 @Override // androidx.preference.Preference.OnPreferenceClickListener
                 public final boolean onPreferenceClick(Preference preference) {
-                    return SettingsFragment.onCreatePreferences$lambda$3(this.f$0, preference);
+                    return SettingsFragment.onCreatePreferences$lambda$3(SettingsFragment.this, preference);
                 }
             });
         }
@@ -85,7 +85,7 @@ public final class SettingsFragment extends PreferenceFragmentCompat {
             update.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() { // from class: com.radby.sounds.ui.settings.SettingsFragment$$ExternalSyntheticLambda4
                 @Override // androidx.preference.Preference.OnPreferenceClickListener
                 public final boolean onPreferenceClick(Preference preference) {
-                    return SettingsFragment.onCreatePreferences$lambda$4(this.f$0, preference);
+                    return SettingsFragment.onCreatePreferences$lambda$4(SettingsFragment.this, preference);
                 }
             });
         }
@@ -99,7 +99,7 @@ public final class SettingsFragment extends PreferenceFragmentCompat {
             view.post(new Runnable() { // from class: com.radby.sounds.ui.settings.SettingsFragment$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    SettingsFragment.onCreatePreferences$lambda$1$lambda$0(this.f$0);
+                    SettingsFragment.onCreatePreferences$lambda$1$lambda$0(SettingsFragment.this);
                 }
             });
             return true;
@@ -168,28 +168,28 @@ public final class SettingsFragment extends PreferenceFragmentCompat {
 
     /* JADX INFO: renamed from: com.radby.sounds.ui.settings.SettingsFragment$refreshYtDlpVersion$1, reason: invalid class name and case insensitive filesystem */
     /* JADX INFO: compiled from: SettingsFragment.kt */
-    @Metadata(d1 = {"\u0000\u0006\n\u0000\n\u0002\u0010\u0002\u0010\u0000\u001a\u00020\u0001H\n"}, d2 = {"<anonymous>", ""}, k = 3, mv = {2, 0, 0}, xi = ConstraintLayout.LayoutParams.Table.LAYOUT_CONSTRAINT_VERTICAL_CHAINSTYLE)
+    @Metadata(d1 = {"\u0000\u0006\n\u0000\n\u0002\u0010\u0002\u0010\u0000\u001a\u00020\u0001H\n"}, d2 = {"<anonymous>", ""}, k = 3, mv = {2, 0, 0})
     @DebugMetadata(c = "com.radby.sounds.ui.settings.SettingsFragment$refreshYtDlpVersion$1", f = "SettingsFragment.kt", i = {}, l = {Base64.mimeLineLength}, m = "invokeSuspend", n = {}, s = {})
-    static final class C01151 extends SuspendLambda implements Function1<Continuation<? super Unit>, Object> {
+    final class C01151 extends SuspendLambda implements Function1<Continuation<? super Unit>, Object> {
         final /* synthetic */ Preference $pref;
         int label;
         final /* synthetic */ SettingsFragment this$0;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         C01151(Preference preference, SettingsFragment settingsFragment, Continuation<? super C01151> continuation) {
-            super(1, continuation);
+            super(1, (Continuation<Object>) continuation);
             this.$pref = preference;
             this.this$0 = settingsFragment;
         }
 
         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         public final Continuation<Unit> create(Continuation<?> continuation) {
-            return new C01151(this.$pref, this.this$0, continuation);
+            return (Continuation<Unit>) (Object) new C01151(this.$pref, SettingsFragment.this, (Continuation<Object>) continuation);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public final Object invoke(Continuation<? super Unit> continuation) {
-            return ((C01151) create(continuation)).invokeSuspend(Unit.INSTANCE);
+            return ((C01151) (Object) create(continuation)).invokeSuspend(Unit.INSTANCE);
         }
 
         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
@@ -197,23 +197,23 @@ public final class SettingsFragment extends PreferenceFragmentCompat {
             Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
             switch (this.label) {
                 case 0:
-                    ResultKt.throwOnFailure($result);
+                    com.radby.compat.Kt.throwOnFailure($result);
                     this.label = 1;
-                    Object objWithContext = BuildersKt.withContext(Dispatchers.getIO(), new SettingsFragment$refreshYtDlpVersion$1$version$1(this.this$0, null), this);
+                    Object objWithContext = BuildersKt.withContext(Dispatchers.getIO(), new SettingsFragment$refreshYtDlpVersion$1$version$1(SettingsFragment.this, null), this);
                     if (objWithContext == coroutine_suspended) {
                         return coroutine_suspended;
                     }
                     $result = objWithContext;
                     break;
                 case 1:
-                    ResultKt.throwOnFailure($result);
+                    com.radby.compat.Kt.throwOnFailure($result);
                     break;
                 default:
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
             }
             String version = (String) $result;
             Preference preference = this.$pref;
-            SettingsFragment settingsFragment = this.this$0;
+            SettingsFragment settingsFragment = SettingsFragment.this;
             int i = R.string.pref_update_summary;
             if (version == null) {
                 version = "?";
@@ -240,9 +240,9 @@ public final class SettingsFragment extends PreferenceFragmentCompat {
 
     /* JADX INFO: renamed from: com.radby.sounds.ui.settings.SettingsFragment$updateYtDlp$1, reason: invalid class name and case insensitive filesystem */
     /* JADX INFO: compiled from: SettingsFragment.kt */
-    @Metadata(d1 = {"\u0000\u0006\n\u0000\n\u0002\u0010\u0002\u0010\u0000\u001a\u00020\u0001H\n"}, d2 = {"<anonymous>", ""}, k = 3, mv = {2, 0, 0}, xi = ConstraintLayout.LayoutParams.Table.LAYOUT_CONSTRAINT_VERTICAL_CHAINSTYLE)
+    @Metadata(d1 = {"\u0000\u0006\n\u0000\n\u0002\u0010\u0002\u0010\u0000\u001a\u00020\u0001H\n"}, d2 = {"<anonymous>", ""}, k = 3, mv = {2, 0, 0})
     @DebugMetadata(c = "com.radby.sounds.ui.settings.SettingsFragment$updateYtDlp$1", f = "SettingsFragment.kt", i = {}, l = {TsExtractor.TS_STREAM_TYPE_DVBSUBS}, m = "invokeSuspend", n = {}, s = {})
-    static final class C01161 extends SuspendLambda implements Function1<Continuation<? super Unit>, Object> {
+    final class C01161 extends SuspendLambda implements Function1<Continuation<? super Unit>, Object> {
         final /* synthetic */ Context $app;
         final /* synthetic */ Preference $pref;
         int label;
@@ -250,7 +250,7 @@ public final class SettingsFragment extends PreferenceFragmentCompat {
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         C01161(Preference preference, SettingsFragment settingsFragment, Context context, Continuation<? super C01161> continuation) {
-            super(1, continuation);
+            super(1, (Continuation<Object>) continuation);
             this.$pref = preference;
             this.this$0 = settingsFragment;
             this.$app = context;
@@ -258,12 +258,12 @@ public final class SettingsFragment extends PreferenceFragmentCompat {
 
         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         public final Continuation<Unit> create(Continuation<?> continuation) {
-            return new C01161(this.$pref, this.this$0, this.$app, continuation);
+            return (Continuation<Unit>) (Object) new C01161(this.$pref, SettingsFragment.this, this.$app, (Continuation<Object>) continuation);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public final Object invoke(Continuation<? super Unit> continuation) {
-            return ((C01161) create(continuation)).invokeSuspend(Unit.INSTANCE);
+            return ((C01161) (Object) create(continuation)).invokeSuspend(Unit.INSTANCE);
         }
 
         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
@@ -271,7 +271,7 @@ public final class SettingsFragment extends PreferenceFragmentCompat {
             Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
             switch (this.label) {
                 case 0:
-                    ResultKt.throwOnFailure($result);
+                    com.radby.compat.Kt.throwOnFailure($result);
                     this.label = 1;
                     Object objWithContext = BuildersKt.withContext(Dispatchers.getIO(), new SettingsFragment$updateYtDlp$1$result$1(this.$app, null), this);
                     if (objWithContext == coroutine_suspended) {
@@ -280,20 +280,20 @@ public final class SettingsFragment extends PreferenceFragmentCompat {
                     $result = objWithContext;
                     break;
                 case 1:
-                    ResultKt.throwOnFailure($result);
+                    com.radby.compat.Kt.throwOnFailure($result);
                     break;
                 default:
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
             }
             Object value = ((Result) $result).getValue();
-            SettingsFragment settingsFragment = this.this$0;
-            if (Result.m670isSuccessimpl(value)) {
+            SettingsFragment settingsFragment = SettingsFragment.this;
+            if (com.radby.compat.Kt.isSuccess(value)) {
                 String string = settingsFragment.getString(((YoutubeDL.UpdateStatus) value) == YoutubeDL.UpdateStatus.DONE ? R.string.update_done : R.string.update_latest);
                 Intrinsics.checkNotNullExpressionValue(string, "getString(...)");
                 settingsFragment.toast(string);
             }
-            SettingsFragment settingsFragment2 = this.this$0;
-            Throwable it = Result.m666exceptionOrNullimpl(value);
+            SettingsFragment settingsFragment2 = SettingsFragment.this;
+            Throwable it = com.radby.compat.Kt.exceptionOrNull(value);
             if (it != null) {
                 int i = R.string.update_failed;
                 String message = it.getMessage();
@@ -305,14 +305,14 @@ public final class SettingsFragment extends PreferenceFragmentCompat {
                 settingsFragment2.toast(string2);
             }
             this.$pref.setEnabled(true);
-            this.this$0.refreshYtDlpVersion(this.$pref);
+            SettingsFragment.this.refreshYtDlpVersion(this.$pref);
             return Unit.INSTANCE;
         }
     }
 
     /* JADX INFO: renamed from: com.radby.sounds.ui.settings.SettingsFragment$launchUi$1, reason: invalid class name */
     /* JADX INFO: compiled from: SettingsFragment.kt */
-    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = ConstraintLayout.LayoutParams.Table.LAYOUT_CONSTRAINT_VERTICAL_CHAINSTYLE)
+    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0})
     @DebugMetadata(c = "com.radby.sounds.ui.settings.SettingsFragment$launchUi$1", f = "SettingsFragment.kt", i = {}, l = {107}, m = "invokeSuspend", n = {}, s = {})
     static final class AnonymousClass1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
         final /* synthetic */ Function1<Continuation<? super Unit>, Object> $block;
@@ -321,18 +321,18 @@ public final class SettingsFragment extends PreferenceFragmentCompat {
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         /* JADX WARN: Multi-variable type inference failed */
         AnonymousClass1(Function1<? super Continuation<? super Unit>, ? extends Object> function1, Continuation<? super AnonymousClass1> continuation) {
-            super(2, continuation);
+            super(2, (Continuation<Object>) continuation);
             this.$block = function1;
         }
 
         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            return new AnonymousClass1(this.$block, continuation);
+            return (Continuation<Unit>) (Object) new AnonymousClass1(this.$block, (Continuation<Object>) continuation);
         }
 
         @Override // kotlin.jvm.functions.Function2
         public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
-            return ((AnonymousClass1) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
+            return ((AnonymousClass1) (Object) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
         }
 
         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
@@ -340,7 +340,7 @@ public final class SettingsFragment extends PreferenceFragmentCompat {
             Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
             switch (this.label) {
                 case 0:
-                    ResultKt.throwOnFailure($result);
+                    com.radby.compat.Kt.throwOnFailure($result);
                     Function1<Continuation<? super Unit>, Object> function1 = this.$block;
                     this.label = 1;
                     if (function1.invoke(this) == coroutine_suspended) {
@@ -348,7 +348,7 @@ public final class SettingsFragment extends PreferenceFragmentCompat {
                     }
                     break;
                 case 1:
-                    ResultKt.throwOnFailure($result);
+                    com.radby.compat.Kt.throwOnFailure($result);
                     break;
                 default:
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
@@ -358,7 +358,7 @@ public final class SettingsFragment extends PreferenceFragmentCompat {
     }
 
     private final void launchUi(Function1<? super Continuation<? super Unit>, ? extends Object> block) {
-        BuildersKt__Builders_commonKt.launch$default(LifecycleOwnerKt.getLifecycleScope(this), null, null, new AnonymousClass1(block, null), 3, null);
+        BuildersKt.launch(LifecycleOwnerKt.getLifecycleScope(this), kotlin.coroutines.EmptyCoroutineContext.INSTANCE, kotlinx.coroutines.CoroutineStart.DEFAULT, (Function2) new AnonymousClass1(block, null));
     }
 
     /* JADX INFO: Access modifiers changed from: private */

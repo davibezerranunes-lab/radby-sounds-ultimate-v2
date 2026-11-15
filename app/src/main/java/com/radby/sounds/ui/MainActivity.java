@@ -82,14 +82,14 @@ import kotlin.jvm.internal.Reflection;
 import kotlin.text.MatchResult;
 import kotlin.text.Regex;
 import kotlin.text.StringsKt;
-import kotlinx.coroutines.BuildersKt__Builders_commonKt;
+import kotlinx.coroutines.BuildersKt;
 import kotlinx.coroutines.CoroutineScope;
 import kotlinx.coroutines.flow.FlowCollector;
 import kotlinx.coroutines.flow.StateFlow;
 
 /* JADX INFO: compiled from: MainActivity.kt */
 /* JADX INFO: loaded from: classes9.dex */
-@Metadata(d1 = {"\u0000j\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010#\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0006\u0018\u0000 12\u00020\u0001:\u00011B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0012\u0010\u0016\u001a\u00020\u00172\b\u0010\u0018\u001a\u0004\u0018\u00010\u0019H\u0014J\u0010\u0010\u001a\u001a\u00020\u00172\u0006\u0010\u001b\u001a\u00020\u001cH\u0014J\b\u0010\u001d\u001a\u00020\u001eH\u0016J\b\u0010\u001f\u001a\u00020\u0017H\u0002J\b\u0010$\u001a\u00020\u0017H\u0002J\u0010\u0010%\u001a\u00020\u00172\u0006\u0010&\u001a\u00020\u0015H\u0002J\u0010\u0010'\u001a\u00020\u00172\u0006\u0010(\u001a\u00020)H\u0002J\u0017\u0010*\u001a\u00020\u00172\b\u0010+\u001a\u0004\u0018\u00010,H\u0002¢\u0006\u0002\u0010-J\b\u0010.\u001a\u00020\u0017H\u0002J\u0012\u0010/\u001a\u00020\u00172\b\u0010\u001b\u001a\u0004\u0018\u00010\u001cH\u0002J\b\u00100\u001a\u00020\u0017H\u0002R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082.¢\u0006\u0002\n\u0000R\u001b\u0010\b\u001a\u00020\t8BX\u0082\u0084\u0002¢\u0006\f\n\u0004\b\f\u0010\r\u001a\u0004\b\n\u0010\u000bR\u001b\u0010\u000e\u001a\u00020\u000f8BX\u0082\u0084\u0002¢\u0006\f\n\u0004\b\u0012\u0010\r\u001a\u0004\b\u0010\u0010\u0011R\u0014\u0010\u0013\u001a\b\u0012\u0004\u0012\u00020\u00150\u0014X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010 \u001a\b\u0012\u0004\u0012\u00020\"0!X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010#\u001a\u00020\u001eX\u0082\u000e¢\u0006\u0002\n\u0000¨\u00062"}, d2 = {"Lcom/muzk/app/ui/MainActivity;", "Landroidx/appcompat/app/AppCompatActivity;", "<init>", "()V", "binding", "Lcom/muzk/app/databinding/ActivityMainBinding;", "navController", "Landroidx/navigation/NavController;", "player", "Lcom/muzk/app/playback/PlayerViewModel;", "getPlayer", "()Lcom/muzk/app/playback/PlayerViewModel;", "player$delegate", "Lkotlin/Lazy;", "search", "Lcom/muzk/app/ui/search/SearchViewModel;", "getSearch", "()Lcom/muzk/app/ui/search/SearchViewModel;", "search$delegate", "notificationPermission", "Landroidx/activity/result/ActivityResultLauncher;", "", "onCreate", "", "savedInstanceState", "Landroid/os/Bundle;", "onNewIntent", "intent", "Landroid/content/Intent;", "onSupportNavigateUp", "", "setupMiniPlayer", "celebrated", "", "Ljava/util/UUID;", "downloadsPrimed", "watchDownloads", "playDownloaded", DownloadWorker.KEY_TITLE, "renderMiniPlayer", CmcdData.Factory.STREAMING_FORMAT_SS, "Lcom/muzk/app/playback/PlayerUiState;", "tintMiniPlayer", "color", "", "(Ljava/lang/Integer;)V", "openPlayer", "handleIntent", "askNotificationPermission", "Companion", "app_debug"}, k = 1, mv = {2, 0, 0}, xi = ConstraintLayout.LayoutParams.Table.LAYOUT_CONSTRAINT_VERTICAL_CHAINSTYLE)
+@Metadata(d1 = {"\u0000j\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010#\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0006\u0018\u0000 12\u00020\u0001:\u00011B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0012\u0010\u0016\u001a\u00020\u00172\b\u0010\u0018\u001a\u0004\u0018\u00010\u0019H\u0014J\u0010\u0010\u001a\u001a\u00020\u00172\u0006\u0010\u001b\u001a\u00020\u001cH\u0014J\b\u0010\u001d\u001a\u00020\u001eH\u0016J\b\u0010\u001f\u001a\u00020\u0017H\u0002J\b\u0010$\u001a\u00020\u0017H\u0002J\u0010\u0010%\u001a\u00020\u00172\u0006\u0010&\u001a\u00020\u0015H\u0002J\u0010\u0010'\u001a\u00020\u00172\u0006\u0010(\u001a\u00020)H\u0002J\u0017\u0010*\u001a\u00020\u00172\b\u0010+\u001a\u0004\u0018\u00010,H\u0002¢\u0006\u0002\u0010-J\b\u0010.\u001a\u00020\u0017H\u0002J\u0012\u0010/\u001a\u00020\u00172\b\u0010\u001b\u001a\u0004\u0018\u00010\u001cH\u0002J\b\u00100\u001a\u00020\u0017H\u0002R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082.¢\u0006\u0002\n\u0000R\u001b\u0010\b\u001a\u00020\t8BX\u0082\u0084\u0002¢\u0006\f\n\u0004\b\f\u0010\r\u001a\u0004\b\n\u0010\u000bR\u001b\u0010\u000e\u001a\u00020\u000f8BX\u0082\u0084\u0002¢\u0006\f\n\u0004\b\u0012\u0010\r\u001a\u0004\b\u0010\u0010\u0011R\u0014\u0010\u0013\u001a\b\u0012\u0004\u0012\u00020\u00150\u0014X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010 \u001a\b\u0012\u0004\u0012\u00020\"0!X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010#\u001a\u00020\u001eX\u0082\u000e¢\u0006\u0002\n\u0000¨\u00062"}, d2 = {"Lcom/muzk/app/ui/MainActivity;", "Landroidx/appcompat/app/AppCompatActivity;", "<init>", "()V", "binding", "Lcom/muzk/app/databinding/ActivityMainBinding;", "navController", "Landroidx/navigation/NavController;", "player", "Lcom/muzk/app/playback/PlayerViewModel;", "getPlayer", "()Lcom/muzk/app/playback/PlayerViewModel;", "player$delegate", "Lkotlin/Lazy;", "search", "Lcom/muzk/app/ui/search/SearchViewModel;", "getSearch", "()Lcom/muzk/app/ui/search/SearchViewModel;", "search$delegate", "notificationPermission", "Landroidx/activity/result/ActivityResultLauncher;", "", "onCreate", "", "savedInstanceState", "Landroid/os/Bundle;", "onNewIntent", "intent", "Landroid/content/Intent;", "onSupportNavigateUp", "", "setupMiniPlayer", "celebrated", "", "Ljava/util/UUID;", "downloadsPrimed", "watchDownloads", "playDownloaded", DownloadWorker.KEY_TITLE, "renderMiniPlayer", "", "Lcom/muzk/app/playback/PlayerUiState;", "tintMiniPlayer", "color", "", "(Ljava/lang/Integer;)V", "openPlayer", "handleIntent", "askNotificationPermission", "Companion", "app_debug"}, k = 1, mv = {2, 0, 0})
 public final class MainActivity extends AppCompatActivity {
     public static final String EXTRA_OPEN_PLAYER = "open_player";
     private ActivityMainBinding binding;
@@ -113,9 +113,6 @@ public final class MainActivity extends AppCompatActivity {
         final MainActivity $this$viewModels_u24default$iv = this;
         final Function0 extrasProducer$iv = null;
         this.player = new ViewModelLazy(Reflection.getOrCreateKotlinClass(PlayerViewModel.class), new Function0<ViewModelStore>() { // from class: com.radby.sounds.ui.MainActivity$special$$inlined$viewModels$default$2
-            {
-                super(0);
-            }
 
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
@@ -123,9 +120,6 @@ public final class MainActivity extends AppCompatActivity {
                 return $this$viewModels_u24default$iv.getViewModelStore();
             }
         }, new Function0<ViewModelProvider.Factory>() { // from class: com.radby.sounds.ui.MainActivity$special$$inlined$viewModels$default$1
-            {
-                super(0);
-            }
 
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
@@ -134,9 +128,6 @@ public final class MainActivity extends AppCompatActivity {
             }
         }, new Function0<CreationExtras>() { // from class: com.radby.sounds.ui.MainActivity$special$$inlined$viewModels$default$3
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            {
-                super(0);
-            }
 
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
@@ -149,9 +140,6 @@ public final class MainActivity extends AppCompatActivity {
         final MainActivity $this$viewModels_u24default$iv2 = this;
         final Function0 extrasProducer$iv2 = null;
         this.search = new ViewModelLazy(Reflection.getOrCreateKotlinClass(SearchViewModel.class), new Function0<ViewModelStore>() { // from class: com.radby.sounds.ui.MainActivity$special$$inlined$viewModels$default$5
-            {
-                super(0);
-            }
 
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
@@ -159,9 +147,6 @@ public final class MainActivity extends AppCompatActivity {
                 return $this$viewModels_u24default$iv2.getViewModelStore();
             }
         }, new Function0<ViewModelProvider.Factory>() { // from class: com.radby.sounds.ui.MainActivity$special$$inlined$viewModels$default$4
-            {
-                super(0);
-            }
 
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
@@ -170,9 +155,6 @@ public final class MainActivity extends AppCompatActivity {
             }
         }, new Function0<CreationExtras>() { // from class: com.radby.sounds.ui.MainActivity$special$$inlined$viewModels$default$6
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            {
-                super(0);
-            }
 
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
@@ -280,7 +262,7 @@ public final class MainActivity extends AppCompatActivity {
         navController.addOnDestinationChangedListener(new NavController.OnDestinationChangedListener() { // from class: com.radby.sounds.ui.MainActivity$$ExternalSyntheticLambda7
             @Override // androidx.navigation.NavController.OnDestinationChangedListener
             public final void onDestinationChanged(NavController navController5, NavDestination navDestination, Bundle bundle) {
-                MainActivity.onCreate$lambda$3(this.f$0, navController5, navDestination, bundle);
+                MainActivity.onCreate$lambda$3(MainActivity.this, navController5, navDestination, bundle);
             }
         });
         setupMiniPlayer();
@@ -357,22 +339,22 @@ public final class MainActivity extends AppCompatActivity {
         miniPlayer.getRoot().setOnClickListener(new View.OnClickListener() { // from class: com.radby.sounds.ui.MainActivity$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                this.f$0.openPlayer();
+                MainActivity.this.openPlayer();
             }
         });
         miniPlayer.miniPlay.setOnClickListener(new View.OnClickListener() { // from class: com.radby.sounds.ui.MainActivity$$ExternalSyntheticLambda3
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                MainActivity.setupMiniPlayer$lambda$5(this.f$0, view);
+                MainActivity.setupMiniPlayer$lambda$5(MainActivity.this, view);
             }
         });
         miniPlayer.miniNext.setOnClickListener(new View.OnClickListener() { // from class: com.radby.sounds.ui.MainActivity$$ExternalSyntheticLambda4
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                MainActivity.setupMiniPlayer$lambda$6(this.f$0, view);
+                MainActivity.setupMiniPlayer$lambda$6(MainActivity.this, view);
             }
         });
-        BuildersKt__Builders_commonKt.launch$default(LifecycleOwnerKt.getLifecycleScope(this), null, null, new AnonymousClass4(miniPlayer, null), 3, null);
+        BuildersKt.launch(LifecycleOwnerKt.getLifecycleScope(this), kotlin.coroutines.EmptyCoroutineContext.INSTANCE, kotlinx.coroutines.CoroutineStart.DEFAULT, (Function2) new AnonymousClass4(miniPlayer, null));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -387,52 +369,52 @@ public final class MainActivity extends AppCompatActivity {
 
     /* JADX INFO: renamed from: com.radby.sounds.ui.MainActivity$setupMiniPlayer$4, reason: invalid class name */
     /* JADX INFO: compiled from: MainActivity.kt */
-    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = ConstraintLayout.LayoutParams.Table.LAYOUT_CONSTRAINT_VERTICAL_CHAINSTYLE)
+    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0})
     @DebugMetadata(c = "com.radby.sounds.ui.MainActivity$setupMiniPlayer$4", f = "MainActivity.kt", i = {}, l = {105}, m = "invokeSuspend", n = {}, s = {})
-    static final class AnonymousClass4 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
+    final class AnonymousClass4 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
         final /* synthetic */ ViewMiniPlayerBinding $mini;
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         AnonymousClass4(ViewMiniPlayerBinding viewMiniPlayerBinding, Continuation<? super AnonymousClass4> continuation) {
-            super(2, continuation);
+            super(2, (Continuation<Object>) continuation);
             this.$mini = viewMiniPlayerBinding;
         }
 
         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            return MainActivity.this.new AnonymousClass4(this.$mini, continuation);
+            return (Continuation<Unit>) (Object) new AnonymousClass4(this.$mini, (Continuation<Object>) continuation);
         }
 
         @Override // kotlin.jvm.functions.Function2
         public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
-            return ((AnonymousClass4) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
+            return ((AnonymousClass4) (Object) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
         }
 
         /* JADX INFO: renamed from: com.radby.sounds.ui.MainActivity$setupMiniPlayer$4$1, reason: invalid class name */
         /* JADX INFO: compiled from: MainActivity.kt */
-        @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = ConstraintLayout.LayoutParams.Table.LAYOUT_CONSTRAINT_VERTICAL_CHAINSTYLE)
+        @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0})
         @DebugMetadata(c = "com.radby.sounds.ui.MainActivity$setupMiniPlayer$4$1", f = "MainActivity.kt", i = {}, l = {107}, m = "invokeSuspend", n = {}, s = {})
-        static final class AnonymousClass1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
+    final class AnonymousClass1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
             final /* synthetic */ ViewMiniPlayerBinding $mini;
             int label;
             final /* synthetic */ MainActivity this$0;
 
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             AnonymousClass1(MainActivity mainActivity, ViewMiniPlayerBinding viewMiniPlayerBinding, Continuation<? super AnonymousClass1> continuation) {
-                super(2, continuation);
+                super(2, (Continuation<Object>) continuation);
                 this.this$0 = mainActivity;
                 this.$mini = viewMiniPlayerBinding;
             }
 
             @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
             public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-                return new AnonymousClass1(this.this$0, this.$mini, continuation);
+                return (Continuation<Unit>) (Object) new AnonymousClass1(MainActivity.this, this.$mini, (Continuation<Object>) continuation);
             }
 
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
-                return ((AnonymousClass1) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
+                return ((AnonymousClass1) (Object) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
             }
 
             /* JADX WARN: Type inference failed for: r2v0, types: [T, kotlin.Unit] */
@@ -441,11 +423,11 @@ public final class MainActivity extends AppCompatActivity {
                 Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
                 switch (this.label) {
                     case 0:
-                        ResultKt.throwOnFailure($result);
+                        com.radby.compat.Kt.throwOnFailure($result);
                         final Ref.ObjectRef lastCover = new Ref.ObjectRef();
                         lastCover.element = Unit.INSTANCE;
-                        StateFlow<PlayerUiState> state = this.this$0.getPlayer().getState();
-                        final MainActivity mainActivity = this.this$0;
+                        StateFlow<PlayerUiState> state = MainActivity.this.getPlayer().getState();
+                        final MainActivity mainActivity = MainActivity.this;
                         final ViewMiniPlayerBinding viewMiniPlayerBinding = this.$mini;
                         this.label = 1;
                         if (state.collect(new FlowCollector() { // from class: com.radby.sounds.ui.MainActivity.setupMiniPlayer.4.1.1
@@ -479,12 +461,12 @@ public final class MainActivity extends AppCompatActivity {
 
                                         @Override // coil.request.ImageRequest.Listener
                                         public void onError(ImageRequest request, ErrorResult result) {
-                                            this.this$0.tintMiniPlayer(null);
+                                            MainActivity.this.tintMiniPlayer(null);
                                         }
 
                                         @Override // coil.request.ImageRequest.Listener
                                         public void onSuccess(ImageRequest request, SuccessResult result) {
-                                            this.this$0.tintMiniPlayer(CoverColors.INSTANCE.extract(result.getDrawable()));
+                                            MainActivity.this.tintMiniPlayer(CoverColors.INSTANCE.extract(result.getDrawable()));
                                         }
                                     });
                                     imageLoader.enqueue(builderTarget.build());
@@ -515,7 +497,7 @@ public final class MainActivity extends AppCompatActivity {
                         }
                         break;
                     case 1:
-                        ResultKt.throwOnFailure($result);
+                        com.radby.compat.Kt.throwOnFailure($result);
                         break;
                     default:
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
@@ -529,14 +511,14 @@ public final class MainActivity extends AppCompatActivity {
             Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
             switch (this.label) {
                 case 0:
-                    ResultKt.throwOnFailure($result);
+                    com.radby.compat.Kt.throwOnFailure($result);
                     this.label = 1;
                     if (RepeatOnLifecycleKt.repeatOnLifecycle(MainActivity.this, Lifecycle.State.STARTED, new AnonymousClass1(MainActivity.this, this.$mini, null), this) == coroutine_suspended) {
                         return coroutine_suspended;
                     }
                     break;
                 case 1:
-                    ResultKt.throwOnFailure($result);
+                    com.radby.compat.Kt.throwOnFailure($result);
                     break;
                 default:
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
@@ -546,10 +528,10 @@ public final class MainActivity extends AppCompatActivity {
     }
 
     private final void watchDownloads() {
-        WorkManager.INSTANCE.getInstance(this).getWorkInfosByTagLiveData(Downloads.TAG).observe(this, new MainActivity$sam$androidx_lifecycle_Observer$0(new Function1() { // from class: com.radby.sounds.ui.MainActivity$$ExternalSyntheticLambda5
+        WorkManager.getInstance(this).getWorkInfosByTagLiveData(Downloads.TAG).observe(this, new MainActivity$sam$androidx_lifecycle_Observer$0(new Function1() { // from class: com.radby.sounds.ui.MainActivity$$ExternalSyntheticLambda5
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                return MainActivity.watchDownloads$lambda$12(this.f$0, (List) obj);
+                return MainActivity.watchDownloads$lambda$12(MainActivity.this, (List) obj);
             }
         }));
     }
@@ -631,7 +613,7 @@ public final class MainActivity extends AppCompatActivity {
                 snackbarMake.setAnchorView(bottomNav).setAction(R.string.play, new View.OnClickListener() { // from class: com.radby.sounds.ui.MainActivity$$ExternalSyntheticLambda0
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
-                        this.f$0.playDownloaded(title);
+                        MainActivity.this.playDownloaded(title);
                     }
                 }).show();
             }
@@ -641,26 +623,26 @@ public final class MainActivity extends AppCompatActivity {
 
     /* JADX INFO: renamed from: com.radby.sounds.ui.MainActivity$playDownloaded$1, reason: invalid class name */
     /* JADX INFO: compiled from: MainActivity.kt */
-    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = ConstraintLayout.LayoutParams.Table.LAYOUT_CONSTRAINT_VERTICAL_CHAINSTYLE)
+    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0})
     @DebugMetadata(c = "com.radby.sounds.ui.MainActivity$playDownloaded$1", f = "MainActivity.kt", i = {}, l = {157}, m = "invokeSuspend", n = {}, s = {})
-    static final class AnonymousClass1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
+    final class AnonymousClass1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
         final /* synthetic */ String $title;
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         AnonymousClass1(String str, Continuation<? super AnonymousClass1> continuation) {
-            super(2, continuation);
+            super(2, (Continuation<Object>) continuation);
             this.$title = str;
         }
 
         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            return MainActivity.this.new AnonymousClass1(this.$title, continuation);
+            return (Continuation<Unit>) (Object) new AnonymousClass1(this.$title, (Continuation<Object>) continuation);
         }
 
         @Override // kotlin.jvm.functions.Function2
         public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
-            return ((AnonymousClass1) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
+            return ((AnonymousClass1) (Object) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
         }
 
         /* JADX WARN: Code duplicated, block: B:20:0x0059  */
@@ -682,7 +664,7 @@ public final class MainActivity extends AppCompatActivity {
             Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
             switch (this.label) {
                 case 0:
-                    ResultKt.throwOnFailure($result);
+                    com.radby.compat.Kt.throwOnFailure($result);
                     this.label = 1;
                     Object objLoadTracks = LocalMusicRepository.INSTANCE.loadTracks(MainActivity.this, this);
                     if (objLoadTracks == coroutine_suspended) {
@@ -691,7 +673,7 @@ public final class MainActivity extends AppCompatActivity {
                     $result = objLoadTracks;
                     break;
                 case 1:
-                    ResultKt.throwOnFailure($result);
+                    com.radby.compat.Kt.throwOnFailure($result);
                     break;
                 default:
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
@@ -770,7 +752,7 @@ public final class MainActivity extends AppCompatActivity {
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void playDownloaded(String title) {
-        BuildersKt__Builders_commonKt.launch$default(LifecycleOwnerKt.getLifecycleScope(this), null, null, new AnonymousClass1(title, null), 3, null);
+        BuildersKt.launch(LifecycleOwnerKt.getLifecycleScope(this), kotlin.coroutines.EmptyCoroutineContext.INSTANCE, kotlinx.coroutines.CoroutineStart.DEFAULT, (Function2) new AnonymousClass1(title, null));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -857,7 +839,7 @@ public final class MainActivity extends AppCompatActivity {
             activityMainBinding2.root.post(new Runnable() { // from class: com.radby.sounds.ui.MainActivity$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    MainActivity.handleIntent$lambda$13(this.f$0);
+                    MainActivity.handleIntent$lambda$13(MainActivity.this);
                 }
             });
         }

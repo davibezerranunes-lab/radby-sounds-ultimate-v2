@@ -2,7 +2,6 @@ package com.radby.sounds.data;
 
 import android.content.Context;
 import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.media3.extractor.text.ttml.TtmlNode;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -29,7 +28,7 @@ import org.json.JSONObject;
 
 /* JADX INFO: compiled from: PlaylistStore.kt */
 /* JADX INFO: loaded from: classes6.dex */
-@Metadata(d1 = {"\u0000T\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\t\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0006\u0018\u0000 %2\u00020\u0001:\u0001%B\u0011\b\u0002\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u000e\u0010\u0010\u001a\u00020\u00112\u0006\u0010\u0012\u001a\u00020\u0011J\u000e\u0010\u0013\u001a\u00020\u00142\u0006\u0010\u0015\u001a\u00020\u0016J\u000e\u0010\u0017\u001a\u00020\u00142\u0006\u0010\u0015\u001a\u00020\u0016J\u0016\u0010\u0018\u001a\u00020\u00192\u0006\u0010\u001a\u001a\u00020\u00112\u0006\u0010\u0012\u001a\u00020\u0011J\u000e\u0010\u001b\u001a\u00020\u00192\u0006\u0010\u001a\u001a\u00020\u0011J\u0016\u0010\u001c\u001a\u00020\u00192\u0006\u0010\u001a\u001a\u00020\u00112\u0006\u0010\u0015\u001a\u00020\u0016J\u0016\u0010\u001d\u001a\u00020\u00192\u0006\u0010\u001a\u001a\u00020\u00112\u0006\u0010\u0015\u001a\u00020\u0016J(\u0010\u001e\u001a\u00020\u00192\u001e\u0010\u001f\u001a\u001a\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u000b0\n\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u000b0\n0 H\u0002J\u001c\u0010!\u001a\b\u0012\u0004\u0012\u00020\u000b0\n2\f\u0010\"\u001a\b\u0012\u0004\u0012\u00020\u000b0\nH\u0002J\u000e\u0010#\u001a\b\u0012\u0004\u0012\u00020\u000b0\nH\u0002J\u0016\u0010$\u001a\u00020\u00192\f\u0010\"\u001a\b\u0012\u0004\u0012\u00020\u000b0\nH\u0002R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\b\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u000b0\n0\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u001d\u0010\f\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u000b0\n0\r¢\u0006\b\n\u0000\u001a\u0004\b\u000e\u0010\u000f¨\u0006&"}, d2 = {"Lcom/muzk/app/data/PlaylistStore;", "", "context", "Landroid/content/Context;", "<init>", "(Landroid/content/Context;)V", "file", "Ljava/io/File;", "_playlists", "Lkotlinx/coroutines/flow/MutableStateFlow;", "", "Lcom/muzk/app/data/Playlist;", "playlists", "Lkotlinx/coroutines/flow/StateFlow;", "getPlaylists", "()Lkotlinx/coroutines/flow/StateFlow;", "create", "", "name", "isLiked", "", "trackId", "", "toggleLike", "rename", "", TtmlNode.ATTR_ID, "delete", "addTrack", "removeTrack", "mutate", "block", "Lkotlin/Function1;", "withLiked", "list", "read", "write", "Companion", "app_debug"}, k = 1, mv = {2, 0, 0}, xi = ConstraintLayout.LayoutParams.Table.LAYOUT_CONSTRAINT_VERTICAL_CHAINSTYLE)
+@Metadata(d1 = {"\u0000T\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\t\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0006\u0018\u0000 %2\u00020\u0001:\u0001%B\u0011\b\u0002\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u000e\u0010\u0010\u001a\u00020\u00112\u0006\u0010\u0012\u001a\u00020\u0011J\u000e\u0010\u0013\u001a\u00020\u00142\u0006\u0010\u0015\u001a\u00020\u0016J\u000e\u0010\u0017\u001a\u00020\u00142\u0006\u0010\u0015\u001a\u00020\u0016J\u0016\u0010\u0018\u001a\u00020\u00192\u0006\u0010\u001a\u001a\u00020\u00112\u0006\u0010\u0012\u001a\u00020\u0011J\u000e\u0010\u001b\u001a\u00020\u00192\u0006\u0010\u001a\u001a\u00020\u0011J\u0016\u0010\u001c\u001a\u00020\u00192\u0006\u0010\u001a\u001a\u00020\u00112\u0006\u0010\u0015\u001a\u00020\u0016J\u0016\u0010\u001d\u001a\u00020\u00192\u0006\u0010\u001a\u001a\u00020\u00112\u0006\u0010\u0015\u001a\u00020\u0016J(\u0010\u001e\u001a\u00020\u00192\u001e\u0010\u001f\u001a\u001a\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u000b0\n\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u000b0\n0 H\u0002J\u001c\u0010!\u001a\b\u0012\u0004\u0012\u00020\u000b0\n2\f\u0010\"\u001a\b\u0012\u0004\u0012\u00020\u000b0\nH\u0002J\u000e\u0010#\u001a\b\u0012\u0004\u0012\u00020\u000b0\nH\u0002J\u0016\u0010$\u001a\u00020\u00192\f\u0010\"\u001a\b\u0012\u0004\u0012\u00020\u000b0\nH\u0002R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\b\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u000b0\n0\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u001d\u0010\f\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u000b0\n0\r¢\u0006\b\n\u0000\u001a\u0004\b\u000e\u0010\u000f¨\u0006&"}, d2 = {"Lcom/muzk/app/data/PlaylistStore;", "", "context", "Landroid/content/Context;", "<init>", "(Landroid/content/Context;)V", "file", "Ljava/io/File;", "_playlists", "Lkotlinx/coroutines/flow/MutableStateFlow;", "", "Lcom/muzk/app/data/Playlist;", "playlists", "Lkotlinx/coroutines/flow/StateFlow;", "getPlaylists", "()Lkotlinx/coroutines/flow/StateFlow;", "create", "", "name", "isLiked", "", "trackId", "", "toggleLike", "rename", "", "id", "delete", "addTrack", "removeTrack", "mutate", "block", "Lkotlin/Function1;", "withLiked", "list", "read", "write", "Companion", "app_debug"}, k = 1, mv = {2, 0, 0})
 public final class PlaylistStore {
 
     /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
@@ -258,13 +257,12 @@ public final class PlaylistStore {
         Object objM663constructorimpl;
         String str = "getString(...)";
         try {
-            Result.Companion companion = Result.INSTANCE;
             PlaylistStore $this$read_u24lambda_u2416 = this;
             int i = 0;
             if (!$this$read_u24lambda_u2416.file.exists()) {
                 return CollectionsKt.emptyList();
             }
-            JSONArray arr = new JSONArray(FilesKt.readText$default($this$read_u24lambda_u2416.file, null, 1, null));
+            JSONArray arr = new JSONArray(FilesKt.readText($this$read_u24lambda_u2416.file, kotlin.text.Charsets.UTF_8));
             Iterable $this$map$iv = RangesKt.until(0, arr.length());
             Collection destination$iv$iv = new ArrayList(CollectionsKt.collectionSizeOrDefault($this$map$iv, 10));
             Iterator<Integer> it = $this$map$iv.iterator();
@@ -272,7 +270,7 @@ public final class PlaylistStore {
                 int item$iv$iv = ((IntIterator) it).nextInt();
                 JSONObject o = arr.getJSONObject(item$iv$iv);
                 JSONArray ids = o.getJSONArray("tracks");
-                String string = o.getString(TtmlNode.ATTR_ID);
+                String string = o.getString("id");
                 Intrinsics.checkNotNullExpressionValue(string, str);
                 PlaylistStore $this$read_u24lambda_u2417 = $this$read_u24lambda_u2416;
                 String string2 = o.getString("name");
@@ -295,15 +293,14 @@ public final class PlaylistStore {
                 i = i2;
                 arr = arr2;
             }
-            objM663constructorimpl = Result.m663constructorimpl((List) destination$iv$iv);
+            objM663constructorimpl = com.radby.compat.Kt.box((List) destination$iv$iv);
             List listEmptyList = CollectionsKt.emptyList();
-            if (Result.m669isFailureimpl(objM663constructorimpl)) {
+            if (com.radby.compat.Kt.isFailure(objM663constructorimpl)) {
                 objM663constructorimpl = listEmptyList;
             }
             return (List) objM663constructorimpl;
         } catch (Throwable th) {
-            Result.Companion companion2 = Result.INSTANCE;
-            objM663constructorimpl = Result.m663constructorimpl(ResultKt.createFailure(th));
+            objM663constructorimpl = com.radby.compat.Kt.box(com.radby.compat.Kt.failure(th));
         }
     }
 
@@ -312,16 +309,16 @@ public final class PlaylistStore {
         List<Playlist> $this$forEach$iv = list;
         for (Object element$iv : $this$forEach$iv) {
             Playlist p = (Playlist) element$iv;
-            arr.put(new JSONObject().put(TtmlNode.ATTR_ID, p.getId()).put("name", p.getName()).put("tracks", new JSONArray((Collection) p.getTrackIds())));
+            arr.put(new JSONObject().put("id", p.getId()).put("name", p.getName()).put("tracks", new JSONArray((Collection) p.getTrackIds())));
         }
         File file = this.file;
         String string = arr.toString();
         Intrinsics.checkNotNullExpressionValue(string, "toString(...)");
-        FilesKt.writeText$default(file, string, null, 2, null);
+        FilesKt.writeText(file, string, kotlin.text.Charsets.UTF_8);
     }
 
     /* JADX INFO: compiled from: PlaylistStore.kt */
-    @Metadata(d1 = {"\u0000\"\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u000e\u0010\t\u001a\u00020\b2\u0006\u0010\n\u001a\u00020\u000bR\u000e\u0010\u0004\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u0010\u0010\u0007\u001a\u0004\u0018\u00010\bX\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006\f"}, d2 = {"Lcom/muzk/app/data/PlaylistStore$Companion;", "", "<init>", "()V", "LIKED_ID", "", "LIKED_NAME", "instance", "Lcom/muzk/app/data/PlaylistStore;", "get", "context", "Landroid/content/Context;", "app_debug"}, k = 1, mv = {2, 0, 0}, xi = ConstraintLayout.LayoutParams.Table.LAYOUT_CONSTRAINT_VERTICAL_CHAINSTYLE)
+    @Metadata(d1 = {"\u0000\"\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u000e\u0010\t\u001a\u00020\b2\u0006\u0010\n\u001a\u00020\u000bR\u000e\u0010\u0004\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u0010\u0010\u0007\u001a\u0004\u0018\u00010\bX\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006\f"}, d2 = {"Lcom/muzk/app/data/PlaylistStore$Companion;", "", "<init>", "()V", "LIKED_ID", "", "LIKED_NAME", "instance", "Lcom/muzk/app/data/PlaylistStore;", "get", "context", "Landroid/content/Context;", "app_debug"}, k = 1, mv = {2, 0, 0})
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

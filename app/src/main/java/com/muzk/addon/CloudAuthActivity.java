@@ -57,7 +57,7 @@ public class CloudAuthActivity extends Activity {
         setText("Finalizando login...");
         new Thread(new Runnable() { // from class: com.muzk.addon.CloudAuthActivity.1
             @Override // java.lang.Runnable
-            public void run() throws Throwable {
+            public void run() {
                 String str;
                 try {
                     JSONObject jSONObject = OAuth.token(queryParameter, string2, Config.CLIENT_ID, Config.REDIRECT_URI);
@@ -76,7 +76,7 @@ public class CloudAuthActivity extends Activity {
                     sb.append(str);
                     sb.append(".");
                     cloudAuthActivity.finishWith(sb.toString());
-                } catch (Exception e) {
+                } catch (Throwable e) {
                     CloudAuthActivity.this.finishWith("Falha no login: " + e.getMessage());
                 }
             }

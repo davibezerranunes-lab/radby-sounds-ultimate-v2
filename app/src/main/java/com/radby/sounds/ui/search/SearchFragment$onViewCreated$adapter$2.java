@@ -10,7 +10,7 @@ import kotlin.jvm.internal.Intrinsics;
 
 /* JADX INFO: compiled from: SearchFragment.kt */
 /* JADX INFO: loaded from: classes7.dex */
-@Metadata(k = 3, mv = {2, 0, 0}, xi = ConstraintLayout.LayoutParams.Table.LAYOUT_CONSTRAINT_VERTICAL_CHAINSTYLE)
+@Metadata(k = 3, mv = {2, 0, 0})
 /* synthetic */ class SearchFragment$onViewCreated$adapter$2 extends FunctionReferenceImpl implements Function1<RemoteTrack, Unit> {
     SearchFragment$onViewCreated$adapter$2(Object obj) {
         super(1, obj, SearchViewModel.class, "download", "download(Lcom/muzk/app/data/RemoteTrack;)V", 0);

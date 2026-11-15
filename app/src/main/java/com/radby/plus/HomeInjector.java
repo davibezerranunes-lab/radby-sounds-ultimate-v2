@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.view.View;
-import androidx.constraintlayout.core.motion.utils.TypedValues;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import java.util.List;
 
@@ -68,7 +67,7 @@ public final class HomeInjector {
             if (!"com.radby.sounds.ui.MainActivity".equals(activity.getClass().getName())) {
                 return;
             }
-            int[] iArr = {0, ItemTouchHelper.Callback.DEFAULT_SWIPE_ANIMATION_DURATION, TypedValues.TransitionType.TYPE_DURATION, 1400, 2400, 4000};
+            int[] iArr = {0, ItemTouchHelper.Callback.DEFAULT_SWIPE_ANIMATION_DURATION, 110, 1400, 2400, 4000};
             for (int i = 0; i < 6; i++) {
                 this.handler.postDelayed(new Runnable() { // from class: com.radby.plus.HomeInjector.Callbacks.2
                     @Override // java.lang.Runnable

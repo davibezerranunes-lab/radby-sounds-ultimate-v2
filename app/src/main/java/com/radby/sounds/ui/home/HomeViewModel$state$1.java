@@ -1,7 +1,6 @@
 package com.radby.sounds.ui.home;
 
 import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.media3.extractor.text.ttml.TtmlNode;
 import com.radby.sounds.data.LocalTrack;
 import com.radby.sounds.data.Playlist;
 import java.util.ArrayList;
@@ -28,7 +27,7 @@ import kotlin.ranges.RangesKt;
 
 /* JADX INFO: compiled from: HomeViewModel.kt */
 /* JADX INFO: loaded from: classes12.dex */
-@Metadata(d1 = {"\u0000.\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010$\n\u0002\u0010\t\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u000b\u0010\u0000\u001a\u00020\u00012\f\u0010\u0002\u001a\b\u0012\u0004\u0012\u00020\u00040\u00032\f\u0010\u0005\u001a\b\u0012\u0004\u0012\u00020\u00060\u00032\u0012\u0010\u0007\u001a\u000e\u0012\u0004\u0012\u00020\t\u0012\u0004\u0012\u00020\n0\b2\u0012\u0010\u000b\u001a\u000e\u0012\u0004\u0012\u00020\r\u0012\u0004\u0012\u00020\r0\fH\n"}, d2 = {"<anonymous>", "Lcom/muzk/app/ui/home/HomeUiState;", TtmlNode.COMBINE_ALL, "", "Lcom/muzk/app/data/LocalTrack;", "playlists", "Lcom/muzk/app/data/Playlist;", "counts", "", "", "", "<destruct>", "Lkotlin/Pair;", ""}, k = 3, mv = {2, 0, 0}, xi = ConstraintLayout.LayoutParams.Table.LAYOUT_CONSTRAINT_VERTICAL_CHAINSTYLE)
+@Metadata(d1 = {"\u0000.\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010$\n\u0002\u0010\t\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u000b\u0010\u0000\u001a\u00020\u00012\f\u0010\u0002\u001a\b\u0012\u0004\u0012\u00020\u00040\u00032\f\u0010\u0005\u001a\b\u0012\u0004\u0012\u00020\u00060\u00032\u0012\u0010\u0007\u001a\u000e\u0012\u0004\u0012\u00020\t\u0012\u0004\u0012\u00020\n0\b2\u0012\u0010\u000b\u001a\u000e\u0012\u0004\u0012\u00020\r\u0012\u0004\u0012\u00020\r0\fH\n"}, d2 = {"<anonymous>", "Lcom/muzk/app/ui/home/HomeUiState;", "all", "", "Lcom/muzk/app/data/LocalTrack;", "playlists", "Lcom/muzk/app/data/Playlist;", "counts", "", "", "", "<destruct>", "Lkotlin/Pair;", ""}, k = 3, mv = {2, 0, 0})
 @DebugMetadata(c = "com.radby.sounds.ui.home.HomeViewModel$state$1", f = "HomeViewModel.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, s = {})
 final class HomeViewModel$state$1 extends SuspendLambda implements Function5<List<? extends LocalTrack>, List<? extends Playlist>, Map<Long, ? extends Integer>, Pair<? extends Boolean, ? extends Boolean>, Continuation<? super HomeUiState>, Object> {
     /* synthetic */ Object L$0;
@@ -37,9 +36,7 @@ final class HomeViewModel$state$1 extends SuspendLambda implements Function5<Lis
     /* synthetic */ Object L$3;
     int label;
 
-    HomeViewModel$state$1(Continuation<? super HomeViewModel$state$1> continuation) {
-        super(5, continuation);
-    }
+    HomeViewModel$state$1(Continuation<? super HomeViewModel$state$1> continuation) { super(2, (Continuation<Object>) continuation); }
 
     @Override // kotlin.jvm.functions.Function5
     public /* bridge */ /* synthetic */ Object invoke(List<? extends LocalTrack> list, List<? extends Playlist> list2, Map<Long, ? extends Integer> map, Pair<? extends Boolean, ? extends Boolean> pair, Continuation<? super HomeUiState> continuation) {
@@ -61,7 +58,7 @@ final class HomeViewModel$state$1 extends SuspendLambda implements Function5<Lis
         IntrinsicsKt.getCOROUTINE_SUSPENDED();
         switch (this.label) {
             case 0:
-                ResultKt.throwOnFailure(obj);
+                com.radby.compat.Kt.throwOnFailure(obj);
                 List all = (List) this.L$0;
                 List playlists = (List) this.L$1;
                 final Map counts = (Map) this.L$2;
@@ -115,7 +112,7 @@ final class HomeViewModel$state$1 extends SuspendLambda implements Function5<Lis
                     Iterable $this$sortedByDescending$iv = destination$iv$iv3.entrySet();
                     Iterable $this$forEach$iv2 = CollectionsKt.take(CollectionsKt.sortedWith($this$sortedByDescending$iv, new Comparator() { // from class: com.radby.sounds.ui.home.HomeViewModel$state$1$invokeSuspend$$inlined$sortedByDescending$1
                         @Override // java.util.Comparator
-                        public final int compare(T t, T t2) {
+                        public final int compare(Object t, Object t2) {
                             Map.Entry it2 = (Map.Entry) t2;
                             Map.Entry it3 = (Map.Entry) t;
                             return ComparisonsKt.compareValues(Integer.valueOf(((List) it2.getValue()).size()), Integer.valueOf(((List) it3.getValue()).size()));
@@ -137,7 +134,7 @@ final class HomeViewModel$state$1 extends SuspendLambda implements Function5<Lis
                         Iterable played = CollectionsKt.take(CollectionsKt.sortedWith($this$sortedByDescending$iv2, new Comparator() { // from class: com.radby.sounds.ui.home.HomeViewModel$state$1$invokeSuspend$$inlined$sortedByDescending$2
                             /* JADX WARN: Multi-variable type inference failed */
                             @Override // java.util.Comparator
-                            public final int compare(T t, T t2) {
+                            public final int compare(Object t, Object t2) {
                                 LocalTrack it3 = (LocalTrack) t2;
                                 Integer num = (Integer) counts.get(Long.valueOf(it3.getId()));
                                 LocalTrack it4 = (LocalTrack) t;

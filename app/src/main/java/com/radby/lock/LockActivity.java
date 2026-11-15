@@ -254,6 +254,7 @@ public final class LockActivity extends Activity {
     public boolean claim(String str) {
         HttpURLConnection httpURLConnection;
         HttpURLConnection httpURLConnection2 = null;
+        Throwable claimError = null;
         try {
             String str2 = "https://firestore.googleapis.com/v1/projects/radby-sounds/databases/(default)/documents/codes/" + str;
             String strEncode = URLEncoder.encode(API_KEY, CharsetNames.UTF_8);
@@ -332,19 +333,19 @@ public final class LockActivity extends Activity {
                 } catch (Throwable th9) {
                     httpURLConnection2 = httpURLConnection3;
                     httpURLConnection = httpURLConnection4;
-                    th = th9;
+                    claimError = th9;
                 }
             } catch (Throwable th10) {
-                th = th10;
+                claimError = th10;
                 httpURLConnection = null;
                 httpURLConnection2 = httpURLConnection3;
             }
         } catch (Throwable th11) {
-            th = th11;
+            claimError = th11;
             httpURLConnection = null;
         }
         try {
-            logError("claim-failed", th);
+            logError("claim-failed", claimError);
             return false;
         } finally {
             if (httpURLConnection2 != null) {

@@ -17,7 +17,7 @@ import kotlinx.coroutines.CoroutineScope;
 
 /* JADX INFO: compiled from: SettingsFragment.kt */
 /* JADX INFO: loaded from: classes8.dex */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u000e\n\u0002\u0018\u0002\u0010\u0000\u001a\u0004\u0018\u00010\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = ConstraintLayout.LayoutParams.Table.LAYOUT_CONSTRAINT_VERTICAL_CHAINSTYLE)
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u000e\n\u0002\u0018\u0002\u0010\u0000\u001a\u0004\u0018\u00010\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0})
 @DebugMetadata(c = "com.radby.sounds.ui.settings.SettingsFragment$refreshYtDlpVersion$1$version$1", f = "SettingsFragment.kt", i = {}, l = {77}, m = "invokeSuspend", n = {}, s = {})
 final class SettingsFragment$refreshYtDlpVersion$1$version$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super String>, Object> {
     private /* synthetic */ Object L$0;
@@ -26,13 +26,13 @@ final class SettingsFragment$refreshYtDlpVersion$1$version$1 extends SuspendLamb
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     SettingsFragment$refreshYtDlpVersion$1$version$1(SettingsFragment settingsFragment, Continuation<? super SettingsFragment$refreshYtDlpVersion$1$version$1> continuation) {
-        super(2, continuation);
-        this.this$0 = settingsFragment;
+        super(2, (Continuation<Object>) continuation);
+        SettingsFragment$refreshYtDlpVersion$1$version$1.this = settingsFragment;
     }
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-        SettingsFragment$refreshYtDlpVersion$1$version$1 settingsFragment$refreshYtDlpVersion$1$version$1 = new SettingsFragment$refreshYtDlpVersion$1$version$1(this.this$0, continuation);
+        SettingsFragment$refreshYtDlpVersion$1$version$1 settingsFragment$refreshYtDlpVersion$1$version$1 = new SettingsFragment$refreshYtDlpVersion$1$version$1(SettingsFragment$refreshYtDlpVersion$1$version$1.this, continuation);
         settingsFragment$refreshYtDlpVersion$1$version$1.L$0 = obj;
         return settingsFragment$refreshYtDlpVersion$1$version$1;
     }
@@ -50,9 +50,8 @@ final class SettingsFragment$refreshYtDlpVersion$1$version$1 extends SuspendLamb
         try {
             switch (this.label) {
                 case 0:
-                    ResultKt.throwOnFailure($result);
-                    SettingsFragment settingsFragment2 = this.this$0;
-                    Result.Companion companion = Result.INSTANCE;
+                    com.radby.compat.Kt.throwOnFailure($result);
+                    SettingsFragment settingsFragment2 = SettingsFragment$refreshYtDlpVersion$1$version$1.this;
                     CompletableDeferred<Unit> ytdlReady = MuzkApp.INSTANCE.getYtdlReady();
                     this.L$0 = settingsFragment2;
                     this.label = 1;
@@ -63,17 +62,16 @@ final class SettingsFragment$refreshYtDlpVersion$1$version$1 extends SuspendLamb
                     break;
                 case 1:
                     settingsFragment = (SettingsFragment) this.L$0;
-                    ResultKt.throwOnFailure($result);
+                    com.radby.compat.Kt.throwOnFailure($result);
                     break;
                 default:
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
             }
-            objM663constructorimpl = Result.m663constructorimpl(YoutubeDL.getInstance().versionName(settingsFragment.requireContext().getApplicationContext()));
+            objM663constructorimpl = com.radby.compat.Kt.box(YoutubeDL.getInstance().versionName(settingsFragment.requireContext().getApplicationContext()));
         } catch (Throwable th) {
-            Result.Companion companion2 = Result.INSTANCE;
-            objM663constructorimpl = Result.m663constructorimpl(ResultKt.createFailure(th));
+            objM663constructorimpl = com.radby.compat.Kt.box(com.radby.compat.Kt.failure(th));
         }
-        if (Result.m669isFailureimpl(objM663constructorimpl)) {
+        if (com.radby.compat.Kt.isFailure(objM663constructorimpl)) {
             return null;
         }
         return objM663constructorimpl;

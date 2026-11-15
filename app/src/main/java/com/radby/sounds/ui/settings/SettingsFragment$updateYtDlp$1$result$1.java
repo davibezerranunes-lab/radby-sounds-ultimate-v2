@@ -19,7 +19,7 @@ import kotlinx.coroutines.CoroutineScope;
 
 /* JADX INFO: compiled from: SettingsFragment.kt */
 /* JADX INFO: loaded from: classes8.dex */
-@Metadata(d1 = {"\u0000\u000e\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u00020\u0001*\u00020\u0003H\n"}, d2 = {"<anonymous>", "Lkotlin/Result;", "Lcom/yausername/youtubedl_android/YoutubeDL$UpdateStatus;", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = ConstraintLayout.LayoutParams.Table.LAYOUT_CONSTRAINT_VERTICAL_CHAINSTYLE)
+@Metadata(d1 = {"\u0000\u000e\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u00020\u0001*\u00020\u0003H\n"}, d2 = {"<anonymous>", "Lkotlin/Result;", "Lcom/yausername/youtubedl_android/YoutubeDL$UpdateStatus;", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0})
 @DebugMetadata(c = "com.radby.sounds.ui.settings.SettingsFragment$updateYtDlp$1$result$1", f = "SettingsFragment.kt", i = {}, l = {91}, m = "invokeSuspend", n = {}, s = {})
 final class SettingsFragment$updateYtDlp$1$result$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Result<? extends YoutubeDL.UpdateStatus>>, Object> {
     final /* synthetic */ Context $app;
@@ -28,7 +28,7 @@ final class SettingsFragment$updateYtDlp$1$result$1 extends SuspendLambda implem
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     SettingsFragment$updateYtDlp$1$result$1(Context context, Continuation<? super SettingsFragment$updateYtDlp$1$result$1> continuation) {
-        super(2, continuation);
+        super(2, (Continuation<Object>) continuation);
         this.$app = context;
     }
 
@@ -52,9 +52,8 @@ final class SettingsFragment$updateYtDlp$1$result$1 extends SuspendLambda implem
         try {
             switch (this.label) {
                 case 0:
-                    ResultKt.throwOnFailure($result);
+                    com.radby.compat.Kt.throwOnFailure($result);
                     Context context2 = this.$app;
-                    Result.Companion companion = Result.INSTANCE;
                     CompletableDeferred<Unit> ytdlReady = MuzkApp.INSTANCE.getYtdlReady();
                     this.L$0 = context2;
                     this.label = 1;
@@ -65,18 +64,17 @@ final class SettingsFragment$updateYtDlp$1$result$1 extends SuspendLambda implem
                     break;
                 case 1:
                     context = (Context) this.L$0;
-                    ResultKt.throwOnFailure($result);
+                    com.radby.compat.Kt.throwOnFailure($result);
                     break;
                 default:
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
             }
             YoutubeDL youtubeDL = YoutubeDL.getInstance();
             Intrinsics.checkNotNull(context);
-            objM663constructorimpl = Result.m663constructorimpl(YoutubeDL.updateYoutubeDL$default(youtubeDL, context, null, 2, null));
+            objM663constructorimpl = com.radby.compat.Kt.box(youtubeDL.updateYoutubeDL(context, null));
         } catch (Throwable th) {
-            Result.Companion companion2 = Result.INSTANCE;
-            objM663constructorimpl = Result.m663constructorimpl(ResultKt.createFailure(th));
+            objM663constructorimpl = com.radby.compat.Kt.box(com.radby.compat.Kt.failure(th));
         }
-        return Result.m662boximpl(objM663constructorimpl);
+        return com.radby.compat.Kt.box(objM663constructorimpl);
     }
 }

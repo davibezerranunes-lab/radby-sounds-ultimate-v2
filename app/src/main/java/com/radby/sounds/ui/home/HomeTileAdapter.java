@@ -30,9 +30,9 @@ import kotlin.jvm.internal.Intrinsics;
 
 /* JADX INFO: compiled from: HomeAdapters.kt */
 /* JADX INFO: loaded from: classes12.dex */
-@Metadata(d1 = {"\u00002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\u0018\u0000 \u00142\u000e\u0012\u0004\u0012\u00020\u0002\u0012\u0004\u0012\u00020\u00030\u0001:\u0002\u0013\u0014B\u001b\u0012\u0012\u0010\u0004\u001a\u000e\u0012\u0004\u0012\u00020\u0002\u0012\u0004\u0012\u00020\u00060\u0005¢\u0006\u0004\b\u0007\u0010\bJ\u0018\u0010\t\u001a\u00020\u00032\u0006\u0010\n\u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\rH\u0016J\u0018\u0010\u0010\u001a\u00020\u00062\u0006\u0010\u0011\u001a\u00020\u00032\u0006\u0010\u0012\u001a\u00020\rH\u0016R\u001a\u0010\u0004\u001a\u000e\u0012\u0004\u0012\u00020\u0002\u0012\u0004\u0012\u00020\u00060\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u000e\u001a\u0004\u0018\u00010\u000fX\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006\u0015"}, d2 = {"Lcom/muzk/app/ui/home/HomeTileAdapter;", "Landroidx/recyclerview/widget/ListAdapter;", "Lcom/muzk/app/ui/home/HomeTile;", "Lcom/muzk/app/ui/home/HomeTileAdapter$VH;", "onClick", "Lkotlin/Function1;", "", "<init>", "(Lkotlin/jvm/functions/Function1;)V", "onCreateViewHolder", "parent", "Landroid/view/ViewGroup;", "viewType", "", "defaultIconTint", "Landroid/content/res/ColorStateList;", "onBindViewHolder", "holder", "position", "VH", "Companion", "app_debug"}, k = 1, mv = {2, 0, 0}, xi = ConstraintLayout.LayoutParams.Table.LAYOUT_CONSTRAINT_VERTICAL_CHAINSTYLE)
-public final class HomeTileAdapter extends ListAdapter<HomeTile, VH> {
-    private static final HomeTileAdapter$Companion$DIFF$1 DIFF = new DiffUtil.ItemCallback<HomeTile>() { // from class: com.radby.sounds.ui.home.HomeTileAdapter$Companion$DIFF$1
+@Metadata(d1 = {"\u00002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\u0018\u0000 \u00142\u000e\u0012\u0004\u0012\u00020\u0002\u0012\u0004\u0012\u00020\u00030\u0001:\u0002\u0013\u0014B\u001b\u0012\u0012\u0010\u0004\u001a\u000e\u0012\u0004\u0012\u00020\u0002\u0012\u0004\u0012\u00020\u00060\u0005¢\u0006\u0004\b\u0007\u0010\bJ\u0018\u0010\t\u001a\u00020\u00032\u0006\u0010\n\u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\rH\u0016J\u0018\u0010\u0010\u001a\u00020\u00062\u0006\u0010\u0011\u001a\u00020\u00032\u0006\u0010\u0012\u001a\u00020\rH\u0016R\u001a\u0010\u0004\u001a\u000e\u0012\u0004\u0012\u00020\u0002\u0012\u0004\u0012\u00020\u00060\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u000e\u001a\u0004\u0018\u00010\u000fX\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006\u0015"}, d2 = {"Lcom/muzk/app/ui/home/HomeTileAdapter;", "Landroidx/recyclerview/widget/ListAdapter;", "Lcom/muzk/app/ui/home/HomeTile;", "Lcom/muzk/app/ui/home/HomeTileAdapter$HomeTileVH;", "onClick", "Lkotlin/Function1;", "", "<init>", "(Lkotlin/jvm/functions/Function1;)V", "onCreateViewHolder", "parent", "Landroid/view/ViewGroup;", "viewType", "", "defaultIconTint", "Landroid/content/res/ColorStateList;", "onBindViewHolder", "holder", "position", "HomeTileVH", "Companion", "app_debug"}, k = 1, mv = {2, 0, 0})
+public final class HomeTileAdapter extends ListAdapter<HomeTile, HomeTileVH> {
+    private static final DiffUtil.ItemCallback<HomeTile> DIFF = new DiffUtil.ItemCallback<HomeTile>() { // from class: com.radby.sounds.ui.home.HomeTileAdapter$Companion$DIFF$1
         @Override // androidx.recyclerview.widget.DiffUtil.ItemCallback
         public boolean areItemsTheSame(HomeTile a, HomeTile b) {
             Intrinsics.checkNotNullParameter(a, "a");
@@ -51,7 +51,7 @@ public final class HomeTileAdapter extends ListAdapter<HomeTile, VH> {
     private final Function1<HomeTile, Unit> onClick;
 
     /* JADX INFO: compiled from: HomeAdapters.kt */
-    @Metadata(k = 3, mv = {2, 0, 0}, xi = ConstraintLayout.LayoutParams.Table.LAYOUT_CONSTRAINT_VERTICAL_CHAINSTYLE)
+    @Metadata(k = 3, mv = {2, 0, 0})
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
 
@@ -78,19 +78,19 @@ public final class HomeTileAdapter extends ListAdapter<HomeTile, VH> {
     public HomeTileAdapter(Function1<? super HomeTile, Unit> onClick) {
         super(DIFF);
         Intrinsics.checkNotNullParameter(onClick, "onClick");
-        this.onClick = onClick;
+        this.onClick = (Function1) onClick;
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
-    public VH onCreateViewHolder(ViewGroup parent, int viewType) {
+    public HomeTileVH onCreateViewHolder(ViewGroup parent, int viewType) {
         Intrinsics.checkNotNullParameter(parent, "parent");
         ItemHomeTileBinding itemHomeTileBindingInflate = ItemHomeTileBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false);
         Intrinsics.checkNotNullExpressionValue(itemHomeTileBindingInflate, "inflate(...)");
-        return new VH(itemHomeTileBindingInflate);
+        return new HomeTileVH(itemHomeTileBindingInflate);
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
-    public void onBindViewHolder(VH holder, int position) {
+    public void onBindViewHolder(HomeTileVH holder, int position) {
         int fallback;
         ColorStateList colorStateListValueOf;
         Uri uri;
@@ -174,7 +174,7 @@ public final class HomeTileAdapter extends ListAdapter<HomeTile, VH> {
         $this$onBindViewHolder_u24lambda_u244.getRoot().setOnClickListener(new View.OnClickListener() { // from class: com.radby.sounds.ui.home.HomeTileAdapter$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                HomeTileAdapter.onBindViewHolder$lambda$4$lambda$3(this.f$0, tile, view);
+                HomeTileAdapter.onBindViewHolder$lambda$4$lambda$3(HomeTileAdapter.this, tile, view);
             }
         });
     }
@@ -186,13 +186,15 @@ public final class HomeTileAdapter extends ListAdapter<HomeTile, VH> {
         function1.invoke($tile);
     }
 
+}
+
     /* JADX INFO: compiled from: HomeAdapters.kt */
-    @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\u0018\u00002\u00020\u0001B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007¨\u0006\b"}, d2 = {"Lcom/muzk/app/ui/home/HomeTileAdapter$VH;", "Landroidx/recyclerview/widget/RecyclerView$ViewHolder;", "b", "Lcom/muzk/app/databinding/ItemHomeTileBinding;", "<init>", "(Lcom/muzk/app/databinding/ItemHomeTileBinding;)V", "getB", "()Lcom/muzk/app/databinding/ItemHomeTileBinding;", "app_debug"}, k = 1, mv = {2, 0, 0}, xi = ConstraintLayout.LayoutParams.Table.LAYOUT_CONSTRAINT_VERTICAL_CHAINSTYLE)
-    public static final class VH extends RecyclerView.ViewHolder {
+    @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\u0018\u00002\u00020\u0001B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007¨\u0006\b"}, d2 = {"Lcom/muzk/app/ui/home/HomeTileAdapter$VH;", "Landroidx/recyclerview/widget/RecyclerView$ViewHolder;", "b", "Lcom/muzk/app/databinding/ItemHomeTileBinding;", "<init>", "(Lcom/muzk/app/databinding/ItemHomeTileBinding;)V", "getB", "()Lcom/muzk/app/databinding/ItemHomeTileBinding;", "app_debug"}, k = 1, mv = {2, 0, 0})
+    final class HomeTileVH extends RecyclerView.ViewHolder {
         private final ItemHomeTileBinding b;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public VH(ItemHomeTileBinding b) {
+        public HomeTileVH(ItemHomeTileBinding b) {
             super(b.getRoot());
             Intrinsics.checkNotNullParameter(b, "b");
             this.b = b;
@@ -202,4 +204,3 @@ public final class HomeTileAdapter extends ListAdapter<HomeTile, VH> {
             return this.b;
         }
     }
-}

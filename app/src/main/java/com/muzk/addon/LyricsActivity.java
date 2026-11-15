@@ -141,13 +141,19 @@ public class LyricsActivity extends Activity {
         this.activeView = -1;
         new Thread(new Runnable() { // from class: com.muzk.addon.LyricsActivity.5
             @Override // java.lang.Runnable
-            public void run() throws Throwable {
-                final String strFetch = LyricsRepo.fetch(LyricsActivity.this, string, string2, j);
-                final List<Lrc.Line> list = Lrc.parse(strFetch);
+            public void run() {
+                String strFetch;
+                try {
+                    strFetch = LyricsRepo.fetch(LyricsActivity.this, string, string2, j);
+                } catch (Throwable th) {
+                    strFetch = "";
+                }
+                final String fetched = strFetch == null ? "" : strFetch;
+                final List<Lrc.Line> list = Lrc.parse(fetched);
                 LyricsActivity.this.runOnUiThread(new Runnable() { // from class: com.muzk.addon.LyricsActivity.5.1
                     @Override // java.lang.Runnable
                     public void run() {
-                        LyricsActivity.this.show(strFetch, list);
+                        LyricsActivity.this.show(fetched, list);
                     }
                 });
             }

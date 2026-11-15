@@ -265,6 +265,7 @@ public final class ChartsData {
             th = th3;
             httpURLConnection = null;
         }
+        return null;
     }
 
     private static String readAll(InputStream inputStream) throws Exception {
