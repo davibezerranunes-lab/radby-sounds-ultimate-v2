@@ -27,7 +27,7 @@ public final class FFmpeg {
     private FFmpeg() {
     }
 
-    public final synchronized void init(Context appContext) {
+    public final synchronized void init(Context appContext) throws YoutubeDLException {
         Intrinsics.checkNotNullParameter(appContext, "appContext");
         if (initialized) {
             return;

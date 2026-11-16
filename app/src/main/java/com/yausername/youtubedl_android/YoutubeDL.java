@@ -368,10 +368,10 @@ public final class YoutubeDL {
         Intrinsics.checkNotNullParameter(updateChannel, "updateChannel");
         assertInit();
         try {
-        } catch (IOException e) {
+            return YoutubeDLUpdater.INSTANCE.update$library_release(appContext, updateChannel);
+        } catch (Exception e) {
             throw new YoutubeDLException("failed to update youtube-dl", e);
         }
-        return YoutubeDLUpdater.INSTANCE.update$library_release(appContext, updateChannel);
     }
 
     public final String version(Context appContext) {

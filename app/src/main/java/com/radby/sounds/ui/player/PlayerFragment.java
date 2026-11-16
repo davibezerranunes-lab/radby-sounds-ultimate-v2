@@ -378,7 +378,7 @@ public final class PlayerFragment extends Fragment {
                                     }
                                     textView.setText(str);
                                     if (!Intrinsics.areEqual(playerUiState.getCover(), objectRef.element)) {
-                                        objectRef.element = (T) playerUiState.getCover();
+                                        objectRef.element = (Object) playerUiState.getCover();
                                         ShapeableImageView cover = binding.cover;
                                         Intrinsics.checkNotNullExpressionValue(cover, "cover");
                                         ShapeableImageView shapeableImageView = cover;
@@ -388,7 +388,7 @@ public final class PlayerFragment extends Fragment {
                                         builderTarget.placeholder(R.drawable.cover_placeholder);
                                         builderTarget.error(R.drawable.cover_placeholder);
                                         builderTarget.allowHardware(false);
-                                        builderTarget.listener(new ImageRequest.Listener(playerFragment2) { // from class: com.radby.sounds.ui.player.PlayerFragment$onViewCreated$3$1$2$emit$lambda$4$lambda$3$$inlined$listener$default$1
+                                        builderTarget.listener(new ImageRequest.Listener() { // from class: com.radby.sounds.ui.player.PlayerFragment$onViewCreated$3$1$2$emit$lambda$4$lambda$3$$inlined$listener$default$1
                                             @Override // coil.request.ImageRequest.Listener
                                             public void onStart(ImageRequest request) {
                                             }
@@ -543,7 +543,7 @@ public final class PlayerFragment extends Fragment {
     /* JADX INFO: Access modifiers changed from: private */
     /* JADX WARN: Code duplicated, block: B:18:0x0040  */
     public final void renderLike() {
-        boolean z;
+        boolean z = false;
         FragmentPlayerBinding b = this._binding;
         if (b == null) {
             return;
@@ -643,7 +643,7 @@ public final class PlayerFragment extends Fragment {
         popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() { // from class: com.radby.sounds.ui.player.PlayerFragment$$ExternalSyntheticLambda4
             @Override // android.widget.PopupMenu.OnMenuItemClickListener
             public final boolean onMenuItemClick(MenuItem menuItem) {
-                return PlayerFragment.showMenu$lambda$14(trackId, this, menuItem);
+                return PlayerFragment.showMenu$lambda$14(trackId, PlayerFragment.this, menuItem);
             }
         });
         popup.show();
@@ -685,7 +685,7 @@ public final class PlayerFragment extends Fragment {
         new MaterialAlertDialogBuilder(requireContext()).setTitle(R.string.add_to_playlist).setItems((CharSequence[]) names, new DialogInterface.OnClickListener() { // from class: com.radby.sounds.ui.player.PlayerFragment$$ExternalSyntheticLambda5
             @Override // android.content.DialogInterface.OnClickListener
             public final void onClick(DialogInterface dialogInterface, int i) {
-                PlayerFragment.pickPlaylist$lambda$17(value, store, trackId, this, dialogInterface, i);
+                PlayerFragment.pickPlaylist$lambda$17(value, store, trackId, PlayerFragment.this, dialogInterface, i);
             }
         }).show();
     }

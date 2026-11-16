@@ -613,7 +613,7 @@ public final class MainActivity extends AppCompatActivity {
                 snackbarMake.setAnchorView(bottomNav).setAction(R.string.play, new View.OnClickListener() { // from class: com.radby.sounds.ui.MainActivity$$ExternalSyntheticLambda0
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
-                        MainActivity.this.playDownloaded(title);
+                        this$0.playDownloaded(title);
                     }
                 }).show();
             }
@@ -652,15 +652,6 @@ public final class MainActivity extends AppCompatActivity {
         /* JADX WARN: Code duplicated, block: B:35:0x009c  */
         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         public final Object invokeSuspend(Object $result) {
-            Object maxElem$iv;
-            Object element$iv;
-            LocalTrack localTrack;
-            LocalTrack match;
-            Iterator iterator$iv;
-            long maxValue$iv;
-            Object e$iv;
-            long v$iv;
-            LocalTrack it;
             Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
             switch (this.label) {
                 case 0:
@@ -679,72 +670,29 @@ public final class MainActivity extends AppCompatActivity {
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
             }
             Iterable tracks = (List) $result;
-            Iterable $this$firstOrNull$iv = tracks;
             String str = this.$title;
-            Iterator it2 = $this$firstOrNull$iv.iterator();
-            do {
-                maxElem$iv = null;
-                if (it2.hasNext()) {
-                    element$iv = it2.next();
-                    it = (LocalTrack) element$iv;
-                } else {
-                    element$iv = null;
+            LocalTrack match = null;
+            for (Object element$iv : tracks) {
+                LocalTrack it = (LocalTrack) element$iv;
+                if (StringsKt.equals(it.getTitle(), str, true)) {
+                    match = it;
+                    break;
                 }
-                localTrack = (LocalTrack) element$iv;
-                if (localTrack == null) {
-                    Iterable $this$maxByOrNull$iv = tracks;
-                    iterator$iv = $this$maxByOrNull$iv.iterator();
-                    if (iterator$iv.hasNext()) {
-                        maxElem$iv = iterator$iv.next();
-                        if (iterator$iv.hasNext()) {
-                            LocalTrack it3 = (LocalTrack) maxElem$iv;
-                            maxValue$iv = it3.getDateAdded();
-                            do {
-                                e$iv = iterator$iv.next();
-                                LocalTrack it4 = (LocalTrack) e$iv;
-                                v$iv = it4.getDateAdded();
-                                if (maxValue$iv < v$iv) {
-                                    maxValue$iv = v$iv;
-                                    maxElem$iv = e$iv;
-                                }
-                            } while (iterator$iv.hasNext());
-                        }
-                    }
-                    localTrack = (LocalTrack) maxElem$iv;
-                }
-                match = localTrack;
-                if (match != null) {
-                    MainActivity mainActivity = MainActivity.this;
-                    mainActivity.getPlayer().playQueue(CollectionsKt.listOf(ModelsKt.toMediaItem(match)), 0, mainActivity.getString(R.string.source_downloads));
-                }
-                return Unit.INSTANCE;
-            } while (!StringsKt.equals(it.getTitle(), str, true));
-            localTrack = (LocalTrack) element$iv;
-            if (localTrack == null) {
-                Iterable $this$maxByOrNull$iv2 = tracks;
-                iterator$iv = $this$maxByOrNull$iv2.iterator();
-                if (iterator$iv.hasNext()) {
-                    maxElem$iv = iterator$iv.next();
-                    if (iterator$iv.hasNext()) {
-                        LocalTrack it5 = (LocalTrack) maxElem$iv;
-                        maxValue$iv = it5.getDateAdded();
-                        do {
-                            e$iv = iterator$iv.next();
-                            LocalTrack it6 = (LocalTrack) e$iv;
-                            v$iv = it6.getDateAdded();
-                            if (maxValue$iv < v$iv) {
-                                maxValue$iv = v$iv;
-                                maxElem$iv = e$iv;
-                            }
-                        } while (iterator$iv.hasNext());
-                    }
-                }
-                localTrack = (LocalTrack) maxElem$iv;
             }
-            match = localTrack;
+            if (match == null) {
+                Long maxValue$iv = null;
+                for (Object element2$iv : tracks) {
+                    LocalTrack it2 = (LocalTrack) element2$iv;
+                    long v$iv = it2.getDateAdded();
+                    if (maxValue$iv == null || maxValue$iv.longValue() < v$iv) {
+                        maxValue$iv = Long.valueOf(v$iv);
+                        match = it2;
+                    }
+                }
+            }
             if (match != null) {
-                MainActivity mainActivity2 = MainActivity.this;
-                mainActivity2.getPlayer().playQueue(CollectionsKt.listOf(ModelsKt.toMediaItem(match)), 0, mainActivity2.getString(R.string.source_downloads));
+                MainActivity mainActivity = MainActivity.this;
+                mainActivity.getPlayer().playQueue(CollectionsKt.listOf(ModelsKt.toMediaItem(match)), 0, mainActivity.getString(R.string.source_downloads));
             }
             return Unit.INSTANCE;
         }
@@ -846,7 +794,7 @@ public final class MainActivity extends AppCompatActivity {
         if (!Intrinsics.areEqual(intent.getAction(), "android.intent.action.SEND") || (text = intent.getStringExtra("android.intent.extra.TEXT")) == null) {
             return;
         }
-        MatchResult matchResultFind$default = new Regex("https?://\\S+").find(text);
+        MatchResult matchResultFind$default = new Regex("https?://\\S+").find(text, 0);
         if (matchResultFind$default == null || (url = matchResultFind$default.getValue()) == null) {
             url = text;
         }

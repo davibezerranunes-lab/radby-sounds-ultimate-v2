@@ -420,7 +420,6 @@ public final class PlayerViewModel extends AndroidViewModel {
             i2 = i;
             if (mutableStateFlow.compareAndSet(value, it.copy((32575 & 1) != 0 ? it.getHasMedia() : z5, (32575 & 2) != 0 ? it.getTitle() : string2, (32575 & 4) != 0 ? it.getArtist() : string3, (32575 & 8) != 0 ? it.getCover() : objCoverModel, (32575 & 16) != 0 ? it.getIsPlaying() : zIsPlaying, (32575 & 32) != 0 ? it.getIsBuffering() : z6, (32575 & 64) != 0 ? it.getPositionMs() : currentPosition, (32575 & 128) != 0 ? it.getDurationMs() : jCoerceAtLeast, (32575 & 256) != 0 ? it.getShuffle() : shuffleModeEnabled, (32575 & 512) != 0 ? it.getRepeatMode() : repeatMode, (32575 & 1024) != 0 ? it.getMediaId() : str4, (32575 & 2048) != 0 ? it.getIsRemote() : z2, (32575 & 4096) != 0 ? it.getSource() : null, (32575 & 8192) != 0 ? it.getAlbum() : str2, (32575 & 16384) != 0 ? it.getError() : error))) {
                 break;
-                break;
             } else {
                 item2 = item;
                 meta2 = meta;

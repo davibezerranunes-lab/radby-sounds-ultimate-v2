@@ -34,14 +34,14 @@ final class SettingsFragment$updateYtDlp$1$result$1 extends SuspendLambda implem
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-        SettingsFragment$updateYtDlp$1$result$1 settingsFragment$updateYtDlp$1$result$1 = new SettingsFragment$updateYtDlp$1$result$1(this.$app, continuation);
+        SettingsFragment$updateYtDlp$1$result$1 settingsFragment$updateYtDlp$1$result$1 = new SettingsFragment$updateYtDlp$1$result$1(this.$app, (Continuation<Object>) continuation);
         settingsFragment$updateYtDlp$1$result$1.L$0 = obj;
-        return settingsFragment$updateYtDlp$1$result$1;
+        return (Continuation<Unit>) (Object) settingsFragment$updateYtDlp$1$result$1;
     }
 
     @Override // kotlin.jvm.functions.Function2
     public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Result<? extends YoutubeDL.UpdateStatus>> continuation) {
-        return ((SettingsFragment$updateYtDlp$1$result$1) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
+        return ((SettingsFragment$updateYtDlp$1$result$1) (Object) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
     }
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
@@ -58,7 +58,7 @@ final class SettingsFragment$updateYtDlp$1$result$1 extends SuspendLambda implem
                     this.L$0 = context2;
                     this.label = 1;
                     if (ytdlReady.await(this) == coroutine_suspended) {
-                        return coroutine_suspended;
+                        return (Continuation<Unit>) (Object) coroutine_suspended;
                     }
                     context = context2;
                     break;

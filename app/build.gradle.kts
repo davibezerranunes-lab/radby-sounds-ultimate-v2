@@ -57,6 +57,13 @@ android {
         }
     }
 
+    lint {
+        // Recursos vindo de decompilação geram falsos positivos de lint
+        // (ResourceCycle em styles de biblioteca, DuplicateIds em layouts do appcompat).
+        abortOnError = false
+        checkReleaseBuilds = false
+    }
+
     packaging {
         resources {
             excludes += setOf("META-INF/*.kotlin_module", "META-INF/DEPENDENCIES", "META-INF/LICENSE*", "META-INF/NOTICE*")

@@ -38,7 +38,7 @@ public final class StreamProcessExtractor extends Thread {
         Intrinsics.checkNotNullParameter(stream, "stream");
         this.buffer = buffer;
         this.stream = stream;
-        this.callback = function3;
+        this.callback = (Function3<Float, Long, String, Unit>) function3;
         this.p = Pattern.compile("\\[download\\]\\s+(\\d+\\.\\d)% .* ETA (\\d+):(\\d+)");
         this.pAria2c = Pattern.compile("\\[#\\w{6}.*\\((\\d*\\.*\\d+)%\\).*?((\\d+)m)*((\\d+)s)*]");
         this.pFFmpeg = Pattern.compile("size=.*");

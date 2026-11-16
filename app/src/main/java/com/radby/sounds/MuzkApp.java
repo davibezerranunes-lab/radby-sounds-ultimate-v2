@@ -138,6 +138,7 @@ public final class MuzkApp extends Application implements ImageLoaderFactory {
                 default:
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
             }
+            return Unit.INSTANCE;
         }
     }
 

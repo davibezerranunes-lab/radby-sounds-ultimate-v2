@@ -1,5 +1,7 @@
 package com.radby.sounds.ui.search;
 
+import com.radby.sounds.data.RemoteTrack;
+import kotlin.jvm.functions.Function1;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.text.Editable;
@@ -37,6 +39,7 @@ import java.util.List;
 import kotlin.KotlinNothingValueException;
 import kotlin.Lazy;
 import kotlin.Metadata;
+import kotlin.jvm.functions.Function1;
 import kotlin.NoWhenBranchMatchedException;
 import kotlin.ResultKt;
 import kotlin.Unit;
@@ -159,7 +162,7 @@ public final class SearchFragment extends Fragment {
     @Override // androidx.fragment.app.Fragment
     public void onViewCreated(View view, Bundle savedInstanceState) {
         Intrinsics.checkNotNullParameter(view, "view");
-        SearchAdapter adapter = new SearchAdapter(new SearchFragment$onViewCreated$adapter$1(getVm()), new SearchFragment$onViewCreated$adapter$2(getVm()));
+        SearchAdapter adapter = new SearchAdapter((Function1<? super RemoteTrack, Unit>) new SearchFragment$onViewCreated$adapter$1(getVm()), (Function1<? super RemoteTrack, Unit>) new SearchFragment$onViewCreated$adapter$2(getVm()));
         getBinding().results.setLayoutManager(new LinearLayoutManager(requireContext()));
         getBinding().results.setAdapter(adapter);
         RecyclerView.ItemAnimator itemAnimator = getBinding().results.getItemAnimator();

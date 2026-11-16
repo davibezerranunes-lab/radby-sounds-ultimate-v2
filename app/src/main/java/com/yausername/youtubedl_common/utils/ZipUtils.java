@@ -27,7 +27,7 @@ public final class ZipUtils {
     private ZipUtils() {
     }
 
-    public final void unzip(File sourceFile, File targetDirectory) {
+    public final void unzip(File sourceFile, File targetDirectory) throws Exception {
         Intrinsics.checkNotNullParameter(targetDirectory, "targetDirectory");
         ZipFile zipFile = new ZipFile(sourceFile);
         try {
@@ -38,7 +38,7 @@ public final class ZipUtils {
                 File entryDestination = new File(targetDirectory, entry.getName());
                 String canonicalPath = entryDestination.getCanonicalPath();
                 Intrinsics.checkNotNullExpressionValue(canonicalPath, "entryDestination.canonicalPath");
-                if (!StringsKt.startsWith$default(canonicalPath, targetDirectory.getCanonicalPath() + File.separator, false, 2, (Object) null)) {
+                if (!StringsKt.startsWith(canonicalPath, targetDirectory.getCanonicalPath() + File.separator, false)) {
                     throw new IllegalAccessException("Entry is outside of the target dir: " + entry.getName());
                 }
                 if (entry.isDirectory()) {
@@ -103,7 +103,7 @@ public final class ZipUtils {
         }
     }
 
-    public final void unzip(InputStream inputStream, File targetDirectory) {
+    public final void unzip(InputStream inputStream, File targetDirectory) throws Exception {
         Intrinsics.checkNotNullParameter(targetDirectory, "targetDirectory");
         ZipArchiveInputStream zipArchiveInputStream = new ZipArchiveInputStream(new BufferedInputStream(inputStream));
         try {
@@ -119,7 +119,7 @@ public final class ZipUtils {
                 File entryDestination = new File(targetDirectory, it.getName());
                 String canonicalPath = entryDestination.getCanonicalPath();
                 Intrinsics.checkNotNullExpressionValue(canonicalPath, "entryDestination.canonicalPath");
-                if (!StringsKt.startsWith$default(canonicalPath, targetDirectory.getCanonicalPath() + File.separator, false, 2, (Object) null)) {
+                if (!StringsKt.startsWith(canonicalPath, targetDirectory.getCanonicalPath() + File.separator, false)) {
                     throw new IllegalAccessException("Entry is outside of the target dir: " + it.getName());
                 }
                 if (it.isDirectory()) {

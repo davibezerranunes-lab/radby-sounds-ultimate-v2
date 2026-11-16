@@ -79,7 +79,7 @@ public final class PalettePreference extends Preference {
             b.getRoot().setOnClickListener(new View.OnClickListener() { // from class: com.radby.sounds.ui.settings.PalettePreference$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view2) {
-                    PalettePreference.onBindViewHolder$lambda$3$lambda$2(on, this, sw, view2);
+                    PalettePreference.onBindViewHolder$lambda$3$lambda$2(on, PalettePreference.this, sw, view2);
                 }
             });
             row.addView(b.getRoot());

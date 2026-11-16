@@ -13,78 +13,81 @@ import kotlin.Metadata;
 @Metadata(d1 = {"\u0000H\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0010\b\n\u0002\b\t\n\u0002\u0010\t\n\u0002\b\t\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010$\n\u0002\b\u0017\n\u0002\u0018\u0002\n\u0002\b\u0014\b\u0007\u0018\u00002\u00020\u0001B\u0005¢\u0006\u0002\u0010\u0002R\u0018\u0010\u0003\u001a\u0004\u0018\u00010\u00048\u0006X\u0087\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0005\u0010\u0006R%\u0010\u0007\u001a\u0016\u0012\u0004\u0012\u00020\u0004\u0018\u00010\bj\n\u0012\u0004\u0012\u00020\u0004\u0018\u0001`\t¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\u000bR\u0013\u0010\f\u001a\u0004\u0018\u00010\u0004¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\u0006R\u0018\u0010\u000e\u001a\u0004\u0018\u00010\u00048\u0006X\u0087\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u0006R\u0018\u0010\u0010\u001a\u0004\u0018\u00010\u00048\u0006X\u0087\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0011\u0010\u0006R\u0014\u0010\u0012\u001a\u00020\u0013X\u0086D¢\u0006\b\n\u0000\u001a\u0004\b\u0014\u0010\u0015R\u0013\u0010\u0016\u001a\u0004\u0018\u00010\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0017\u0010\u0006R\u0013\u0010\u0018\u001a\u0004\u0018\u00010\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0019\u0010\u0006R\u0018\u0010\u001a\u001a\u0004\u0018\u00010\u00048\u0006X\u0087\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u001b\u0010\u0006R\u0016\u0010\u001c\u001a\u00020\u001d8\u0006X\u0087D¢\u0006\b\n\u0000\u001a\u0004\b\u001e\u0010\u001fR\u0016\u0010 \u001a\u00020\u001d8\u0006X\u0087D¢\u0006\b\n\u0000\u001a\u0004\b!\u0010\u001fR\u0013\u0010\"\u001a\u0004\u0018\u00010\u0004¢\u0006\b\n\u0000\u001a\u0004\b#\u0010\u0006R\u0018\u0010$\u001a\u0004\u0018\u00010\u00048\u0006X\u0087\u0004¢\u0006\b\n\u0000\u001a\u0004\b%\u0010\u0006R%\u0010&\u001a\u0016\u0012\u0004\u0012\u00020'\u0018\u00010\bj\n\u0012\u0004\u0012\u00020'\u0018\u0001`\t¢\u0006\b\n\u0000\u001a\u0004\b(\u0010\u000bR\u0013\u0010)\u001a\u0004\u0018\u00010\u0004¢\u0006\b\n\u0000\u001a\u0004\b*\u0010\u0006R\u0014\u0010+\u001a\u00020\u0013X\u0086D¢\u0006\b\n\u0000\u001a\u0004\b,\u0010\u0015R$\u0010-\u001a\u0010\u0012\u0004\u0012\u00020\u0004\u0012\u0004\u0012\u00020\u0004\u0018\u00010.8\u0006X\u0087\u0004¢\u0006\b\n\u0000\u001a\u0004\b/\u00100R\u0013\u00101\u001a\u0004\u0018\u00010\u0004¢\u0006\b\n\u0000\u001a\u0004\b2\u0010\u0006R\u0013\u00103\u001a\u0004\u0018\u00010\u0004¢\u0006\b\n\u0000\u001a\u0004\b4\u0010\u0006R\u0018\u00105\u001a\u0004\u0018\u00010\u00048\u0006X\u0087\u0004¢\u0006\b\n\u0000\u001a\u0004\b6\u0010\u0006R\u0018\u00107\u001a\u0004\u0018\u00010\u00048\u0006X\u0087\u0004¢\u0006\b\n\u0000\u001a\u0004\b8\u0010\u0006R\u0018\u00109\u001a\u0004\u0018\u00010\u00048\u0006X\u0087\u0004¢\u0006\b\n\u0000\u001a\u0004\b:\u0010\u0006R\u0018\u0010;\u001a\u0004\u0018\u00010\u00048\u0006X\u0087\u0004¢\u0006\b\n\u0000\u001a\u0004\b<\u0010\u0006R*\u0010=\u001a\u0016\u0012\u0004\u0012\u00020'\u0018\u00010\bj\n\u0012\u0004\u0012\u00020'\u0018\u0001`\t8\u0006X\u0087\u0004¢\u0006\b\n\u0000\u001a\u0004\b>\u0010\u000bR\u0013\u0010?\u001a\u0004\u0018\u00010\u0004¢\u0006\b\n\u0000\u001a\u0004\b@\u0010\u0006R%\u0010A\u001a\u0016\u0012\u0004\u0012\u00020\u0004\u0018\u00010\bj\n\u0012\u0004\u0012\u00020\u0004\u0018\u0001`\t¢\u0006\b\n\u0000\u001a\u0004\bB\u0010\u000bR\u0013\u0010C\u001a\u0004\u0018\u00010\u0004¢\u0006\b\n\u0000\u001a\u0004\bD\u0010\u0006R%\u0010E\u001a\u0016\u0012\u0004\u0012\u00020F\u0018\u00010\bj\n\u0012\u0004\u0012\u00020F\u0018\u0001`\t¢\u0006\b\n\u0000\u001a\u0004\bG\u0010\u000bR\u0013\u0010H\u001a\u0004\u0018\u00010\u0004¢\u0006\b\n\u0000\u001a\u0004\bI\u0010\u0006R\u0018\u0010J\u001a\u0004\u0018\u00010\u00048\u0006X\u0087\u0004¢\u0006\b\n\u0000\u001a\u0004\bK\u0010\u0006R\u0013\u0010L\u001a\u0004\u0018\u00010\u0004¢\u0006\b\n\u0000\u001a\u0004\bM\u0010\u0006R\u0018\u0010N\u001a\u0004\u0018\u00010\u00048\u0006X\u0087\u0004¢\u0006\b\n\u0000\u001a\u0004\bO\u0010\u0006R\u0013\u0010P\u001a\u0004\u0018\u00010\u0004¢\u0006\b\n\u0000\u001a\u0004\bQ\u0010\u0006R\u0018\u0010R\u001a\u0004\u0018\u00010\u00048\u0006X\u0087\u0004¢\u0006\b\n\u0000\u001a\u0004\bS\u0010\u0006R\u0018\u0010T\u001a\u0004\u0018\u00010\u00048\u0006X\u0087\u0004¢\u0006\b\n\u0000\u001a\u0004\bU\u0010\u0006R\u0018\u0010V\u001a\u0004\u0018\u00010\u00048\u0006X\u0087\u0004¢\u0006\b\n\u0000\u001a\u0004\bW\u0010\u0006R\u0014\u0010X\u001a\u00020\u0013X\u0086D¢\u0006\b\n\u0000\u001a\u0004\bY\u0010\u0015¨\u0006Z"}, d2 = {"Lcom/yausername/youtubedl_android/mapper/VideoInfo;", "", "()V", "averageRating", "", "getAverageRating", "()Ljava/lang/String;", "categories", "Ljava/util/ArrayList;", "Lkotlin/collections/ArrayList;", "getCategories", "()Ljava/util/ArrayList;", "description", "getDescription", "dislikeCount", "getDislikeCount", "displayId", "getDisplayId", "duration", "", "getDuration", "()I", "ext", "getExt", "extractor", "getExtractor", "extractorKey", "getExtractorKey", "fileSize", "", "getFileSize", "()J", "fileSizeApproximate", "getFileSizeApproximate", "format", "getFormat", "formatId", "getFormatId", "formats", "Lcom/yausername/youtubedl_android/mapper/VideoFormat;", "getFormats", "fulltitle", "getFulltitle", "height", "getHeight", "httpHeaders", "", "getHttpHeaders", "()Ljava/util/Map;", "id", "getId", "license", "getLicense", "likeCount", "getLikeCount", "manifestUrl", "getManifestUrl", "playerUrl", "getPlayerUrl", "repostCount", "getRepostCount", "requestedFormats", "getRequestedFormats", "resolution", "getResolution", "tags", "getTags", "thumbnail", "getThumbnail", "thumbnails", "Lcom/yausername/youtubedl_android/mapper/VideoThumbnail;", "getThumbnails", DownloadWorker.KEY_TITLE, "getTitle", "uploadDate", "getUploadDate", "uploader", "getUploader", "uploaderId", "getUploaderId", DownloadWorker.KEY_URL, "getUrl", "viewCount", "getViewCount", "webpageUrl", "getWebpageUrl", "webpageUrlBasename", "getWebpageUrlBasename", "width", "getWidth", "library_release"}, k = 1, mv = {1, 7, 1})
 public final class VideoInfo {
 
+    public VideoInfo() {
+    }
+
     @JsonProperty("average_rating")
-    private final String averageRating;
-    private final ArrayList<String> categories;
-    private final String description;
+    private String averageRating;
+    private ArrayList<String> categories;
+    private String description;
 
     @JsonProperty("dislike_count")
-    private final String dislikeCount;
+    private String dislikeCount;
 
     @JsonProperty("display_id")
-    private final String displayId;
-    private final int duration;
-    private final String ext;
-    private final String extractor;
+    private String displayId;
+    private int duration;
+    private String ext;
+    private String extractor;
 
     @JsonProperty("extractor_key")
-    private final String extractorKey;
+    private String extractorKey;
 
     @JsonProperty("filesize")
-    private final long fileSize;
+    private long fileSize;
 
     @JsonProperty("filesize_approx")
-    private final long fileSizeApproximate;
-    private final String format;
+    private long fileSizeApproximate;
+    private String format;
 
     @JsonProperty("format_id")
-    private final String formatId;
-    private final ArrayList<VideoFormat> formats;
-    private final String fulltitle;
-    private final int height;
+    private String formatId;
+    private ArrayList<VideoFormat> formats;
+    private String fulltitle;
+    private int height;
 
     @JsonProperty("http_headers")
-    private final Map<String, String> httpHeaders;
-    private final String id;
-    private final String license;
+    private Map<String, String> httpHeaders;
+    private String id;
+    private String license;
 
     @JsonProperty("like_count")
-    private final String likeCount;
+    private String likeCount;
 
     @JsonProperty("manifest_url")
-    private final String manifestUrl;
+    private String manifestUrl;
 
     @JsonProperty("player_url")
-    private final String playerUrl;
+    private String playerUrl;
 
     @JsonProperty("repost_count")
-    private final String repostCount;
+    private String repostCount;
 
     @JsonProperty("requested_formats")
-    private final ArrayList<VideoFormat> requestedFormats;
-    private final String resolution;
-    private final ArrayList<String> tags;
-    private final String thumbnail;
-    private final ArrayList<VideoThumbnail> thumbnails;
-    private final String title;
+    private ArrayList<VideoFormat> requestedFormats;
+    private String resolution;
+    private ArrayList<String> tags;
+    private String thumbnail;
+    private ArrayList<VideoThumbnail> thumbnails;
+    private String title;
 
     @JsonProperty("upload_date")
-    private final String uploadDate;
-    private final String uploader;
+    private String uploadDate;
+    private String uploader;
 
     @JsonProperty("uploader_id")
-    private final String uploaderId;
-    private final String url;
+    private String uploaderId;
+    private String url;
 
     @JsonProperty("view_count")
-    private final String viewCount;
+    private String viewCount;
 
     @JsonProperty("webpage_url")
-    private final String webpageUrl;
+    private String webpageUrl;
 
     @JsonProperty("webpage_url_basename")
-    private final String webpageUrlBasename;
-    private final int width;
+    private String webpageUrlBasename;
+    private int width;
 
     public final String getId() {
         return this.id;

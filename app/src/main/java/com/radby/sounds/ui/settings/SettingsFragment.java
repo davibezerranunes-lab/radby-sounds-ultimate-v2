@@ -99,7 +99,7 @@ public final class SettingsFragment extends PreferenceFragmentCompat {
             view.post(new Runnable() { // from class: com.radby.sounds.ui.settings.SettingsFragment$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    SettingsFragment.onCreatePreferences$lambda$1$lambda$0(SettingsFragment.this);
+                    SettingsFragment.onCreatePreferences$lambda$1$lambda$0(this$0);
                 }
             });
             return true;
@@ -285,7 +285,7 @@ public final class SettingsFragment extends PreferenceFragmentCompat {
                 default:
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
             }
-            Object value = ((Result) $result).getValue();
+            Object value = $result;
             SettingsFragment settingsFragment = SettingsFragment.this;
             if (com.radby.compat.Kt.isSuccess(value)) {
                 String string = settingsFragment.getString(((YoutubeDL.UpdateStatus) value) == YoutubeDL.UpdateStatus.DONE ? R.string.update_done : R.string.update_latest);
@@ -322,7 +322,7 @@ public final class SettingsFragment extends PreferenceFragmentCompat {
         /* JADX WARN: Multi-variable type inference failed */
         AnonymousClass1(Function1<? super Continuation<? super Unit>, ? extends Object> function1, Continuation<? super AnonymousClass1> continuation) {
             super(2, (Continuation<Object>) continuation);
-            this.$block = function1;
+            this.$block = (Function1<Continuation<? super Unit>, Object>) function1;
         }
 
         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl

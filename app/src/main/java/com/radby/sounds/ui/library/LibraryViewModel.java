@@ -329,9 +329,9 @@ public final class LibraryViewModel extends AndroidViewModel {
                         destination$iv$iv2.add(element$iv$iv2);
                     }
                 }
-                ArrayList $this$mapTo$iv = (List) destination$iv$iv2;
+                List $this$mapTo$iv = (List) destination$iv$iv2;
                 List list3 = rows;
-                String strSubstringAfterLast$default = StringsKt.substringAfterLast$default(n.getFolder(), '/', (String) null, 2, (Object) null);
+                String strSubstringAfterLast$default = StringsKt.substringAfterLast(n.getFolder(), "/", (String) null);
                 if (StringsKt.isBlank(strSubstringAfterLast$default)) {
                     strSubstringAfterLast$default = n.getFolder();
                 }
@@ -358,9 +358,9 @@ public final class LibraryViewModel extends AndroidViewModel {
                     list$iv$iv.add(element$iv$iv3);
                 }
                 Collection destination$iv$iv4 = new ArrayList(destination$iv$iv3.size());
-                for (Map.Entry item$iv$iv : destination$iv$iv3.entrySet()) {
-                    String path = (String) item$iv$iv.getKey();
-                    List list4 = (List) item$iv$iv.getValue();
+                for (Object item$iv$iv : ((java.util.Map) (Object) destination$iv$iv3).entrySet()) {
+                    String path = (String) ((java.util.Map.Entry) item$iv$iv).getKey();
+                    List list4 = (List) ((java.util.Map.Entry) item$iv$iv).getValue();
                     destination$iv$iv4.add(new LibraryRow.Folder(path, ((LocalTrack) CollectionsKt.first(list4)).getFolderName(), list4.size()));
                     listEmptyList = listEmptyList;
                 }
@@ -403,7 +403,7 @@ public final class LibraryViewModel extends AndroidViewModel {
                             }
                             $this$mapNotNull$iv = $this$mapNotNull$iv2;
                         }
-                        ArrayList $this$mapTo$iv2 = (List) destination$iv$iv5;
+                        List $this$mapTo$iv2 = (List) destination$iv$iv5;
                         rows.add(new LibraryRow.Header(p.getName()));
                         for (Object item$iv3 : $this$mapTo$iv2) {
                             LocalTrack it7 = (LocalTrack) item$iv3;

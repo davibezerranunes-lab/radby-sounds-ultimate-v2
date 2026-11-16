@@ -45,7 +45,7 @@ final class HomeViewModel$state$1 extends SuspendLambda implements Function5<Lis
 
     /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
     public final Object invoke2(List<LocalTrack> list, List<Playlist> list2, Map<Long, Integer> map, Pair<Boolean, Boolean> pair, Continuation<? super HomeUiState> continuation) {
-        HomeViewModel$state$1 homeViewModel$state$1 = new HomeViewModel$state$1(continuation);
+        HomeViewModel$state$1 homeViewModel$state$1 = new HomeViewModel$state$1((Continuation) continuation);
         homeViewModel$state$1.L$0 = list;
         homeViewModel$state$1.L$1 = list2;
         homeViewModel$state$1.L$2 = map;
@@ -156,7 +156,6 @@ final class HomeViewModel$state$1 extends SuspendLambda implements Function5<Lis
                         destination$iv$iv4.add(element$iv$iv3);
                     }
                 }
-                break;
             default:
                 throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         }

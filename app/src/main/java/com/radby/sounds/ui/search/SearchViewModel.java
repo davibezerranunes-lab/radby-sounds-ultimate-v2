@@ -57,7 +57,7 @@ public final class SearchViewModel extends AndroidViewModel {
         Intrinsics.checkNotNullParameter(app, "app");
         this._state = StateFlowKt.MutableStateFlow(new SearchUiState(null, false, null, null, null, null, 63, null));
         this.state = FlowKt.asStateFlow(this._state);
-        this._events = SharedFlowKt.MutableSharedFlow$default(0, 4, null, 5, null);
+        this._events = SharedFlowKt.MutableSharedFlow(0, 4, kotlinx.coroutines.channels.BufferOverflow.SUSPEND);
         this.events = FlowKt.asSharedFlow(this._events);
         this.history = SearchHistory.INSTANCE.get(app);
         this.recentSearches = this.history.getItems();
@@ -215,6 +215,25 @@ public final class SearchViewModel extends AndroidViewModel {
                 default:
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
             }
+            searchViewModel = SearchViewModel.this;
+            if (com.radby.compat.Kt.isSuccess(objM663constructorimpl)) {
+                list = (List) objM663constructorimpl;
+                $this$update$iv2 = searchViewModel._state;
+                do {
+                    prevValue$iv2 = $this$update$iv2.getValue();
+                    it2 = (SearchUiState) prevValue$iv2;
+                } while (!$this$update$iv2.compareAndSet(prevValue$iv2, SearchUiState.copy$default(it2, null, false, list, null, null, null, 57, null)));
+            }
+            searchViewModel2 = SearchViewModel.this;
+            e = com.radby.compat.Kt.exceptionOrNull(objM663constructorimpl);
+            if (e != null) {
+                $this$update$iv = searchViewModel2._state;
+                do {
+                    prevValue$iv = $this$update$iv.getValue();
+                    it = (SearchUiState) prevValue$iv;
+                } while (!$this$update$iv.compareAndSet(prevValue$iv, SearchUiState.copy$default(it, null, false, CollectionsKt.emptyList(), searchViewModel2.shortMessage(e), null, null, 49, null)));
+            }
+            return Unit.INSTANCE;
         }
     }
 
@@ -415,7 +434,17 @@ public final class SearchViewModel extends AndroidViewModel {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 }
             } catch (Throwable th2) {
-                th = th2;
+                mutableSharedFlow2 = SearchViewModel.this._events;
+                message = new SearchEvent.Message("Não consegui abrir o áudio: ");
+                this.label = 3;
+                if (mutableSharedFlow2.emit(message, this) == coroutine_suspended) {
+                    return coroutine_suspended;
+                }
+                $this$update$iv = SearchViewModel.this._state;
+                do {
+                    prevValue$iv = $this$update$iv.getValue();
+                } while (!$this$update$iv.compareAndSet(prevValue$iv, SearchUiState.copy$default((SearchUiState) prevValue$iv, null, false, null, null, null, null, 47, null)));
+                return Unit.INSTANCE;
             }
         }
     }
@@ -447,7 +476,9 @@ public final class SearchViewModel extends AndroidViewModel {
             }
         });
         Object last$iv = null;
-        for (Object element$iv : $this$lastOrNull$iv) {
+        java.util.Iterator iterator$iv = $this$lastOrNull$iv.iterator();
+        while (iterator$iv.hasNext()) {
+            Object element$iv = iterator$iv.next();
             String it = (String) element$iv;
             if (StringsKt.startsWith(it, "ERROR", false)) {
                 last$iv = element$iv;

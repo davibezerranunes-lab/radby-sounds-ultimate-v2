@@ -49,10 +49,6 @@ public final class SearchAdapter extends ListAdapter<RemoteTrack, SearchVH> {
     private final Function1<RemoteTrack, Unit> onListen;
     private String resolvingId;
 
-    @Override // androidx.recyclerview.widget.RecyclerView.Adapter
-    public /* bridge */ /* synthetic */ void onBindViewHolder(SearchVH p0, int p1, List<Object> p2) {
-        onBindViewHolder(p0, p1, p2);
-    }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     /* JADX WARN: Multi-variable type inference failed */
