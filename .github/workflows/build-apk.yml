@@ -25,6 +25,13 @@ jobs:
       - name: Permissao do gradlew
         run: chmod +x gradlew
 
+      - name: Garantir keystore de assinatura
+        run: |
+          if [ ! -f "$HOME/.android/debug.keystore" ]; then
+            mkdir -p "$HOME/.android"
+            keytool -genkeypair -v -keystore "$HOME/.android/debug.keystore" -storepass android -alias androiddebugkey -keypass android -keyalg RSA -keysize 2048 -validity 10000 -dname "CN=Android Debug,O=Android,C=US"
+          fi
+
       - name: Gerar APK (release)
         run: ./gradlew assembleRelease --no-daemon --stacktrace
 
