@@ -27,6 +27,13 @@ android {
         targetCompatibility = JavaVersion.VERSION_17
     }
 
+    // Só arm64-v8a tem as libs nativas (ffmpeg, python). Outros ABIs falhariam no runtime.
+    defaultConfig {
+        ndk {
+            abiFilters += listOf("arm64-v8a")
+        }
+    }
+
     signingConfigs {
         create("release") {
             // CI: assina com o keystore de debug quando não há segredos configurados.
