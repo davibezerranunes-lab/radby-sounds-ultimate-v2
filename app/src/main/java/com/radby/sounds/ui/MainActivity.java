@@ -339,7 +339,7 @@ public final class MainActivity extends AppCompatActivity {
         miniPlayer.getRoot().setOnClickListener(new View.OnClickListener() { // from class: com.radby.sounds.ui.MainActivity$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                this.this$0.openPlayer();
+                MainActivity.this.openPlayer();
             }
         });
         miniPlayer.miniPlay.setOnClickListener(new View.OnClickListener() { // from class: com.radby.sounds.ui.MainActivity$$ExternalSyntheticLambda3
@@ -461,12 +461,12 @@ public final class MainActivity extends AppCompatActivity {
 
                                         @Override // coil.request.ImageRequest.Listener
                                         public void onError(ImageRequest request, ErrorResult result) {
-                                            this.this$0.tintMiniPlayer(null);
+                                            MainActivity.this.tintMiniPlayer(null);
                                         }
 
                                         @Override // coil.request.ImageRequest.Listener
                                         public void onSuccess(ImageRequest request, SuccessResult result) {
-                                            this.this$0.tintMiniPlayer(CoverColors.INSTANCE.extract(result.getDrawable()));
+                                            MainActivity.this.tintMiniPlayer(CoverColors.INSTANCE.extract(result.getDrawable()));
                                         }
                                     });
                                     imageLoader.enqueue(builderTarget.build());

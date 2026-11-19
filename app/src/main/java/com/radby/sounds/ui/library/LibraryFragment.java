@@ -895,7 +895,7 @@ public final class LibraryFragment extends Fragment {
         new MaterialAlertDialogBuilder(requireContext()).setTitle(R.string.add_to_playlist).setItems((CharSequence[]) names, new DialogInterface.OnClickListener() { // from class: com.radby.sounds.ui.library.LibraryFragment$$ExternalSyntheticLambda16
             @Override // android.content.DialogInterface.OnClickListener
             public final void onClick(DialogInterface dialogInterface, int i) {
-                LibraryFragment.pickPlaylist$lambda$34(playlists, this.this$0, ids, dialogInterface, i);
+                LibraryFragment.pickPlaylist$lambda$34(playlists, LibraryFragment.this, ids, dialogInterface, i);
             }
         }).show();
     }
