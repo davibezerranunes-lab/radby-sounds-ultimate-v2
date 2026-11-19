@@ -310,7 +310,7 @@ public final class PlaylistStore {
         List<Playlist> $this$forEach$iv = list;
         for (Object element$iv : $this$forEach$iv) {
             Playlist p = (Playlist) element$iv;
-            try { arr.put(new JSONObject().put("id", p.getId()).put("name", p.getName()).put("tracks", new JSONArray((Collection) p.getTrackIds()))); } catch (Exception ignored) { }
+            try { try { arr.put(new JSONObject().put("id", p.getId()).put("name", p.getName()).put("tracks", new JSONArray((Collection) p.getTrackIds()))); } catch (Exception ignored) { } } catch (Exception ignored) { }
         }
         File file = this.file;
         String string = arr.toString();

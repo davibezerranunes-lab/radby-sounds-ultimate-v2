@@ -271,7 +271,7 @@ public final class LibraryAdapter extends ListAdapter<LibraryRow, RecyclerView.V
     public static final void onBindViewHolder$lambda$11$lambda$9(LibraryAdapter this$0, LibraryRow $row, View it) {
         Function2<LibraryRow.PlaylistItem, View, Unit> function2 = this$0.onPlaylistMore;
         Intrinsics.checkNotNull(it);
-        function2.invoke((LibraryRow.PlaylistItem) $row, it);
+        function2.invoke((LibraryRow.Track) $row, it);
     }
 
     /* JADX INFO: Access modifiers changed from: private */

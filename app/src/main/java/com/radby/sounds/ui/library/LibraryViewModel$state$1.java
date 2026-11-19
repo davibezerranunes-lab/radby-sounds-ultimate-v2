@@ -39,7 +39,7 @@ final class LibraryViewModel$state$1 extends SuspendLambda implements Function5<
 
     /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
     public final Object invoke2(List<LocalTrack> list, List<Playlist> list2, Nav nav, Set<Long> set, Continuation<? super LibraryUiState> continuation) {
-        LibraryViewModel$state$1 libraryViewModel$state$1 = new LibraryViewModel$state$1(this.this$0, (Continuation) continuation);
+        LibraryViewModel$state$1 libraryViewModel$state$1 = new LibraryViewModel$state$1(this.this$0, (Continuation<Object>) continuation);
         libraryViewModel$state$1.L$0 = list;
         libraryViewModel$state$1.L$1 = list2;
         libraryViewModel$state$1.L$2 = nav;
